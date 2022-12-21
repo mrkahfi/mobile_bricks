@@ -11,6 +11,5 @@ bricks:
   #   git:
   #     url: https://github.com/felangel/mason.git
   #     path: bricks/widget
-  authentication:
-    git:
-      url: https://gitlab.com/mrkahfi/ecommerce-starter-app.git
+  auth_formz:
+    path: ./auth_formz/
