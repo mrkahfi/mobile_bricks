@@ -51,12 +51,6 @@ vars:
     default: true
     prompt: Do you want to have Google Analytics in your app?
 
-  hasAnalytics:
-    type: boolean
-    description: to integrate Firebase Analytics
-    default: true
-    prompt: Do you want to have Google Analytics in your app?
-
   hasPushNotification:
     type: boolean
     description: to integrate FCM push notification
@@ -81,11 +75,11 @@ vars:
     default: true
     prompt: Do you want to implement an authentication with Google?
 
-  hasFacebokSignin:
+  hasPhoneNumberSignin:
     type: boolean
-    description: to implement an authentication with Facebook?
+    description: to implement an authentication with phone number?
     default: true
-    prompt: Do you want to implement an authentication with Facebook?
+    prompt: Do you want to implement an authentication with phone number?
 
   hasOnboarding:
     type: boolean
