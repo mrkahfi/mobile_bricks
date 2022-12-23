@@ -21,8 +21,77 @@ environment:
 #  * an optional prompt phrase used when asking for the variable
 #  * a list of values (enums only)
 vars:
-  name:
+  appName:
     type: string
-    description: Your name
-    default: Dash
-    prompt: What is your name?
+    description: App name
+    default: Kahfi App
+    prompt: What is your app's name?
+
+  iosBundleId:
+    type: string
+    description: iOS Bundle Identifier
+    default: com.example.kahfi
+    prompt: Wefine the iOS Bundle Identifier?
+
+  androidAppId:
+    type: string
+    description: Android application ID
+    default: com.example.kahfi
+    prompt: Define the Android App ID?
+
+  hasCrashlytics:
+    type: boolean
+    description: to integrate Firebase Crashlytics
+    default: true
+    prompt: Do you want to have Crashlytics in your app?
+
+  hasAnalytics:
+    type: boolean
+    description: to integrate Firebase Analytics
+    default: true
+    prompt: Do you want to have Google Analytics in your app?
+
+  hasAnalytics:
+    type: boolean
+    description: to integrate Firebase Analytics
+    default: true
+    prompt: Do you want to have Google Analytics in your app?
+
+  hasPushNotification:
+    type: boolean
+    description: to integrate FCM push notification
+    default: true
+    prompt: Do you want to have FCM push notification in your app?
+
+  hasCredentialSignin:
+    type: boolean
+    description: to implement an authentication with credentials?
+    default: true
+    prompt: Do you want to implement an authentication with credentials (email/username and password)?
+
+  hasGoogleSignin:
+    type: boolean
+    description: to implement an authentication with Google?
+    default: true
+    prompt: Do you want to mplement an authentication with Google?
+
+  hasFacebokSignin:
+    type: boolean
+    description: to implement an authentication with Google?
+    default: true
+    prompt: Do you want to implement an authentication with Google?
+
+  hasFacebokSignin:
+    type: boolean
+    description: to implement an authentication with Facebook?
+    default: true
+    prompt: Do you want to implement an authentication with Facebook?
+
+  hasOnboarding:
+    type: boolean
+    description: to implement onboarding pages?
+    default: true
+    prompt: Do you want to implement onboarding pages in your app?
+
+  
+

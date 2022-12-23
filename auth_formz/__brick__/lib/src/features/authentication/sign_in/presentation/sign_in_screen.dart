@@ -19,10 +19,15 @@ class SignInScreen extends ConsumerWidget {
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(16.0),
-          child: Column(children: [
+          child:
+              Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
             Image.network(
               'https://cdni.iconscout.com/illustration/premium/thumb/account-login-6003624-4976687.png',
               height: MediaQuery.of(context).size.height / 4,
+            ),
+            const Text(
+              'App Name',
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
             InputField(
               label: 'Username',
