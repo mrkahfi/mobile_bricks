@@ -26,7 +26,7 @@ class SignInScreen extends ConsumerWidget {
               height: MediaQuery.of(context).size.height / 4,
             ),
             const Text(
-              'App Name',
+              '{{ appName }}',
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
             InputField(

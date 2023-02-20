@@ -1,10 +1,31 @@
+import 'dart:async';
+import 'dart:developer';
+
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:zot_ecommerce/src/config/routers.dart';
-import 'package:zot_ecommerce/src/config/themes.dart';
+import 'package:zot_ecommerce/src/app/config/config.dart';
+import 'package:zot_ecommerce/src/app/firebase/config/routers.dart';
+import 'package:zot_ecommerce/src/app/firebase/config/themes.dart';
+import 'package:zot_ecommerce/src/app/firebase/firebase_options.dart';
 
 void main() {
-  runApp(const ProviderScope(child: MyApp()));
+  F.flavor = Flavor.stag;
+
+  runZonedGuarded(
+    () async {
+      WidgetsFlutterBinding.ensureInitialized();
+      await Firebase.initializeApp(
+        name: DefaultFirebaseOptions.currentName,
+        options: DefaultFirebaseOptions.currentPlatform,
+      );
+      await EasyLocalization.ensureInitialized();
+      runApp(const ProviderScope(child: MyApp()));
+    },
+    (error, stackTrace) {
+      log(error.toString(), error: error, stackTrace: stackTrace);
+    },
+  );
 }
 
 class MyApp extends ConsumerWidget {
@@ -17,7 +38,7 @@ class MyApp extends ConsumerWidget {
     return MaterialApp.router(
       routerConfig: routers,
       debugShowCheckedModeBanner: false,
-      title: 'ZOT Ecommerce',
+      title: '{{ appName }}',
       theme: AppTheme.defaultTheme,
     );
   }

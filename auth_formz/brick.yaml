@@ -24,19 +24,19 @@ vars:
   appName:
     type: string
     description: App name
-    default: Kahfi App
+    default: ZeroOne App
     prompt: What is your app's name?
 
   iosBundleId:
     type: string
     description: iOS Bundle Identifier
-    default: com.example.kahfi
+    default: com.example.zeroone
     prompt: Wefine the iOS Bundle Identifier?
 
   androidAppId:
     type: string
     description: Android application ID
-    default: com.example.kahfi
+    default: com.example.zeroone
     prompt: Define the Android App ID?
 
   hasCrashlytics:
