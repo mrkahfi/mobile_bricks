@@ -1,4 +1,0 @@
-bricks:
-  hello: 0.1.0+1
-  auth_formz:
-    path: ../flutter_bricks/auth_formz
