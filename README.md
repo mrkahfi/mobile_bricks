@@ -31,9 +31,9 @@ bricks:
 
 NOTE: Currently we have only one brick called `zot_starter_mobile`. We're still working on other bricks.
 
-## Usage Case 
+## Use Cases 
 
-### Project Initialization
+### 🚀 Project Initialization
 Instead of having a useless default "counter-app" project, use brick `zot_starter_mobile`. Just go to the root of your mobile project and run this command.
 
 ```
@@ -41,12 +41,17 @@ Instead of having a useless default "counter-app" project, use brick `zot_starte
 mason make zot_starter_mobile
 ```
 
+This initializes the whole starter app setup.
 
-### Add A New Module
+### Module Creation
 
 ```
 TODO
 ```
+
+## 📦 Contributing
+All the contribution are welcome. You can either file an issue, open a PR, or create a new impactful brick others can benefit from.
+If you're making significant changes or refactor to the existing bricks, please elaborate your take on it.
 
 
 
