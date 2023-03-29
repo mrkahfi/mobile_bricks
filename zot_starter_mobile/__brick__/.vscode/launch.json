@@ -7,6 +7,8 @@
             "request": "launch",
             "program": "lib/main.dart",
             "args": [
+                "--dart-define=API_URL=http://10.0.2.2:9000/api",
+                "--dart-define=ENV=DEV",
                 "--flavor=dev"
             ]
         }, 
@@ -16,6 +18,8 @@
             "request": "launch",
             "program": "lib/main.dart",
             "args": [
+                "--dart-define=API_URL=http://10.0.2.2:9000/api",
+                "--dart-define=ENV=STG",
                 "--flavor=stg"
             ]
         },
