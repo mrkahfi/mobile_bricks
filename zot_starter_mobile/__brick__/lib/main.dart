@@ -7,12 +7,12 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:stack_trace/stack_trace.dart' as stack_trace;
-import 'package:zot_starter/src/app.dart';
+import 'package:{{ packageName }}/src/app.dart';
 
-import 'package:zot_starter/src/app/config/config.dart';
-import 'package:zot_starter/src/localization/codegen_loader.g.dart';
-import 'package:zot_starter/src/services/local/hive_db.dart';
-import 'package:zot_starter/src/services/remote/config/http_overrides.dart';
+import 'package:{{ packageName }}/src/app/config/config.dart';
+import 'package:{{ packageName }}/src/localization/codegen_loader.g.dart';
+import 'package:{{ packageName }}/src/services/local/hive_db.dart';
+import 'package:{{ packageName }}/src/services/remote/config/http_overrides.dart';
 
 void main() {
   const String env = String.fromEnvironment('ENV', defaultValue: 'DEV');

@@ -9,7 +9,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:542396848940:android:0c4b83b0a7186b4c34ea89",
         "android_client_info": {
-          "package_name": "com.example.zot_commerce"
+          "package_name": "{{ androidAppId }}"
         }
       },
       "oauth_client": [
@@ -45,7 +45,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:542396848940:android:972534eefcae7db734ea89",
         "android_client_info": {
-          "package_name": "com.example.zot_ecommerce.dev"
+          "package_name": "{{ androidAppId }}.dev"
         }
       },
       "oauth_client": [

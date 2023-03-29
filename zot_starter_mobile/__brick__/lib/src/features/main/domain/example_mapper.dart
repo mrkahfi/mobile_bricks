@@ -1,6 +1,6 @@
-import 'package:zot_starter/src/features/main/data/models/responses/item_response.dart';
-import 'package:zot_starter/src/features/main/domain/models/item.dart';
-import 'package:zot_starter/src/services/remote/config/api_response.dart';
+import 'package:{{ packageName }}/src/features/main/data/models/responses/item_response.dart';
+import 'package:{{ packageName }}/src/features/main/domain/models/item.dart';
+import 'package:{{ packageName }}/src/services/remote/config/api_response.dart';
 
 /// Mapper is a class responsible to map raw objects retrieved from the API
 /// to models acccording to UI needs

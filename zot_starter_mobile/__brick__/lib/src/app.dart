@@ -5,11 +5,11 @@ import 'package:go_router/go_router.dart';
 
 import 'package:zog_ui/zog_ui.dart';
 
-import 'package:zot_starter/src/app/config/config.dart';
-import 'package:zot_starter/src/app/themes/app_theme.dart';
-import 'package:zot_starter/src/constants/constants.dart';
-import 'package:zot_starter/src/presentation/app_controller.dart';
-import 'package:zot_starter/src/routes/routes.dart';
+import 'package:{{ packageName }}/src/app/config/config.dart';
+import 'package:{{ packageName }}/src/app/themes/app_theme.dart';
+import 'package:{{ packageName }}/src/constants/constants.dart';
+import 'package:{{ packageName }}/src/presentation/app_controller.dart';
+import 'package:{{ packageName }}/src/routes/routes.dart';
 
 class MyApp extends ConsumerStatefulWidget {
   const MyApp({Key? key}) : super(key: key);

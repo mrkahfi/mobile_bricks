@@ -3,14 +3,14 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:formz/formz.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:zog_ui/zog_ui.dart' show ZeroText;
-import 'package:zot_starter/gen/assets.gen.dart';
-import 'package:zot_starter/src/app/config/config.dart';
+import 'package:{{ packageName }}/gen/assets.gen.dart';
+import 'package:{{ packageName }}/src/app/config/config.dart';
 
-import 'package:zot_starter/src/common_widgets/button.dart';
-import 'package:zot_starter/src/common_widgets/textfield.dart';
-import 'package:zot_starter/src/presentation/app_controller.dart';
-import 'package:zot_starter/src/localization/locale_keys.g.dart';
-import 'package:zot_starter/src/utils/extensions/widget_extension.dart';
+import 'package:{{ packageName }}/src/common_widgets/button.dart';
+import 'package:{{ packageName }}/src/common_widgets/textfield.dart';
+import 'package:{{ packageName }}/src/presentation/app_controller.dart';
+import 'package:{{ packageName }}/src/localization/locale_keys.g.dart';
+import 'package:{{ packageName }}/src/utils/extensions/widget_extension.dart';
 
 import 'sign_in_controller.dart';
 

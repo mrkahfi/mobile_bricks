@@ -1,7 +1,9 @@
 import 'package:firebase_core/firebase_core.dart';
-import 'package:zot_starter/src/app/firebase/firebase_options.dart';
-import 'package:zot_starter/src/app/firebase/firebase_options_stg.dart' as stg;
-import 'package:zot_starter/src/app/firebase/firebase_options_dev.dart' as dev;
+import 'package:{{ packageName }}/src/app/firebase/firebase_options.dart';
+import 'package:{{ packageName }}/src/app/firebase/firebase_options_stg.dart'
+    as stg;
+import 'package:{{ packageName }}/src/app/firebase/firebase_options_dev.dart'
+    as dev;
 
 import '../config/flavor_config.dart';
 
@@ -32,14 +34,14 @@ import '../config/flavor_config.dart';
 class AppConfig {
   const AppConfig._();
 
-  /// App Name
+  /// {{ appName }}
   static const appName = FlavorConfig<String>(
-    dev: '[DEV] App Name',
-    stag: '[STG] App Name',
-    prod: 'App Name',
+    dev: '[DEV] {{ appName }}',
+    stag: '[STG] {{ appName }}',
+    prod: '{{ appName }}',
   );
 
-  /// App Name for Firebase Options
+  /// {{ appName }} for Firebase Options
   static const firebaseAppName = FlavorConfig<String>(
     dev: 'DevAppName',
     stag: 'StgAppName',

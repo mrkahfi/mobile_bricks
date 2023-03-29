@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:zog_ui/zog_ui.dart';
-import 'package:zot_starter/src/localization/locale_keys.g.dart';
+import 'package:{{ packageName }}/src/localization/locale_keys.g.dart';
 
 class CommonButton extends StatelessWidget {
   final double height;

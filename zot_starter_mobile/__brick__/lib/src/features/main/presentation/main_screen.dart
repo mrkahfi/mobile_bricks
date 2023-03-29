@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:zog_ui/zog_ui.dart';
-import 'package:zot_starter/src/features/main/presentation/main_state.dart';
-import 'package:zot_starter/src/features/main/presentation/home/home_screen.dart';
-import 'package:zot_starter/src/presentation/app_controller.dart';
+import 'package:{{ packageName }}/src/features/main/presentation/main_state.dart';
+import 'package:{{ packageName }}/src/features/main/presentation/home/home_screen.dart';
+import 'package:{{ packageName }}/src/presentation/app_controller.dart';
 
 import 'main_controller.dart';
 

@@ -63,7 +63,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '542396848940',
     projectId: 'zot-commerce',
     storageBucket: 'zot-commerce.appspot.com',
-    iosClientId: '542396848940-6lkrnk29p3a9d1tepbhpijlvffucnjcd.apps.googleusercontent.com',
-    iosBundleId: 'com.example.zot-ecommerce.stg',
+    iosClientId:
+        '542396848940-6lkrnk29p3a9d1tepbhpijlvffucnjcd.apps.googleusercontent.com',
+    iosBundleId: '{{ iosBundleId }}.stg',
   );
 }

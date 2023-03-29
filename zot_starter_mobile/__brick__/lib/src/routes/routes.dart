@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:go_router/go_router.dart';
-import 'package:zot_starter/src/features/auth/presentation/sign_in/sign_in_screen.dart';
-import 'package:zot_starter/src/features/main/presentation/main_screen.dart';
-import 'package:zot_starter/src/routes/go_router_refresh_stream.dart';
-import 'package:zot_starter/src/features/auth/data/auth_repository.dart';
+import 'package:{{ packageName }}/src/features/auth/presentation/sign_in/sign_in_screen.dart';
+import 'package:{{ packageName }}/src/features/main/presentation/main_screen.dart';
+import 'package:{{ packageName }}/src/routes/go_router_refresh_stream.dart';
+import 'package:{{ packageName }}/src/features/auth/data/auth_repository.dart';
 
 // It is better to split the route into smal chunks based on their focused area
 // or based on feature modules

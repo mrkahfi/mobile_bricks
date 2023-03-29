@@ -2,11 +2,11 @@ import 'dart:convert';
 
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:zot_starter/src/features/main/data/models/responses/example_response.dart';
-import 'package:zot_starter/src/features/main/data/models/responses/item_response.dart';
-import 'package:zot_starter/src/services/remote/config/config.dart';
+import 'package:{{ packageName }}/src/features/main/data/models/responses/example_response.dart';
+import 'package:{{ packageName }}/src/features/main/data/models/responses/item_response.dart';
+import 'package:{{ packageName }}/src/services/remote/config/config.dart';
 
-import 'package:zot_starter/src/utils/delay.dart';
+import 'package:{{ packageName }}/src/utils/delay.dart';
 import 'package:flutter/services.dart' show rootBundle;
 
 class ExampleApi {

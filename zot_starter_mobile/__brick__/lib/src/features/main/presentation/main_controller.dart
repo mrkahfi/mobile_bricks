@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:zot_starter/src/features/main/presentation/main_state.dart';
+import 'package:{{ packageName }}/src/features/main/presentation/main_state.dart';
 
 class MainController extends StateNotifier<MainState> {
   MainController(this.ref) : super(const MainState());

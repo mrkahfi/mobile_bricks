@@ -1,6 +1,6 @@
 // ignore: depend_on_referenced_packages
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:zot_starter/src/services/remote/config/network_exceptions.dart';
+import 'package:{{ packageName }}/src/services/remote/config/network_exceptions.dart';
 
 part 'api_response.freezed.dart';
 

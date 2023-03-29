@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:zog_ui/zog_ui.dart';
-import 'package:zot_starter/src/app/themes/foundation/colors.dart';
-import 'package:zot_starter/src/app/themes/foundation/typography.dart';
+import 'package:{{ packageName }}/src/app/themes/foundation/colors.dart';
+import 'package:{{ packageName }}/src/app/themes/foundation/typography.dart';
 
-import 'package:zot_starter/gen/fonts.gen.dart';
+import 'package:{{ packageName }}/gen/fonts.gen.dart';
 
 class AppTheme {
   static final ZeroThemeData light = ZeroThemeData(

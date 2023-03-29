@@ -25,8 +25,24 @@ environment:
 #  * an optional prompt phrase used when asking for the variable
 #  * a list of values (enums only)
 vars:
-  name:
+  appName:
     type: string
-    description: Your name
-    default: Dash
-    prompt: What is your name?
+    description: App name
+    default: ZOT Mobile Starter
+    prompt: What is the app's name?
+  packageName:
+    type: string
+    description: Package name
+    default: zot_starter
+    prompt: What is the app's package name?
+  androidAppId:
+    type: string
+    description: Android App ID
+    default: com.zot_starter.mobile
+    prompt: What is the app's Android App ID?
+  iosBundleId:
+    type: string
+    description: iOS bundle ID
+    default: com.zot_starter.mobile
+    prompt: What is the app's iOS bundle ID?
+  

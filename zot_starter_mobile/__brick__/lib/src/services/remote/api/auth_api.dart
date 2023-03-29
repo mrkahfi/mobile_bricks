@@ -1,4 +1,4 @@
-import 'package:zot_starter/src/services/remote/config/config.dart';
+import 'package:{{ packageName }}/src/services/remote/config/config.dart';
 
 class AuthApi {
   final DioClient _dioClient;

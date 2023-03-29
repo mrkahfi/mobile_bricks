@@ -1,9 +1,9 @@
 import 'dart:convert';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:zot_starter/src/features/main/data/models/responses/item_response.dart';
-import 'package:zot_starter/src/services/remote/api/example_api.dart';
-import 'package:zot_starter/src/services/remote/config/config.dart';
+import 'package:{{ packageName }}/src/features/main/data/models/responses/item_response.dart';
+import 'package:{{ packageName }}/src/services/remote/api/example_api.dart';
+import 'package:{{ packageName }}/src/services/remote/config/config.dart';
 
 class ExampleRepository {
   final ExampleApi _exampleApi;

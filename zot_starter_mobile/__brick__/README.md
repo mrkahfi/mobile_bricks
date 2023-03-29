@@ -1,4 +1,4 @@
-# ZOT Starter App
+# {{ appName }}
 
 [![GitHub license](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![platform](https://img.shields.io/badge/platform-Flutter-blue.svg)](https://flutter.dev/)
