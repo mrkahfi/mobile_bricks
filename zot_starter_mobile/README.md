@@ -37,7 +37,7 @@ This is a starting point for a new brick.
 
 ## 📸 Screenshots
 <pre>
-<img src="screenshot/ios1.png" width="28.5%">     <img src="screenshot/ios2.png" width="30%">     <img src="screenshot/ios3.png" width="28.5%">     <img src="screenshot/ios4.png" width="30%">     <img src="screenshot/ios5.png" width="30%">     <img src="screenshot/ios6.png" width="30%">     <img src="screenshot/ios7.png" width="28.5%">     
+<img src="__brick__/screenshot/ios1.png" width="28.5%">     <img src="__brick__/screenshot/ios2.png" width="30%">     <img src="__brick__/screenshot/ios3.png" width="28.5%">     <img src="__brick__/screenshot/ios4.png" width="30%">     <img src="__brick__/screenshot/ios5.png" width="30%">     <img src="__brick__/screenshot/ios6.png" width="30%">     <img src="__brick__/screenshot/ios7.png" width="28.5%">     
 </pre>
 
 
