@@ -1,3 +1,7 @@
+# 0.2.0+3
+
+- chore: remove creds files
+
 # 0.2.0+2
 
 - feat: add hooks post gen to execute `flutterfire config`
