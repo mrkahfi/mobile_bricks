@@ -16,22 +16,26 @@
 *  Implementation example of cstom colors and typography
 
 
-## 📸 Screenshots
-<pre>
-<img src="screenshot/ios1.png" width="28.5%">     <img src="screenshot/ios2.png" width="30%">     <img src="screenshot/ios3.png" width="28.5%">     <img src="screenshot/ios4.png" width="30%">     <img src="screenshot/ios5.png" width="30%">     <img src="screenshot/ios6.png" width="30%">     <img src="screenshot/ios7.png" width="28.5%">     
-</pre>
-
-
-## Quick start
-This is a normal flutter app. You should follow the instructions in the [official documentation](https://flutter.io/docs/get-started/install).
-This project uses **Riverpod** as a caching and data-binding framework
-
-
 ## Folder Structure 🔥
 
     # Root Project
     .
-    |
+    ├── android                       
+    │   ├── app                      
+    │   │   ├── src                            
+    │   │   │   ├── google-services.json 
+    ├── assets                            
+    │   ├── fonts                        
+    │   ├── images                           
+    │   ├── translations 
+    ├── ios                         
+    │   ├── config                      
+    │   │   ├── dev                            
+    │   │   │   ├── GoogleServices-info.plist 
+    │   │   ├── prod                             
+    │   │   │   ├── GoogleServices-info.plist               
+    │   │   ├── stg                             
+    │   │   │   ├── GoogleServices-info.plist        
     ├── lib                             
     │   ├── gen                         # All generated codes go here
     │   └── src                         # All the source code here
@@ -72,7 +76,7 @@ This project uses **Riverpod** as a caching and data-binding framework
 * [ZOG UI](https://pub.dev/packages/zog_ui) - Collection of ZOG design system UI components
 * [Mason CLI](https://pub.dev/packages/mason_cli) - To create and consume reusable templates called bricks
 
-## Todo
+## TODOs 🗓️
 * [ ] Add Linting
 * [ ] Use Isar for Hive replacement
 * [ ] Push Notification
@@ -83,12 +87,56 @@ This project uses **Riverpod** as a caching and data-binding framework
 * [ ] Unit Testing (Mocktail with Riverpod)
 
 
-## How to run the App
-1. Clone this project.
-2. Open with your favorite tools editor.
+## Configure Firebase Project 🔥
+Right on the root of the project, on terminal execute these 3 command
+
+```
+# Configure Firebase project for development environment
+flutterfire config 
+      --project={{ firebaseProjectId }} 
+      --ios-bundle-{{ iosBundleId }}.dev
+      --android-app-id={{ androidAppId }}.dev
+      --out=lib/src/app/firebase/firebase_options_dev.dart
+```
+```
+# Configure Firebase project for staging environment
+flutterfire config 
+      --project={{ firebaseProjectId }} 
+      --ios-bundle-{{ iosBundleId }}.stg
+      --android-app-id={{ androidAppId }}.stg
+      --out=lib/src/app/firebase/firebase_options_stg.dart
+```
+```
+# Configure Firebase project for production environment
+flutterfire config 
+      --project={{ firebaseProjectId }} 
+      --ios-bundle-{{ iosBundleId }}
+      --android-app-id={{ androidAppId }}
+      --out=lib/src/app/firebase/firebase_options_stg.dart
+```
+
+## Localization Setup
+
+- Open folder [`assets/translations/`]()
+- Add some text for `en` and `id` version language.
+- Run code in terminal for generate `easy_localization` :
+
+```
+flutter pub run easy_localization:generate -h
+```
+- Then run this code for generate `codegen_loader.g.dart` :
+
+```
+flutter pub run easy_localization:generate -S "assets/translations" -O "lib/src/localization"
+```
+
+- Finally run this code for generate `locale_keys.g.dart`:
+```
+flutter pub run easy_localization:generate -S "assets/translations" -O "lib/src/localization" -o "locale_keys.g.dart" -f keys
+```
 
 
-## Run the App using command prompt
+## Run the App using command prompt ▶️
 
 
 ```console
@@ -98,41 +146,15 @@ flutter run --flavor dev --dart-define=API_URL='<your_api_url>'
 
 
 ## How to run the Test
-### Integration Testing (will be modified, for now it's not working)
-```console
-flutter drive --target=test_driver/app.dart --flavor development
-```
 
 
-## Author
+## Author 🧑‍💻
 
-* **ZOT Team**
+* **{{ teamName }}**
 
 Don't forget to follow us, fork and give us a ⭐
 
 
 ## License
 
-```
-MIT License
-
-Copyright (c) [2020] [Zero One Technology]
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
 ```
