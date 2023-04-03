@@ -1,0 +1,105 @@
+name: {{ packageName }}
+description: A new Flutter project.
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=2.18.5 <3.0.0'
+dependencies:
+  flutter:
+    sdk: flutter
+
+  freezed_annotation: ^2.2.0
+  formz: ^0.4.1
+
+  json_annotation: ^4.8.0
+  json_serializable: ^6.6.1
+  freezed: ^2.3.2
+  
+  # Navigation
+  go_router: ^5.0.5
+
+  # State Management
+  flutter_riverpod: ^2.1.1
+  rxdart: ^0.27.7
+
+  # Networking
+  dio: ^4.0.6
+
+  # Local Storage
+  hive_flutter: ^1.1.0
+
+  # Firebase
+  firebase_core: ^2.4.0
+  firebase_crashlytics: ^3.0.8
+  firebase_analytics: ^10.0.8
+  firebase_messaging: ^14.2.0
+
+  # Localization
+  easy_localization: ^3.0.1
+  easy_localization_loader: ^1.0.1+1
+
+  stack_trace: ^1.11.0
+
+
+  # The following adds the Cupertino Icons font to your application.
+  # Use with the CupertinoIcons class for iOS style icons.
+  cupertino_icons: ^1.0.2
+
+  # UI
+  flutter_screenutil: ^5.6.0
+  flutter_svg: ^2.0.4
+  
+  # ZOG UI
+  zog_ui: ^0.0.1-alpha.8
+    # path: ../ZOG/zero-ui/packages/mobile
+    # git: 
+    #   url: https://github.com/zero-one-group/zog-ui.git
+    #   path: packages/mobile
+
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutterfire_cli: ^0.2.7
+
+  flutter_gen_runner: ^5.2.0
+  build_runner:
+
+  flutter_lints: ^2.0.0
+
+  # Testing
+  mocktail: ^0.3.0
+
+  integration_test:
+    sdk: flutter
+
+flutter_gen:
+  output: lib/gen/ # Optional (default: lib/gen/)
+  line_length: 80 # Optional (default: 80)
+
+  integrations:
+    flutter_svg: true
+    rive: true
+    
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/translations/
+    - assets/images/
+    - assets/jsons/
+
+  fonts:
+    - family: DMMono
+      fonts:
+        - asset: assets/fonts/DMMono-Regular.ttf
+    - family: DMSans
+      fonts:
+        - asset: assets/fonts/DMSans-Regular.ttf
+

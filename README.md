@@ -29,7 +29,7 @@ bricks:
         path: app_scaffolding
 ```
 
-NOTE: Currently we have only one brick called `zot_starter_mobile`. We're still working on other bricks.
+NOTE: Currently we have only one brick called `app_scaffolding`. We're still working on other bricks.
 
 - Get the bricks
 
