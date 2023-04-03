@@ -1,3 +1,7 @@
+# 0.5.0+5
+
+- chore: change name
+
 # 0.4.0+4
 
 - chore: updated readme and post_gen

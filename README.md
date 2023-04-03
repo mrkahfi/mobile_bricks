@@ -23,13 +23,19 @@ mason init
 ```
 # List all the bricks
 bricks:
-  zot_starter_mobile:
+  app_scaffolding:
       git:
         url: https://github.com/zero-one-group/mobile_bricks.git
-        path: zot_starter_mobile
+        path: app_scaffolding
 ```
 
 NOTE: Currently we have only one brick called `zot_starter_mobile`. We're still working on other bricks.
+
+- Get the bricks
+
+```
+mason get
+```
 
 ## Use Cases 
 
