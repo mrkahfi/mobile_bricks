@@ -65,6 +65,8 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
+  flutterfire_cli: ^0.2.7
+
   flutter_gen_runner: ^5.2.0
   build_runner:
 
