@@ -44,7 +44,7 @@ Instead of having a useless default "counter-app" project, use brick `zot_starte
 
 ```
 # initialize Mason 
-mason make zot_starter_mobile
+mason make app_scaffolding
 ```
 
 This initializes the whole starter app setup.
