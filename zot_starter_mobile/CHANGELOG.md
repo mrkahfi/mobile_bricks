@@ -1,3 +1,8 @@
+# 0.4.0+4
+
+- chore: updated readme and post_gen
+- feat: using firebase_cli 0.3.0-dev.16 to automatically add config file
+
 # 0.2.0+3
 
 - chore: remove creds files
