@@ -147,9 +147,22 @@ flutter pub run easy_localization:generate -S "assets/translations" -O "lib/src/
 
 ## Run the App using command prompt ▶️
 
+For development:
 
 ```console
-flutter run --flavor dev --dart-define=API_URL='<your_api_url>'
+flutter run --flavor dev --dart-define=API_URL='<your_dev_api_url>'
+```
+
+For staging:
+
+```console
+flutter run --flavor stg --dart-define=API_URL='<your_staging_api_url>'
+```
+
+For production
+
+```console
+flutter run --flavor prod --dart-define=API_URL='<your_prod_api_url>'
 ```
 
 
