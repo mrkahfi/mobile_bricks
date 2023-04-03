@@ -92,14 +92,7 @@ This project uses **Riverpod** as a caching and data-binding framework
 * [Mason CLI](https://pub.dev/packages/mason_cli) - To create and consume reusable templates called bricks
 
 ## Todo
-* [ ] Add Linting
-* [ ] Use Isar for Hive replacement
-* [ ] Push Notification
-* [ ] Deep Link
-* [ ] Modularization
-* [ ] Responsive UI
-* [ ] Integration Testing
-* [ ] Unit Testing (Mocktail with Riverpod)
+* [ ] Mason for NX workspace
 
 
 ## More Readings

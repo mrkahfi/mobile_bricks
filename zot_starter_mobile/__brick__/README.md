@@ -77,8 +77,8 @@
 * [Mason CLI](https://pub.dev/packages/mason_cli) - To create and consume reusable templates called bricks
 
 ## TODOs 🗓️
-* [ ] Add Linting
-* [ ] Use Isar for Hive replacement
+* [ ] Add Custom Linting
+* [ ] Use Isar as Hive replacement
 * [ ] Push Notification
 * [ ] Deep Link
 * [ ] Modularization
@@ -86,34 +86,43 @@
 * [ ] Integration Testing
 * [ ] Unit Testing (Mocktail with Riverpod)
 
+## Getting Started
 
-## Configure Firebase Project 🔥
-Right on the root of the project, on terminal execute these 3 command
+### Configure Firebase Project 🔥
+Right on the root of the project, on terminal execute these 3 commands
 
 ```
 # Configure Firebase project for development environment
-flutterfire config 
-      --project={{ firebaseProjectId }} 
-      --ios-bundle-{{ iosBundleId }}.dev
-      --android-app-id={{ androidAppId }}.dev
+flutterfire config  \
+      --project={{ firebaseProjectId }}  \
+      --ios-bundle-{{ iosBundleId }}.dev \
+      --android-app-id={{ androidAppId }}.dev \
+      --ios-out=ios/config/dev/GoogleService-Info.plist \
       --out=lib/src/app/firebase/firebase_options_dev.dart
 ```
 ```
 # Configure Firebase project for staging environment
-flutterfire config 
-      --project={{ firebaseProjectId }} 
-      --ios-bundle-{{ iosBundleId }}.stg
-      --android-app-id={{ androidAppId }}.stg
+flutterfire config  \
+      --project={{ firebaseProjectId }} \
+      --ios-bundle-{{ iosBundleId }}.stg \
+      --android-app-id={{ androidAppId }}.stg \
+      --ios-out=ios/config/stg/GoogleService-Info.plist \
       --out=lib/src/app/firebase/firebase_options_stg.dart
 ```
 ```
 # Configure Firebase project for production environment
-flutterfire config 
-      --project={{ firebaseProjectId }} 
-      --ios-bundle-{{ iosBundleId }}
-      --android-app-id={{ androidAppId }}
+flutterfire config \
+      --project={{ firebaseProjectId }}  \
+      --ios-bundle-{{ iosBundleId }} \
+      --ios-out=ios/config/prod/GoogleService-Info.plist \
+      --android-app-id={{ androidAppId }} \
       --out=lib/src/app/firebase/firebase_options_stg.dart
 ```
+
+**IMPORTANT NOTEs:** 
+
+- Always answer `yes` for every prompt telling you that some certain firebase related files already exists.
+- If you are prompted `Would you like your iOS GoogleService-Info.plist to be associated with your iOS Build configuration or Target?`, DO select `No, I want to write the file to the path I chose`
 
 ## Localization Setup
 

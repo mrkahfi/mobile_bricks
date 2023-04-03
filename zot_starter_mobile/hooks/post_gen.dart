@@ -19,12 +19,8 @@ void run(HookContext context) async {
   ]);
 
   context.logger.info(
-      'Please run following command to configure Firebase projects for all the environments. ');
-  context.logger.info('\x1B[33mNOTE:\x1B[0m If you are prompted '
-      '\x1B[33m\'Would you like your iOS GoogleService-Info.plist to be associated with your iOS Build configuration '
-      'or Target?\'\x1B[0m, ');
-  context.logger.info(
-      'DO select \x1B[33m\'No, I want to write the file to the path I chose\'\x1B[0m');
+      'Please run following command to configure Firebase projects for all the environments. \\');
+
   context.logger.info('''
   flutterfire config \\
       --project=$firebaseProjectId \\
@@ -51,4 +47,10 @@ void run(HookContext context) async {
   ''');
   context.logger
       .info('Or check ./README.md on how to configure Firebase projects');
+
+  context.logger.info('\x1B[33mNOTE:\x1B[0m If you are prompted '
+      '\x1B[33m\'Would you like your iOS GoogleService-Info.plist to be associated with your iOS Build configuration '
+      'or Target?\'\x1B[0m, ');
+  context.logger.info(
+      'DO select \x1B[33m\'No, I want to write the file to the path I chose\'\x1B[0m');
 }
