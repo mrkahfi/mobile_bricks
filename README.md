@@ -40,7 +40,7 @@ mason get
 ## Use Cases 
 
 ### 🚀 Project Initialization
-Instead of having a useless default "counter-app" project, use brick `zot_starter_mobile`. Just go to the root of your mobile project and run this command.
+Instead of having a useless default "counter-app" project, use brick `app_scaffolding`. Just go to the root of your mobile project and run this command.
 
 ```
 # initialize Mason 
