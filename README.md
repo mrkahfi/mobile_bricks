@@ -56,7 +56,7 @@ TODO
 ```
 
 ## 📦 Contributing
-All the contribution are welcome. You can either file an issue, open a PR, or create a new impactful brick others can benefit from.
+Any contributions are welcomed. You can either file an issue, open a PR, or create a new impactful brick others can benefit from.
 If you're making significant changes or refactor to the existing bricks, please elaborate your take on it.
 
 
