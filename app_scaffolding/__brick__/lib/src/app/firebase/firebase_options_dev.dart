@@ -2,7 +2,7 @@
 // ignore_for_file: lines_longer_than_80_chars, avoid_classes_with_only_static_members
 import 'package:firebase_core/firebase_core.dart' show FirebaseOptions;
 import 'package:flutter/foundation.dart'
-    show defaultTargetPlatform, kIsWeb, TargetPlatform;
+    show defaultTargetPlatform, TargetPlatform;
 
 /// Default [FirebaseOptions] for use with your Firebase apps.
 ///
@@ -16,12 +16,6 @@ import 'package:flutter/foundation.dart'
 /// ```
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
-    if (kIsWeb) {
-      throw UnsupportedError(
-        'DefaultFirebaseOptions have not been configured for web - '
-        'you can reconfigure this by running the FlutterFire CLI again.',
-      );
-    }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
         return android;
@@ -50,21 +44,20 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyCIvUuQYT1Jgq6DeWmYIg-MrYTHk4dSQoY',
-    appId: '1:542396848940:android:972534eefcae7db734ea89',
-    messagingSenderId: '542396848940',
-    projectId: 'zot-commerce',
-    storageBucket: 'zot-commerce.appspot.com',
+    apiKey: '',
+    appId: '',
+    messagingSenderId: '',
+    projectId: '{{ firebaseProjectId }}',
+    storageBucket: '',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyBLMCmi325hS15KvzCAJmUACr6TWRwzJbQ',
-    appId: '1:542396848940:ios:a5f2793017e1023d34ea89',
-    messagingSenderId: '542396848940',
-    projectId: 'zot-commerce',
-    storageBucket: 'zot-commerce.appspot.com',
-    iosClientId:
-        '542396848940-e0eqr9sjg6gkab511l29eq070u4fugvh.apps.googleusercontent.com',
+    apiKey: '',
+    appId: '',
+    messagingSenderId: '',
+    projectId: '',
+    storageBucket: '',
+    iosClientId: '',
     iosBundleId: '{{ iosBundleId }}.dev',
   );
 }

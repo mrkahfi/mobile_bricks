@@ -8,7 +8,7 @@ import 'package:{{ packageName }}/src/app/config/config.dart';
 
 import 'package:{{ packageName }}/src/components/button.dart';
 import 'package:{{ packageName }}/src/components/textfield.dart';
-import 'package:{{ packageName }}/src/presentation/app_controller.dart';
+import 'package:{{ packageName }}/src/controllers/app_controller.dart';
 import 'package:{{ packageName }}/src/localization/locale_keys.g.dart';
 import 'package:{{ packageName }}/src/utils/extensions/widget_extension.dart';
 
@@ -35,7 +35,7 @@ class SignInScreen extends ConsumerWidget {
             children: [
               Assets.images.authentication
                   .svg(height: MediaQuery.of(context).size.height / 3),
-              Text(
+              ZeroText.heading5(
                 AppConfig.appName.value,
               ),
               CommonTextfield(

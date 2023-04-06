@@ -10,17 +10,28 @@ import 'package:stack_trace/stack_trace.dart' as stack_trace;
 import 'package:{{ packageName }}/src/app.dart';
 
 import 'package:{{ packageName }}/src/app/config/config.dart';
+import 'package:{{ packageName }}/src/constants/constants.dart';
 import 'package:{{ packageName }}/src/localization/codegen_loader.g.dart';
 import 'package:{{ packageName }}/src/services/local/hive_db.dart';
 import 'package:{{ packageName }}/src/services/remote/config/http_overrides.dart';
 
 void main() {
-  const String env = String.fromEnvironment('ENV', defaultValue: 'DEV');
+  const String env = String.fromEnvironment(AppConstants.env,
+      defaultValue: AppConstants.envDev);
   F.configureFromEnv(env);
 
   runZonedGuarded(
     () async {
       WidgetsFlutterBinding.ensureInitialized();
+      await EasyLocalization.ensureInitialized();
+      await Firebase.initializeApp(
+        name: AppConfig.firebaseAppName.value,
+        options: AppConfig.firebaseOptions.value,
+      );
+      await HiveDB.init();
+
+      // to skip the problem of SSL certification and solve the Image.network(url) issue
+      HttpOverrides.global = AppHttpOverrides();
 
       FlutterError.demangleStackTrace = (StackTrace stack) {
         if (stack is stack_trace.Trace) return stack.vmTrace;
@@ -28,26 +39,23 @@ void main() {
         return stack;
       };
 
-      await HiveDB.init();
-
-      await Firebase.initializeApp(
-        name: AppConfig.firebaseAppName.value,
-        options: AppConfig.firebaseOptions.value,
-      );
-      await EasyLocalization.ensureInitialized();
-
-      // to skip the problem of SSL certification and solve the Image.network(url) issue
-      HttpOverrides.global = AppHttpOverrides();
-
-      runApp(ProviderScope(
+      runApp(
+        ProviderScope(
           child: EasyLocalization(
-              fallbackLocale: const Locale('en', 'US'),
-              supportedLocales: const [Locale('en', 'US'), Locale('id', 'ID')],
-              path: 'assets/translations',
-              assetLoader: const CodegenLoader(),
-              child: const MyApp())));
+            fallbackLocale: AppConstants.localeID,
+            supportedLocales: const [
+              AppConstants.localeID,
+              AppConstants.localeEN
+            ],
+            path: AppConstants.translationsAssetPath,
+            assetLoader: const CodegenLoader(),
+            child: const MyApp(),
+          ),
+        ),
+      );
     },
     (error, stackTrace) {
+      // use log() instead of debugPrint() or print()
       log(error.toString(), error: error, stackTrace: stackTrace);
     },
   );

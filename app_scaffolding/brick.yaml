@@ -48,6 +48,6 @@ vars:
   iosBundleId:
     type: string
     description: iOS bundle ID
-    default: com.zot_starter.mobile
+    default: com.zot-starter.mobile
     prompt: What is the app's iOS bundle ID?
   

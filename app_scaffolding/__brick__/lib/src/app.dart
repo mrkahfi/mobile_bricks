@@ -8,19 +8,14 @@ import 'package:zog_ui/zog_ui.dart';
 import 'package:{{ packageName }}/src/app/config/config.dart';
 import 'package:{{ packageName }}/src/app/themes/app_theme.dart';
 import 'package:{{ packageName }}/src/constants/constants.dart';
-import 'package:{{ packageName }}/src/presentation/app_controller.dart';
+import 'package:{{ packageName }}/src/controllers/app_controller.dart';
 import 'package:{{ packageName }}/src/routes/routes.dart';
 
-class MyApp extends ConsumerStatefulWidget {
+class MyApp extends ConsumerWidget {
   const MyApp({Key? key}) : super(key: key);
 
   @override
-  ConsumerState<ConsumerStatefulWidget> createState() => _MyAppState();
-}
-
-class _MyAppState extends ConsumerState<MyApp> {
-  @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final GoRouter routers = ref.watch(goRouterProvider);
 
     return ZeroApp.router(
@@ -34,7 +29,7 @@ class _MyAppState extends ConsumerState<MyApp> {
       builder: (context, child) {
         final isProdVariant = F.flavor == Flavor.prod;
         return _FlavorBanner(
-          show: true,
+          show: !isProdVariant,
           child: child,
         );
       },

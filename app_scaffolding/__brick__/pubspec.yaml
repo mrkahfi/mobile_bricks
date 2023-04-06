@@ -53,8 +53,7 @@ dependencies:
   flutter_svg: ^2.0.4
   
   # ZOG UI
-  zog_ui: ^0.0.1-alpha.8
-    # path: ../ZOG/zero-ui/packages/mobile
+  zog_ui: ^0.0.1-alpha.10
     # git: 
     #   url: https://github.com/zero-one-group/zog-ui.git
     #   path: packages/mobile

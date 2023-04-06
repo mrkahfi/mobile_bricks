@@ -20,12 +20,11 @@ class ExampleApi {
     try {
       // // Real response should be this
       // Uncomment if no more mocking
-      // final response = await _dioClient.get(
-      //   Endpoint.items,
-      // );
+      // await _dioClient.get(Endpoint.items);
 
       // This is to mock how the items fetched from server
       await delay(true);
+
       final String json =
           await rootBundle.loadString('assets/jsons/example.json');
       final ExampleResponse response =
