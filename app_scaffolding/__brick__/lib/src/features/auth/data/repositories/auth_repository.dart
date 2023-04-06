@@ -1,7 +1,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:{{{ packageName }}/src/features/auth/data/models/user.dart';
-import 'package:{{{ packageName }}/src/utils/delay.dart';
-import 'package:{{{ packageName }}/src/utils/in_memory_store.dart';
+import 'package:{{ packageName }}/src/features/auth/data/models/user.dart';
+import 'package:{{ packageName }}/src/utils/delay.dart';
+import 'package:{{ packageName }}/src/utils/in_memory_store.dart';
 
 class AuthRepository {
   AuthRepository({this.addDelay = true});

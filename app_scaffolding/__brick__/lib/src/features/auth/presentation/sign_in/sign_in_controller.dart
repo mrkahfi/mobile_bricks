@@ -1,8 +1,8 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:formz/formz.dart';
-import 'package:{{{ packageName }}/src/features/auth/data/repositories/auth_repository.dart';
-import 'package:{{{ packageName }}/src/features/auth/domain/formz/formz.dart';
-import 'package:{{{ packageName }}/src/features/auth/presentation/sign_in/sign_in_state.dart';
+import 'package:{{ packageName }}/src/features/auth/data/repositories/auth_repository.dart';
+import 'package:{{ packageName }}/src/features/auth/domain/formz/formz.dart';
+import 'package:{{ packageName }}/src/features/auth/presentation/sign_in/sign_in_state.dart';
 
 class SignInController extends StateNotifier<SignInState> {
   SignInController({
