@@ -1,5 +1,5 @@
 import 'package:formz/formz.dart';
-import 'package:{{ packageName }}/src/utils/validators/string_validators.dart';
+import 'package:{{{ packageName }}/src/utils/validators/string_validators.dart';
 
 enum PasswordValidationError {
   empty,
