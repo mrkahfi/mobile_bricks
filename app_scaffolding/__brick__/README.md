@@ -95,7 +95,7 @@ Right on the root of the project, on terminal execute these 3 commands
 # Configure Firebase project for development environment
 flutterfire config  \
       --project={{ firebaseProjectId }}  \
-      --ios-bundle-{{ iosBundleId }}.dev \
+      --ios-bundle-id={{ iosBundleId }}.dev \
       --android-app-id={{ androidAppId }}.dev \
       --ios-out=ios/config/dev/GoogleService-Info.plist \
       --out=lib/src/app/firebase/firebase_options_dev.dart
@@ -104,7 +104,7 @@ flutterfire config  \
 # Configure Firebase project for staging environment
 flutterfire config  \
       --project={{ firebaseProjectId }} \
-      --ios-bundle-{{ iosBundleId }}.stg \
+      --ios-bundle-id={{ iosBundleId }}.stg \
       --android-app-id={{ androidAppId }}.stg \
       --ios-out=ios/config/stg/GoogleService-Info.plist \
       --out=lib/src/app/firebase/firebase_options_stg.dart
@@ -113,7 +113,7 @@ flutterfire config  \
 # Configure Firebase project for production environment
 flutterfire config \
       --project={{ firebaseProjectId }}  \
-      --ios-bundle-{{ iosBundleId }} \
+      --ios-bundle-id={{ iosBundleId }} \
       --ios-out=ios/config/prod/GoogleService-Info.plist \
       --android-app-id={{ androidAppId }} \
       --out=lib/src/app/firebase/firebase_options_stg.dart
