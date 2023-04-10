@@ -4,21 +4,21 @@
 
 ### 🔖 Pre-requisites
 
-#### Installed Firebase CLI
+#### 1️⃣ Installed Firebase CLI
 
-1. Install [Firebase CLI](https://firebase.flutter.dev/docs/cli)
+- Install [Firebase CLI](https://firebase.flutter.dev/docs/cli)
 
 ```
 npm install -g firebase-tools
 ```
 
-2. Login to Firebase account that you will use to create a Firebase project.
+- Login to Firebase account that you will use to create a Firebase project.
 
 ```
 firebase login
 ```
 
-#### A Firebase Project
+#### 2️⃣ A Firebase Project
 
 Login to your Firebase console and [create a Firebase project](https://console.firebase.google.com/u/0/). Then, note the **project ID**.
 
@@ -32,13 +32,13 @@ dart pub global activate mason_cli
 
 ### 🧱 Add all the available bricks
 
-1️⃣ Go to the root of your mobile project and initialize Mason:
+1. Go to the root of your mobile project and initialize Mason:
 
 ```
 mason init
 ```
 
-2️⃣ Open `mason.yaml` and add the following lines as a child of `brick`
+2. Open `mason.yaml` and add the following lines as a child of `brick`
 
 ```
 # List all the bricks
@@ -51,7 +51,7 @@ bricks:
 
 NOTE: Currently we have only one brick called `app_scaffolding`. We're still working on other bricks.
 
-3️⃣ Get the bricks
+3. Get the bricks
 
 ```
 mason get
