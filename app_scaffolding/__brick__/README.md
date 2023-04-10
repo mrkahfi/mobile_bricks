@@ -96,7 +96,7 @@ Right on the root of the project, on terminal execute these 3 commands
 flutterfire config  \
       --project={{ firebaseProjectId }}  \
       --ios-bundle-id={{ iosBundleId }}.dev \
-      --android-app-id={{ androidAppId }}.dev \
+      --android-package-name={{ androidAppId }}.dev \
       --ios-out=ios/config/dev/GoogleService-Info.plist \
       --out=lib/src/app/firebase/firebase_options_dev.dart
 ```
@@ -105,7 +105,7 @@ flutterfire config  \
 flutterfire config  \
       --project={{ firebaseProjectId }} \
       --ios-bundle-id={{ iosBundleId }}.stg \
-      --android-app-id={{ androidAppId }}.stg \
+      --android-package-name={{ androidAppId }}.stg \
       --ios-out=ios/config/stg/GoogleService-Info.plist \
       --out=lib/src/app/firebase/firebase_options_stg.dart
 ```
@@ -115,7 +115,7 @@ flutterfire config \
       --project={{ firebaseProjectId }}  \
       --ios-bundle-id={{ iosBundleId }} \
       --ios-out=ios/config/prod/GoogleService-Info.plist \
-      --android-app-id={{ androidAppId }} \
+      --android-package-name={{ androidAppId }} \
       --out=lib/src/app/firebase/firebase_options_stg.dart
 ```
 
