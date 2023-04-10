@@ -2,26 +2,6 @@
 
 ## Getting Started
 
-### 🔖 Pre-requisites
-
-#### 1️⃣ Installed Firebase CLI
-
-- Install [Firebase CLI](https://firebase.flutter.dev/docs/cli)
-
-```
-npm install -g firebase-tools
-```
-
-- Login to Firebase account that you will use to create a Firebase project.
-
-```
-firebase login
-```
-
-#### 2️⃣ A Firebase Project
-
-Login to your Firebase console and [create a Firebase project](https://console.firebase.google.com/u/0/). Then, note the **project ID**.
-
 ### 🎯 Pub.dev
 Install `mason_cli` from **[pub.dev](https://pub.dev/packages/mason_cli)**
 
