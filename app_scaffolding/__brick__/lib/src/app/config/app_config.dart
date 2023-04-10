@@ -34,18 +34,18 @@ import '../config/flavor_config.dart';
 class AppConfig {
   const AppConfig._();
 
-  /// Supreme Solar
+  /// {{ appName }}
   static const appName = FlavorConfig<String>(
-    dev: 'Supreme Solar',
-    stag: 'Supreme Solar',
-    prod: 'Supreme Solar',
+    dev: '{{ appName }}',
+    stag: '{{ appName }}',
+    prod: '{{ appName }}',
   );
 
-  /// Supreme Solar for Firebase Options
+  /// {{ appName }} for Firebase Options
   static const firebaseAppName = FlavorConfig<String>(
-    dev: 'DevAppName',
-    stag: 'StgAppName',
-    prod: 'AppName',
+    dev: 'Dev{{ packageName }}',
+    stag: 'St{{ packageName }}',
+    prod: 'App{{ packageName }}',
   );
 
   /// App Banner Name
