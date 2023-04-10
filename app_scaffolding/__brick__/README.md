@@ -89,7 +89,10 @@
 ## Getting Started
 
 ### Configure Firebase Project 🔥
-Right on the root of the project, on terminal execute these 3 commands
+
+All the Firebase configuration for each platform has been done automatically upon project initialization using Mason.
+
+However, in case you have to do them manually, execute these 3 commands right on the root directory of your **mobile** project.
 
 ```
 # Configure Firebase project for development environment
