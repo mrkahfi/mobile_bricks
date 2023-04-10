@@ -44,9 +44,9 @@ mason init
 # List all the bricks
 bricks:
   app_scaffolding:
-      git:
-        url: https://github.com/zero-one-group/mobile_bricks.git
-        path: app_scaffolding
+    git:
+      url: https://github.com/zero-one-group/mobile_bricks.git
+      path: app_scaffolding
 ```
 
 NOTE: Currently we have only one brick called `app_scaffolding`. We're still working on other bricks.
@@ -63,13 +63,19 @@ mason get
 Instead of having a useless default "counter-app" project, use brick `app_scaffolding`. Just go to the root of your mobile project and run this command.
 
 ```
-# initialize Mason 
+# 1️⃣ initialize Mason 
 mason make app_scaffolding
 ```
 
 This initializes the whole starter app setup.
 
-### Module Creation
+### 2️⃣ Module Creation
+
+```
+TODO
+```
+
+### 3️⃣ Feature Creation
 
 ```
 TODO
