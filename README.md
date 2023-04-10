@@ -32,13 +32,13 @@ dart pub global activate mason_cli
 
 ### 🧱 Add all the available bricks
 
-- Go to the root of your mobile project and initialize Mason:
+1️⃣ Go to the root of your mobile project and initialize Mason:
 
 ```
 mason init
 ```
 
-- Open `mason.yaml` and add the following lines as a child of `brick`
+2️⃣ Open `mason.yaml` and add the following lines as a child of `brick`
 
 ```
 # List all the bricks
@@ -51,7 +51,7 @@ bricks:
 
 NOTE: Currently we have only one brick called `app_scaffolding`. We're still working on other bricks.
 
-- Get the bricks
+3️⃣ Get the bricks
 
 ```
 mason get
@@ -63,19 +63,19 @@ mason get
 Instead of having a useless default "counter-app" project, use brick `app_scaffolding`. Just go to the root of your mobile project and run this command.
 
 ```
-# 1️⃣ initialize Mason 
+# initialize Mason 
 mason make app_scaffolding
 ```
 
 This initializes the whole starter app setup.
 
-### 2️⃣ Module Creation
+### Module Creation
 
 ```
 TODO
 ```
 
-### 3️⃣ Feature Creation
+### Feature Creation
 
 ```
 TODO
