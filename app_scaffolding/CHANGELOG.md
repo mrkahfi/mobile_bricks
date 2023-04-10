@@ -1,3 +1,7 @@
+# 0.5.1+6
+
+- fix: hardcoded name in sign in screen
+
 # 0.5.0+5
 
 - chore: change name
