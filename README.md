@@ -2,6 +2,26 @@
 
 ## Getting Started
 
+### 🔖 Pre-requisites
+
+#### Installed Firebase CLI
+
+1. Install Firebase CLI
+
+```
+npm install -g firebase-tools
+```
+
+2. Login to Firebase account that you will use to create a Firebase project.
+
+```
+firebase login
+```
+
+#### A Firebase Project
+
+Login to your Firebase console and [create a Firebase project](https://console.firebase.google.com/u/0/). Then, note the **project ID**.
+
 ### 🎯 Pub.dev
 Install `mason_cli` from **[pub.dev](https://pub.dev/packages/mason_cli)**
 
