@@ -30,15 +30,21 @@ Install `mason_cli` from **[pub.dev](https://pub.dev/packages/mason_cli)**
 dart pub global activate mason_cli
 ```
 
-### 🧱 Add all the available bricks
+### Initialize Mason
 
-1. Go to the root of your mobile project and initialize Mason:
+Go to the root of your mobile project and initialize Mason:
 
 ```
 mason init
 ```
 
-2. Open `mason.yaml` and add the following lines as a child of `brick`
+### 🧱 Update mason.yaml
+
+There are two ways to consume the bricks, remotely and locally.
+
+#### Remotely From the Repo
+
+Open `mason.yaml` and add the following lines as a child of `brick`
 
 ```
 # List all the bricks
@@ -49,9 +55,34 @@ bricks:
       path: app_scaffolding
 ```
 
-NOTE: Currently we have only one brick called `app_scaffolding`. We're still working on other bricks.
+#### Locally From the Cloned Repo
 
-3. Get the bricks
+Getting the bricks from repositories can stuck for some reason, such as some security check issue. Alternatively, you can clone the repo and get it locally.
+
+1. Clone the repo
+
+```
+git clone git@gitlab.zero-one-group.com:zo-group/software/mobile_bricks.git
+```
+
+2. Open `mason.yaml` and add the following lines as a child of `brick`
+
+```
+# List all the bricks
+bricks:
+  app_scaffolding:
+    path: <path_to_your_cloned_repo>/app_scaffolding
+```
+
+Example:
+```
+# List all the bricks
+bricks:
+  app_scaffolding:
+    path: ../../../mobile_bricks/app_scaffolding
+```
+
+### Get the bricks
 
 ```
 mason get
