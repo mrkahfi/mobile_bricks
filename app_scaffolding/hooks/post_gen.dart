@@ -34,6 +34,10 @@ void run(HookContext context) async {
   //   '--overwrite',
   // ]);
 
+  context.logger.info(''' \
+    Configuring firebase for development... \
+  ''');
+
   var devResult = await Process.run('flutterfire', [
     'config',
     '--project=$firebaseProjectId',
@@ -59,6 +63,10 @@ void run(HookContext context) async {
     ''');
   }
 
+  context.logger.info(''' \
+    Configuring firebase for staging... \
+  ''');
+
   var stgResult = await Process.run('flutterfire', [
     'config',
     '--project=$firebaseProjectId',
@@ -83,6 +91,10 @@ void run(HookContext context) async {
         --out=lib/src/app/firebase/firebase_options_stg.dart \
     ''');
   }
+
+  context.logger.info(''' \
+    Configuring firebase for production... \
+  ''');
 
   var prodResult = await Process.run('flutterfire', [
     'config',

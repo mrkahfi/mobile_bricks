@@ -1,3 +1,7 @@
+# 0.6.10+6
+
+- feat: updated hooks, automatically flutterfire config
+
 # 0.5.1+6
 
 - fix: hardcoded name in sign in screen
