@@ -38,11 +38,11 @@ Go to the root of your mobile project and initialize Mason:
 mason init
 ```
 
-### 🧱 Update mason.yaml
+### 📥 Download the bricks.
 
-There are two ways to consume the bricks, remotely and locally.
+There are two ways to download the bricks, remotely and locally.
 
-#### Remotely From the Repo
+#### ⛅️ Remotely From the Repo
 
 Open `mason.yaml` and add the following lines as a child of `brick`
 
@@ -55,7 +55,7 @@ bricks:
       path: app_scaffolding
 ```
 
-#### Locally From the Cloned Repo
+#### 💾 Locally From the Cloned Repo
 
 Getting the bricks from repositories can stuck for some reason, such as some security check issue. Alternatively, you can clone the repo and get it locally.
 
@@ -82,7 +82,7 @@ bricks:
     path: ../../../mobile_bricks/app_scaffolding
 ```
 
-### Get the bricks
+### 🧱 Get the bricks
 
 ```
 mason get
