@@ -6,7 +6,7 @@
 
 #### Installed Firebase CLI
 
-1. Install Firebase CLI
+1. Install [Firebase CLI](https://firebase.flutter.dev/docs/cli)
 
 ```
 npm install -g firebase-tools
