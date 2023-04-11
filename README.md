@@ -24,15 +24,9 @@ There are two ways to download the bricks, remotely and locally.
 
 #### ⛅️ Remotely From the Repo
 
-Open `mason.yaml` and add the following lines as a child of `brick`
-
 ```
 # List all the bricks
-bricks:
-  app_scaffolding:
-    git:
-      url: https://github.com/zero-one-group/mobile_bricks.git
-      path: app_scaffolding
+mason add app_scaffolding --git-url https://github.com/zero-one-group/mobile_bricks.git --git-path app_scaffolding
 ```
 
 #### 💾 Locally From the Cloned Repo
@@ -45,21 +39,17 @@ Getting the bricks from repositories can stuck for some reason, such as some sec
 git clone git@gitlab.zero-one-group.com:zo-group/software/mobile_bricks.git
 ```
 
-2. Open `mason.yaml` and add the following lines as a child of `brick`
+2. Add the below brick.
 
 ```
 # List all the bricks
-bricks:
-  app_scaffolding:
-    path: <path_to_your_cloned_repo>/app_scaffolding
+mason add app_scaffolding --path <path_to_your_cloned_repo>/app_scaffolding
 ```
 
 Example:
 ```
 # List all the bricks
-bricks:
-  app_scaffolding:
-    path: ../../../mobile_bricks/app_scaffolding
+mason add app_scaffolding --path ../../../mobile_bricks/app_scaffolding
 ```
 
 ### 🧱 Get the bricks
