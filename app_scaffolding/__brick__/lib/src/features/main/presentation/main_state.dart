@@ -1,3 +1,5 @@
+// ignore_for_file: public_member_api_docs
+
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
@@ -33,5 +35,6 @@ enum MainTab {
 
 @freezed
 class MainState with _$MainState {
-  const factory MainState({@Default(MainTab.tab1) selectedTab}) = _MainState;
+  const factory MainState({@Default(MainTab.tab1) MainTab selectedTab}) =
+      _MainState;
 }

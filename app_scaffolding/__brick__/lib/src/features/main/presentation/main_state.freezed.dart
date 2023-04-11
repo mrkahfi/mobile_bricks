@@ -16,7 +16,7 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$MainState {
-  dynamic get selectedTab => throw _privateConstructorUsedError;
+  MainTab get selectedTab => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $MainStateCopyWith<MainState> get copyWith =>
@@ -28,7 +28,7 @@ abstract class $MainStateCopyWith<$Res> {
   factory $MainStateCopyWith(MainState value, $Res Function(MainState) then) =
       _$MainStateCopyWithImpl<$Res, MainState>;
   @useResult
-  $Res call({dynamic selectedTab});
+  $Res call({MainTab selectedTab});
 }
 
 /// @nodoc
@@ -44,13 +44,13 @@ class _$MainStateCopyWithImpl<$Res, $Val extends MainState>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? selectedTab = freezed,
+    Object? selectedTab = null,
   }) {
     return _then(_value.copyWith(
-      selectedTab: freezed == selectedTab
+      selectedTab: null == selectedTab
           ? _value.selectedTab
           : selectedTab // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as MainTab,
     ) as $Val);
   }
 }
@@ -62,7 +62,7 @@ abstract class _$$_MainStateCopyWith<$Res> implements $MainStateCopyWith<$Res> {
       __$$_MainStateCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({dynamic selectedTab});
+  $Res call({MainTab selectedTab});
 }
 
 /// @nodoc
@@ -76,10 +76,13 @@ class __$$_MainStateCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? selectedTab = freezed,
+    Object? selectedTab = null,
   }) {
     return _then(_$_MainState(
-      selectedTab: freezed == selectedTab ? _value.selectedTab! : selectedTab,
+      selectedTab: null == selectedTab
+          ? _value.selectedTab
+          : selectedTab // ignore: cast_nullable_to_non_nullable
+              as MainTab,
     ));
   }
 }
@@ -91,7 +94,7 @@ class _$_MainState implements _MainState {
 
   @override
   @JsonKey()
-  final dynamic selectedTab;
+  final MainTab selectedTab;
 
   @override
   String toString() {
@@ -103,13 +106,12 @@ class _$_MainState implements _MainState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_MainState &&
-            const DeepCollectionEquality()
-                .equals(other.selectedTab, selectedTab));
+            (identical(other.selectedTab, selectedTab) ||
+                other.selectedTab == selectedTab));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(selectedTab));
+  int get hashCode => Object.hash(runtimeType, selectedTab);
 
   @JsonKey(ignore: true)
   @override
@@ -119,10 +121,10 @@ class _$_MainState implements _MainState {
 }
 
 abstract class _MainState implements MainState {
-  const factory _MainState({final dynamic selectedTab}) = _$_MainState;
+  const factory _MainState({final MainTab selectedTab}) = _$_MainState;
 
   @override
-  dynamic get selectedTab;
+  MainTab get selectedTab;
   @override
   @JsonKey(ignore: true)
   _$$_MainStateCopyWith<_$_MainState> get copyWith =>

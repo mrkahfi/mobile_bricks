@@ -1,8 +1,8 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:formz/formz.dart';
-import 'package:{{ packageName }}/src/repositories/auth_repository.dart';
 import 'package:{{ packageName }}/src/features/auth/domain/formz/formz.dart';
 import 'package:{{ packageName }}/src/features/auth/presentation/sign_in/sign_in_state.dart';
+import 'package:{{ packageName }}/src/repositories/auth_repository.dart';
 
 class SignInController extends StateNotifier<SignInState> {
   SignInController({
@@ -23,7 +23,9 @@ class SignInController extends StateNotifier<SignInState> {
   void updatePassword(String value) {
     final password = PasswordFormz.dirty(value);
     state = state.copyWith(
-        password: password, status: validate(password: password));
+      password: password,
+      status: validate(password: password),
+    );
   }
 
   Future<bool> submit(String email, String password) async {

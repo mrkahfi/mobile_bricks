@@ -16,8 +16,10 @@ import 'package:{{ packageName }}/src/services/local/hive_db.dart';
 import 'package:{{ packageName }}/src/services/remote/config/http_overrides.dart';
 
 void main() {
-  const String env = String.fromEnvironment(AppConstants.env,
-      defaultValue: AppConstants.envDev);
+  const env = String.fromEnvironment(
+    AppConstants.env,
+    defaultValue: AppConstants.envDev,
+  );
   F.configureFromEnv(env);
 
   runZonedGuarded(
@@ -30,7 +32,8 @@ void main() {
       );
       await HiveDB.init();
 
-      // to skip the problem of SSL certification and solve the Image.network(url) issue
+      // to skip the problem of SSL certification
+      // and solve the Image.network(url) issue
       HttpOverrides.global = AppHttpOverrides();
 
       FlutterError.demangleStackTrace = (StackTrace stack) {

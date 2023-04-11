@@ -6,7 +6,7 @@ class MainController extends StateNotifier<MainState> {
   MainController(this.ref) : super(const MainState());
 
   final Ref ref;
-  final PageController _pageController = PageController(initialPage: 0);
+  final PageController _pageController = PageController();
 
   PageController get pageController => _pageController;
 
@@ -17,4 +17,5 @@ class MainController extends StateNotifier<MainState> {
 }
 
 final mainControllerProvider = StateNotifierProvider<MainController, MainState>(
-    (ref) => MainController(ref));
+  MainController.new,
+);

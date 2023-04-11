@@ -11,6 +11,6 @@ class SignInState with _$SignInState {
     @Default(EmailFormz.pure()) EmailFormz email,
     @Default(PasswordFormz.pure()) PasswordFormz password,
     @Default(FormzStatus.pure) FormzStatus status,
-    @Default(AsyncValue.data(null)) AsyncValue value,
+    @Default(AsyncValue.data(null)) AsyncValue<void> value,
   }) = _SignInState;
 }

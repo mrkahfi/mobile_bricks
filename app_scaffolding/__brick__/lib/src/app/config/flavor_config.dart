@@ -13,13 +13,12 @@ enum Flavor {
         return 'STG';
       case prod:
         return 'PROD';
-      default:
-        return 'DEV';
     }
   }
 }
 
-/// Configure the flavor based on environment 'ENV' param passed when running main
+/// Configure the flavor based on environment 'ENV' param passed
+/// when running main
 class F {
   static late Flavor flavor;
 
@@ -44,16 +43,17 @@ class F {
 class FlavorConfig<T> {
   const FlavorConfig({
     required this.dev,
-    required this.stag,
+    required this.stg,
     required this.prod,
     this.fallback,
   }) : assert(
-          dev == null || prod == null ? fallback != null : true,
-          '[fallback]cannot be null if there is one flavor whose value is null',
+          (dev == null || stg == null || prod == null) || fallback == null,
+          '[fallback] can not be null if there is at least one flavor '
+          'that is null',
         );
 
   final T? dev;
-  final T? stag;
+  final T? stg;
   final T? prod;
   final T? fallback;
 
@@ -62,7 +62,7 @@ class FlavorConfig<T> {
       case Flavor.dev:
         return dev ?? fallback!;
       case Flavor.stg:
-        return stag ?? fallback!;
+        return stg ?? fallback!;
       case Flavor.prod:
         return prod ?? fallback!;
     }

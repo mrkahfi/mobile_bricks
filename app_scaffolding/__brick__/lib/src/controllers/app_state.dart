@@ -5,5 +5,6 @@ part 'app_state.freezed.dart';
 
 @freezed
 class AppState with _$AppState {
-  const factory AppState({@Default(ThemeMode.light) currentTheme}) = _AppState;
+  const factory AppState({@Default(ThemeMode.light) ThemeMode currentTheme}) =
+      _AppState;
 }

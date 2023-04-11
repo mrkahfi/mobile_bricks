@@ -7,9 +7,10 @@ class AppController extends StateNotifier<AppState> {
 
   void toggleThemeMode() {
     state = state.copyWith(
-        currentTheme: state.currentTheme == ThemeMode.dark
-            ? ThemeMode.light
-            : ThemeMode.dark);
+      currentTheme: state.currentTheme == ThemeMode.dark
+          ? ThemeMode.light
+          : ThemeMode.dark,
+    );
   }
 }
 

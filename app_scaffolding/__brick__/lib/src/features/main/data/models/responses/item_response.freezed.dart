@@ -14,6 +14,10 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
+ItemResponse _$ItemResponseFromJson(Map<String, dynamic> json) {
+  return _ItemResponse.fromJson(json);
+}
+
 /// @nodoc
 mixin _$ItemResponse {
   int? get id => throw _privateConstructorUsedError;
@@ -28,6 +32,7 @@ mixin _$ItemResponse {
   String? get thumbnail => throw _privateConstructorUsedError;
   List<String>? get images => throw _privateConstructorUsedError;
 
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $ItemResponseCopyWith<ItemResponse> get copyWith =>
       throw _privateConstructorUsedError;
@@ -223,6 +228,7 @@ class __$$_ItemResponseCopyWithImpl<$Res>
 
 /// @nodoc
 
+@JsonSerializable(fieldRename: FieldRename.snake)
 class _$_ItemResponse implements _ItemResponse {
   _$_ItemResponse(
       {this.id = null,
@@ -237,6 +243,9 @@ class _$_ItemResponse implements _ItemResponse {
       this.thumbnail = null,
       final List<String>? images = const []})
       : _images = images;
+
+  factory _$_ItemResponse.fromJson(Map<String, dynamic> json) =>
+      _$$_ItemResponseFromJson(json);
 
   @override
   @JsonKey()
@@ -306,6 +315,7 @@ class _$_ItemResponse implements _ItemResponse {
             const DeepCollectionEquality().equals(other._images, _images));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -326,6 +336,13 @@ class _$_ItemResponse implements _ItemResponse {
   @pragma('vm:prefer-inline')
   _$$_ItemResponseCopyWith<_$_ItemResponse> get copyWith =>
       __$$_ItemResponseCopyWithImpl<_$_ItemResponse>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_ItemResponseToJson(
+      this,
+    );
+  }
 }
 
 abstract class _ItemResponse implements ItemResponse {
@@ -341,6 +358,9 @@ abstract class _ItemResponse implements ItemResponse {
       final String? category,
       final String? thumbnail,
       final List<String>? images}) = _$_ItemResponse;
+
+  factory _ItemResponse.fromJson(Map<String, dynamic> json) =
+      _$_ItemResponse.fromJson;
 
   @override
   int? get id;

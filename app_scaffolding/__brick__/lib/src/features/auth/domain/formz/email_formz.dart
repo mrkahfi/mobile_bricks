@@ -9,7 +9,7 @@ enum EmailValidationError {
   String getMessage() {
     switch (this) {
       case empty:
-        return 'Email can\'t be empty';
+        return "Email can't be empty";
       case invalid:
         return 'Invalid email';
     }
@@ -19,7 +19,7 @@ enum EmailValidationError {
 class EmailFormz extends FormzInput<String, EmailValidationError> {
   const EmailFormz.pure() : super.pure('');
 
-  const EmailFormz.dirty(String value) : super.dirty(value);
+  const EmailFormz.dirty(super.value) : super.dirty();
 
   @override
   EmailValidationError? validator(String value) {

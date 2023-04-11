@@ -1,11 +1,12 @@
+// ignore_for_file: inference_failure_on_function_invocation
+
 import 'package:{{ packageName }}/src/services/remote/config/config.dart';
 
 class AuthApi {
-  final DioClient _dioClient;
-
   AuthApi(this._dioClient);
 
-  /// [INFO]
+  final DioClient _dioClient;
+
   /// @POST(Endpoints.login)
   /// @Data(
   ///   String email (required)
@@ -24,10 +25,15 @@ class AuthApi {
           'password': password,
         },
       );
-      return ApiResponse.success(response['data']['token']);
-    } catch (e, st) {
+      return ApiResponse.success(response as String);
+    } on Exception catch (e, st) {
       return ApiResponse.failure(
         NetworkExceptions.getDioException(e, st),
+        st,
+      );
+    } catch (e, st) {
+      return ApiResponse.failure(
+        NetworkExceptions.getError(e, st),
         st,
       );
     }

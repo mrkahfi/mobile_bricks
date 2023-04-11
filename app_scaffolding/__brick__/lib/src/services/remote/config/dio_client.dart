@@ -1,29 +1,28 @@
+// ignore_for_file: inference_failure_on_untyped_parameter,
+// ignore_for_file: type_annotate_public_apis
+
 import 'dart:developer';
 import 'dart:io';
 
-import 'package:dio/adapter.dart';
 import 'package:dio/dio.dart';
+import 'package:dio/io.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../../../services/local/hive_service.dart';
+import 'package:{{ packageName }}/src/services/local/hive_service.dart';
 
-const _defaultConnectTimeout = 15000;
-const _defaultReceiveTimeout = 15000;
+const _defaultConnectTimeout = Duration(milliseconds: 15000);
+const _defaultReceiveTimeout = Duration(milliseconds: 15000);
 
 class DioClient {
-  late Dio _dio;
-
-  final List<Interceptor>? interceptors;
-  final HiveService hiveService;
-
   DioClient({
+    required this.hiveService,
     required Dio dio,
     this.interceptors,
-    required HttpClient httpClient,
-    required this.hiveService,
   }) {
-    const String baseUrl = String.fromEnvironment('API_URL',
-        defaultValue: 'http://127.0.0.1:9000/api/');
+    const baseUrl = String.fromEnvironment(
+      'API_URL',
+      defaultValue: 'http://127.0.0.1:9000/api/',
+    );
 
     _dio = dio;
     _dio
@@ -35,7 +34,7 @@ class DioClient {
         'Content-Type': 'application/json; charset=UTF-8',
       };
 
-    (_dio.httpClientAdapter as DefaultHttpClientAdapter).onHttpClientCreate =
+    (_dio.httpClientAdapter as IOHttpClientAdapter).onHttpClientCreate =
         (HttpClient client) {
       client.badCertificateCallback =
           (X509Certificate cert, String host, int port) => true;
@@ -62,18 +61,23 @@ class DioClient {
       _dio.interceptors.addAll(interceptors!);
     }
     if (kDebugMode) {
-      _dio.interceptors.add(LogInterceptor(
+      _dio.interceptors.add(
+        LogInterceptor(
           responseBody: true,
-          error: true,
           requestHeader: false,
           responseHeader: false,
           request: false,
           logPrint: (obj) {
             log(obj.toString());
           },
-          requestBody: false));
+        ),
+      );
     }
   }
+  late Dio _dio;
+
+  final List<Interceptor>? interceptors;
+  final HiveService hiveService;
 
   Future<T?> get<T>(
     String uri, {
@@ -83,7 +87,7 @@ class DioClient {
     ProgressCallback? onReceiveProgress,
   }) async {
     try {
-      var response = await _dio.get<T>(
+      final response = await _dio.get<T>(
         uri,
         queryParameters: queryParameters,
         options: options,
@@ -94,7 +98,7 @@ class DioClient {
     } on SocketException catch (e) {
       throw SocketException(e.toString());
     } on FormatException catch (_) {
-      throw const FormatException("Unable to process the data");
+      throw const FormatException('Unable to process the data');
     } catch (e) {
       rethrow;
     }
@@ -102,7 +106,7 @@ class DioClient {
 
   Future<T?> post<T>(
     String uri, {
-    data,
+    required Map<String, dynamic> data,
     Map<String, dynamic>? queryParameters,
     Options? options,
     CancelToken? cancelToken,
@@ -110,7 +114,7 @@ class DioClient {
     ProgressCallback? onReceiveProgress,
   }) async {
     try {
-      var response = await _dio.post<T>(
+      final response = await _dio.post<T>(
         uri,
         data: data,
         queryParameters: queryParameters,
@@ -121,7 +125,7 @@ class DioClient {
       );
       return response.data;
     } on FormatException catch (_) {
-      throw const FormatException("Unable to process the data");
+      throw const FormatException('Unable to process the data');
     } catch (e) {
       rethrow;
     }
@@ -137,7 +141,7 @@ class DioClient {
     ProgressCallback? onReceiveProgress,
   }) async {
     try {
-      var response = await _dio.patch<T>(
+      final response = await _dio.patch<T>(
         uri,
         data: data,
         queryParameters: queryParameters,
@@ -148,7 +152,7 @@ class DioClient {
       );
       return response.data;
     } on FormatException catch (_) {
-      throw const FormatException("Unable to process the data");
+      throw const FormatException('Unable to process the data');
     } catch (e) {
       rethrow;
     }
@@ -164,7 +168,7 @@ class DioClient {
     ProgressCallback? onReceiveProgress,
   }) async {
     try {
-      var response = await _dio.put<T>(
+      final response = await _dio.put<T>(
         uri,
         data: data,
         queryParameters: queryParameters,
@@ -175,7 +179,7 @@ class DioClient {
       );
       return response.data;
     } on FormatException catch (_) {
-      throw const FormatException("Unable to process the data");
+      throw const FormatException('Unable to process the data');
     } catch (e) {
       rethrow;
     }
@@ -189,7 +193,7 @@ class DioClient {
     CancelToken? cancelToken,
   }) async {
     try {
-      var response = await _dio.delete<T>(
+      final response = await _dio.delete<T>(
         uri,
         data: data,
         queryParameters: queryParameters,
@@ -198,7 +202,7 @@ class DioClient {
       );
       return response.data;
     } on FormatException catch (_) {
-      throw const FormatException("Unable to process the data");
+      throw const FormatException('Unable to process the data');
     } catch (e) {
       rethrow;
     }
@@ -220,10 +224,8 @@ class DioClient {
 final dioClientProvider = Provider<DioClient>((ref) {
   final hiveService = ref.read(hiveServiceProvider);
   final dio = Dio();
-  final httpClient = HttpClient();
   return DioClient(
     dio: dio,
-    httpClient: httpClient,
     hiveService: hiveService,
   );
 });

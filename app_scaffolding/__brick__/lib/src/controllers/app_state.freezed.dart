@@ -16,7 +16,7 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$AppState {
-  dynamic get currentTheme => throw _privateConstructorUsedError;
+  ThemeMode get currentTheme => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $AppStateCopyWith<AppState> get copyWith =>
@@ -28,7 +28,7 @@ abstract class $AppStateCopyWith<$Res> {
   factory $AppStateCopyWith(AppState value, $Res Function(AppState) then) =
       _$AppStateCopyWithImpl<$Res, AppState>;
   @useResult
-  $Res call({dynamic currentTheme});
+  $Res call({ThemeMode currentTheme});
 }
 
 /// @nodoc
@@ -44,13 +44,13 @@ class _$AppStateCopyWithImpl<$Res, $Val extends AppState>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? currentTheme = freezed,
+    Object? currentTheme = null,
   }) {
     return _then(_value.copyWith(
-      currentTheme: freezed == currentTheme
+      currentTheme: null == currentTheme
           ? _value.currentTheme
           : currentTheme // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as ThemeMode,
     ) as $Val);
   }
 }
@@ -62,7 +62,7 @@ abstract class _$$_AppStateCopyWith<$Res> implements $AppStateCopyWith<$Res> {
       __$$_AppStateCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({dynamic currentTheme});
+  $Res call({ThemeMode currentTheme});
 }
 
 /// @nodoc
@@ -76,11 +76,13 @@ class __$$_AppStateCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? currentTheme = freezed,
+    Object? currentTheme = null,
   }) {
     return _then(_$_AppState(
-      currentTheme:
-          freezed == currentTheme ? _value.currentTheme! : currentTheme,
+      currentTheme: null == currentTheme
+          ? _value.currentTheme
+          : currentTheme // ignore: cast_nullable_to_non_nullable
+              as ThemeMode,
     ));
   }
 }
@@ -92,7 +94,7 @@ class _$_AppState implements _AppState {
 
   @override
   @JsonKey()
-  final dynamic currentTheme;
+  final ThemeMode currentTheme;
 
   @override
   String toString() {
@@ -104,13 +106,12 @@ class _$_AppState implements _AppState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_AppState &&
-            const DeepCollectionEquality()
-                .equals(other.currentTheme, currentTheme));
+            (identical(other.currentTheme, currentTheme) ||
+                other.currentTheme == currentTheme));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(currentTheme));
+  int get hashCode => Object.hash(runtimeType, currentTheme);
 
   @JsonKey(ignore: true)
   @override
@@ -120,10 +121,10 @@ class _$_AppState implements _AppState {
 }
 
 abstract class _AppState implements AppState {
-  const factory _AppState({final dynamic currentTheme}) = _$_AppState;
+  const factory _AppState({final ThemeMode currentTheme}) = _$_AppState;
 
   @override
-  dynamic get currentTheme;
+  ThemeMode get currentTheme;
   @override
   @JsonKey(ignore: true)
   _$$_AppStateCopyWith<_$_AppState> get copyWith =>

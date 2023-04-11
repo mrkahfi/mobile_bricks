@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:zog_ui/zog_ui.dart';
 
-/// [INFO]
-/// Constant for LIGHT colors to be used in the app with following the design system
+/// Constant for LIGHT colors to be used in the app according to the DS
 class LightColors {
   static const primaryColor = ShadedColor(0xFF85E51A, {
     1: Color(0xFFF4FDEA),
@@ -83,8 +82,7 @@ class LightColors {
   });
 }
 
-/// [INFO]
-/// Constant for DARK colors to be used in the app with following the design system
+/// Constant for DARK colors to be used in the app according to the DS
 class DarkColors {
   static const primaryColor = ShadedColor(0xFFABED62, {
     1: Color(0xFF284508),

@@ -10,7 +10,7 @@ enum PasswordValidationError {
   String getMessage() {
     switch (this) {
       case empty:
-        return 'Password can\'t be empty';
+        return "Password can't be empty";
       case tooShort:
         return 'Password is too short';
       case invalid:
@@ -22,7 +22,7 @@ enum PasswordValidationError {
 class PasswordFormz extends FormzInput<String, PasswordValidationError> {
   const PasswordFormz.pure() : super.pure('');
 
-  const PasswordFormz.dirty(String value) : super.dirty(value);
+  const PasswordFormz.dirty(super.value) : super.dirty();
 
   @override
   PasswordValidationError? validator(String value) {

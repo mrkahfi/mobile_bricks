@@ -1,14 +1,12 @@
 // * themes
-export '../app/themes/themes.dart';
+import 'dart:ui';
 
+export '../app/themes/themes.dart';
+// * enums
+export 'enums/enums.dart';
 // * keys
 export 'keys/extras_key.dart';
 export 'keys/hive_key.dart';
-
-// * enums
-export 'enums/enums.dart';
-
-import 'dart:ui';
 
 class AppConstants {
   const AppConstants._();

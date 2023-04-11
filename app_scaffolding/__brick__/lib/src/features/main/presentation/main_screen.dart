@@ -1,27 +1,30 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:zog_ui/zog_ui.dart';
-import 'package:{{ packageName }}/src/features/main/presentation/main_state.dart';
-import 'package:{{ packageName }}/src/features/main/presentation/home/home_screen.dart';
 import 'package:{{ packageName }}/src/controllers/app_controller.dart';
+import 'package:{{ packageName }}/src/features/main/presentation/home/home_screen.dart';
+import 'package:{{ packageName }}/src/features/main/presentation/main_controller.dart';
+import 'package:{{ packageName }}/src/features/main/presentation/main_state.dart';
 
-import 'main_controller.dart';
-
+/// Screen that contains the bottom navigation bar along with the children tabs
 class MainScreen extends ConsumerWidget {
+  /// Create [MainScreen] object with a key
   const MainScreen({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final pageController =
         ref.watch(mainControllerProvider.notifier).pageController;
-    final MainTab selectedTab = ref.watch(mainControllerProvider).selectedTab;
+    final selectedTab = ref.watch(mainControllerProvider).selectedTab;
+
     return Scaffold(
       floatingActionButton: FloatingActionButton(
-          child: const Icon(
-            Icons.dark_mode,
-          ),
-          onPressed: () =>
-              ref.read(appControllerProvider.notifier).toggleThemeMode()),
+        child: const Icon(
+          Icons.dark_mode,
+        ),
+        onPressed: () =>
+            ref.read(appControllerProvider.notifier).toggleThemeMode(),
+      ),
       body: PageView(
         controller: pageController,
         physics: const NeverScrollableScrollPhysics(),
@@ -46,9 +49,11 @@ class MainScreen extends ConsumerWidget {
 }
 
 class ContentScreen extends StatelessWidget {
+  const ContentScreen({
+    required this.title,
+    super.key,
+  });
   final String title;
-
-  const ContentScreen({super.key, required this.title});
 
   @override
   Widget build(BuildContext context) {

@@ -13,13 +13,13 @@ class CommonTextfield extends StatelessWidget {
 
   final TextInputType inputType;
 
-  final Function(String)? onChanged;
+  final void Function(String)? onChanged;
 
   final FormFieldValidator<String>? validator;
 
   const CommonTextfield({
-    Key? key,
     required this.label,
+    super.key,
     this.controller,
     this.focusNode,
     this.hintText,
@@ -28,25 +28,23 @@ class CommonTextfield extends StatelessWidget {
     this.inputType = TextInputType.text,
     this.validator,
     this.onEditingComplete,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
     return Column(
-      mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         Padding(
-            padding: const EdgeInsets.only(top: 15, bottom: 4),
-            child: Text(
-              label,
-              style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
-            )),
+          padding: const EdgeInsets.only(top: 15, bottom: 4),
+          child: Text(
+            label,
+            style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
+          ),
+        ),
         ZeroTextField(
           controller: controller,
           focusNode: focusNode,
-          autovalidateMode: AutovalidateMode.onUserInteraction,
-          textInputAction: TextInputAction.next,
           keyboardType: inputType,
           validator: validator,
           onChanged: onChanged,

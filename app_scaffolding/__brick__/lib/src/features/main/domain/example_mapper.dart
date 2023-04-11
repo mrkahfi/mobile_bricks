@@ -14,18 +14,21 @@ class ExampleMapper {
       success: (data) => ApiResponse.success(
         _mapItemListRespoToItemList(data),
       ),
-      failure: (error, stacktrace) => ApiResponse.failure(error, stacktrace),
+      failure: ApiResponse.failure,
     );
   }
 
   static List<Item> _mapItemListRespoToItemList(List<ItemResponse> data) {
     return data
-        .map((e) => Item(
+        .map(
+          (e) => Item(
             id: e.id,
             title: e.title,
             description: e.description,
             profileImg: e.images?.first,
-            thumbnail: e.thumbnail))
+            thumbnail: e.thumbnail,
+          ),
+        )
         .toList();
   }
 }

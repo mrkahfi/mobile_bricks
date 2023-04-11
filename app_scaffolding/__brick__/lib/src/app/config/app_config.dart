@@ -1,16 +1,17 @@
 import 'package:firebase_core/firebase_core.dart';
+import 'package:{{ packageName }}/src/app/config/flavor_config.dart';
 import 'package:{{ packageName }}/src/app/firebase/firebase_options.dart';
-import 'package:{{ packageName }}/src/app/firebase/firebase_options_stg.dart'
-    as stg;
 import 'package:{{ packageName }}/src/app/firebase/firebase_options_dev.dart'
     as dev;
+import 'package:{{ packageName }}/src/app/firebase/firebase_options_stg.dart'
+    as stg;
 
-import '../config/flavor_config.dart';
-
-/// A config that serves as a source of configuration regarding this app in general.
+/// A config that serves as a source of configuration
+/// regarding this app in general.
 ///
 /// Such as appName, version, etc related to the application.
-/// And here you can also use FlavorConfig to create different values for each environment.
+/// And here you can also use FlavorConfig to create different values
+/// for each environment.
 ///
 ///
 /// Example:
@@ -37,28 +38,28 @@ class AppConfig {
   /// {{ appName }}
   static const appName = FlavorConfig<String>(
     dev: '{{ appName }}',
-    stag: '{{ appName }}',
+    stg: '{{ appName }}',
     prod: '{{ appName }}',
   );
 
   /// {{ appName }} for Firebase Options
   static const firebaseAppName = FlavorConfig<String>(
     dev: 'Dev{{ packageName }}',
-    stag: 'St{{ packageName }}',
+    stg: 'St{{ packageName }}',
     prod: 'App{{ packageName }}',
   );
 
   /// App Banner Name
   static const appBannerName = FlavorConfig<String>(
     dev: '[DEV]',
-    stag: '[STG]',
+    stg: '[STG]',
     prod: '',
   );
 
   /// FirebaeOptions
   static final firebaseOptions = FlavorConfig<FirebaseOptions>(
     dev: dev.DefaultFirebaseOptions.currentPlatform,
-    stag: stg.DefaultFirebaseOptions.currentPlatform,
+    stg: stg.DefaultFirebaseOptions.currentPlatform,
     prod: DefaultFirebaseOptions.currentPlatform,
   );
 }

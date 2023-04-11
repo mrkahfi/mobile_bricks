@@ -19,7 +19,7 @@ mixin _$SignInState {
   EmailFormz get email => throw _privateConstructorUsedError;
   PasswordFormz get password => throw _privateConstructorUsedError;
   FormzStatus get status => throw _privateConstructorUsedError;
-  AsyncValue<dynamic> get value => throw _privateConstructorUsedError;
+  AsyncValue<void> get value => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $SignInStateCopyWith<SignInState> get copyWith =>
@@ -36,7 +36,7 @@ abstract class $SignInStateCopyWith<$Res> {
       {EmailFormz email,
       PasswordFormz password,
       FormzStatus status,
-      AsyncValue<dynamic> value});
+      AsyncValue<void> value});
 }
 
 /// @nodoc
@@ -73,7 +73,7 @@ class _$SignInStateCopyWithImpl<$Res, $Val extends SignInState>
       value: null == value
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
-              as AsyncValue<dynamic>,
+              as AsyncValue<void>,
     ) as $Val);
   }
 }
@@ -90,7 +90,7 @@ abstract class _$$_SignInStateCopyWith<$Res>
       {EmailFormz email,
       PasswordFormz password,
       FormzStatus status,
-      AsyncValue<dynamic> value});
+      AsyncValue<void> value});
 }
 
 /// @nodoc
@@ -125,7 +125,7 @@ class __$$_SignInStateCopyWithImpl<$Res>
       value: null == value
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
-              as AsyncValue<dynamic>,
+              as AsyncValue<void>,
     ));
   }
 }
@@ -150,7 +150,7 @@ class _$_SignInState implements _SignInState {
   final FormzStatus status;
   @override
   @JsonKey()
-  final AsyncValue<dynamic> value;
+  final AsyncValue<void> value;
 
   @override
   String toString() {
@@ -184,7 +184,7 @@ abstract class _SignInState implements SignInState {
       {final EmailFormz email,
       final PasswordFormz password,
       final FormzStatus status,
-      final AsyncValue<dynamic> value}) = _$_SignInState;
+      final AsyncValue<void> value}) = _$_SignInState;
 
   @override
   EmailFormz get email;
@@ -193,7 +193,7 @@ abstract class _SignInState implements SignInState {
   @override
   FormzStatus get status;
   @override
-  AsyncValue<dynamic> get value;
+  AsyncValue<void> get value;
   @override
   @JsonKey(ignore: true)
   _$$_SignInStateCopyWith<_$_SignInState> get copyWith =>

@@ -1,12 +1,14 @@
+// ignore_for_file: invalid_annotation_target
+
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'item_response.freezed.dart';
 part 'item_response.g.dart';
 
 /// Raw object representation the schema retrieved from server
-@JsonSerializable(fieldRename: FieldRename.snake)
 @freezed
 class ItemResponse with _$ItemResponse {
+  @JsonSerializable(fieldRename: FieldRename.snake)
   factory ItemResponse({
     @Default(null) int? id,
     @Default(null) String? title,

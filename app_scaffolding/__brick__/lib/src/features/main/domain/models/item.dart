@@ -31,24 +31,4 @@ class Item {
       profileImg: profileImg ?? this.profileImg,
     );
   }
-
-  @override
-  bool operator ==(covariant Item other) {
-    if (identical(this, other)) return true;
-
-    return other.id == id &&
-        other.title == title &&
-        other.description == description &&
-        other.thumbnail == thumbnail &&
-        other.profileImg == profileImg;
-  }
-
-  @override
-  int get hashCode {
-    return id.hashCode ^
-        title.hashCode ^
-        description.hashCode ^
-        thumbnail.hashCode ^
-        profileImg.hashCode;
-  }
 }

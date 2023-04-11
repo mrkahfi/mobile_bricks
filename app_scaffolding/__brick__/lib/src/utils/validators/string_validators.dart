@@ -1,6 +1,6 @@
 import 'package:flutter/services.dart';
 
-abstract class StringValidator {
+mixin StringValidator {
   bool isValid(String value);
 }
 
@@ -12,7 +12,7 @@ class RegexValidator implements StringValidator {
   @override
   bool isValid(String value) {
     try {
-      final RegExp regex = RegExp(regexSource);
+      final regex = RegExp(regexSource);
       final Iterable<Match> matches = regex.allMatches(value);
 
       for (final match in matches) {
@@ -36,9 +36,11 @@ class ValidatorInputFormatter implements TextInputFormatter {
 
   @override
   TextEditingValue formatEditUpdate(
-      TextEditingValue oldValue, TextEditingValue newValue) {
-    final bool oldValueValid = editingValidator.isValid(oldValue.text);
-    final bool newValueValid = editingValidator.isValid(newValue.text);
+    TextEditingValue oldValue,
+    TextEditingValue newValue,
+  ) {
+    final oldValueValid = editingValidator.isValid(oldValue.text);
+    final newValueValid = editingValidator.isValid(newValue.text);
 
     if (oldValueValid && !newValueValid) {
       return oldValue;
@@ -49,30 +51,32 @@ class ValidatorInputFormatter implements TextInputFormatter {
 }
 
 class UsernameEditingRegexValidator extends RegexValidator {
-  UsernameEditingRegexValidator() : super(regexSource: '^(|\\S)+\$');
+  UsernameEditingRegexValidator() : super(regexSource: r'^(|\S)+$');
 }
 
 class EmailSubmitRegexValidator extends RegexValidator {
   EmailSubmitRegexValidator()
       : super(
-            regexSource: r'(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)');
+          regexSource: r'(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)',
+        );
 }
 
 class PasswordSubmitRegexValidator extends RegexValidator {
   PasswordSubmitRegexValidator()
       : super(
-            regexSource:
-                r'^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*();:,."-_/#?&])[A-Za-z\d@$!%*();:,."-_/#?&]{8,}$');
+          regexSource:
+              r'^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*();:,."-_/#?&])[A-Za-z\d@$!%*();:,."-_/#?&]{8,}$',
+        );
 }
 
-class NonEmptyStringValidator extends StringValidator {
+class NonEmptyStringValidator with StringValidator {
   @override
   bool isValid(String value) {
     return value.isNotEmpty;
   }
 }
 
-class MinLengthStringValidator extends StringValidator {
+class MinLengthStringValidator with StringValidator {
   MinLengthStringValidator(this.minLength);
   final int minLength;
 

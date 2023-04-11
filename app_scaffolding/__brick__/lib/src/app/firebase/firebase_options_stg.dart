@@ -2,7 +2,7 @@
 // ignore_for_file: type=lint
 import 'package:firebase_core/firebase_core.dart' show FirebaseOptions;
 import 'package:flutter/foundation.dart'
-    show defaultTargetPlatform, TargetPlatform;
+    show defaultTargetPlatform, kIsWeb, TargetPlatform;
 
 /// Default [FirebaseOptions] for use with your Firebase apps.
 ///
@@ -16,6 +16,12 @@ import 'package:flutter/foundation.dart'
 /// ```
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
+    if (kIsWeb) {
+      throw UnsupportedError(
+        'DefaultFirebaseOptions have not been configured for web - '
+        'you can reconfigure this by running the FlutterFire CLI again.',
+      );
+    }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
         return android;
@@ -44,20 +50,21 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: '',
-    appId: '',
-    messagingSenderId: '',
+    apiKey: 'AIzaSyCIvUuQYT1Jgq6DeWmYIg-MrYTHk4dSQoY',
+    appId: '1:542396848940:android:98a178ed6dbe1a7e34ea89',
+    messagingSenderId: '542396848940',
     projectId: '{{ firebaseProjectId }}',
-    storageBucket: '',
+    storageBucket: '{{ firebaseProjectId }}.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: '',
-    appId: '',
-    messagingSenderId: '',
-    projectId: '',
-    storageBucket: '',
-    iosClientId: '',
+    apiKey: 'AIzaSyBLMCmi325hS15KvzCAJmUACr6TWRwzJbQ',
+    appId: '1:542396848940:ios:71222d22217d01b834ea89',
+    messagingSenderId: '542396848940',
+    projectId: '{{ firebaseProjectId }}',
+    storageBucket: '{{ firebaseProjectId }}.appspot.com',
+    iosClientId:
+        '542396848940-qrkt1f0jo55huu8foedejurdscussner.apps.googleusercontent.com',
     iosBundleId: '{{ iosBundleId }}.stg',
   );
 }
