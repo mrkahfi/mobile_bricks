@@ -126,6 +126,8 @@ flutterfire config \
       --out=lib/src/app/firebase/firebase_options_stg.dart
 ```
 
+## ABOUT ZOG UI
+
 **IMPORTANT NOTE ON ZOG UI:** 
 
 Zero One has just developed a package called [ZOG UI](https://pub.dev/packages/zog_ui). Its goal is to speed up the UI development process by providing a collection of ready-to-use components, yet still attempting to maintain their customizability.
