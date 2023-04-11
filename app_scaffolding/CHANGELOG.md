@@ -1,3 +1,7 @@
+# 0.6.11+7
+
+- feat: add custom linting, refactor accordingly
+
 # 0.6.10+6
 
 - feat: updated hooks, automatically flutterfire config
