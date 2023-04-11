@@ -3,8 +3,10 @@
 [![GitHub license](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![platform](https://img.shields.io/badge/platform-Flutter-blue.svg)](https://flutter.dev/)
 
-
 ## Features
+*  Fake login authentication
+
+## Specification
 *  Adapted from Clean Architecture with Riverpod state Management
 *  ThemeMode toggle (Dark and Light) 🔥
 *  Powered by ZOG UI with examples (`ZeroApp`)
@@ -14,6 +16,7 @@
 *  Skeleton (shimmer) loading effect
 *  Quick files generation with Mason CLI
 *  Implementation example of cstom colors and typography
+*  Custom Linting
 
 
 ## Folder Structure 🔥
@@ -77,7 +80,7 @@
 * [Mason CLI](https://pub.dev/packages/mason_cli) - To create and consume reusable templates called bricks
 
 ## TODOs 🗓️
-* [ ] Add Custom Linting
+* [x] Add Custom Linting
 * [ ] Use Isar as Hive replacement
 * [ ] Push Notification
 * [ ] Deep Link
