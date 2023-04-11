@@ -7,8 +7,9 @@ void run(HookContext context) async {
   final androidAppId = context.vars['androidAppId'];
   final iosBundleId = context.vars['iosBundleId'];
 
+  context.logger.info(''' \ ''');
   context.logger.info(''' \
-    Activating flutterfire_cli zero-one globally... \
+Activating flutterfire_cli zero-one globally... \
 ''');
 
   // dart pub global activate --source="git" https://github.com/zero-one-group/flutterfire_cli
@@ -35,7 +36,7 @@ void run(HookContext context) async {
   // ]);
 
   context.logger.info(''' \
-    Configuring firebase for development... \
+Configuring firebase for development... \
   ''');
 
   var devResult = await Process.run('flutterfire', [
@@ -51,7 +52,7 @@ void run(HookContext context) async {
 
   if (devResult.stderr.length > 0) {
     context.logger.info('''
-    Something wrong happened. Consider run this command manually. \
+Something wrong happened. Consider run this command manually. \
     ''');
     context.logger.info('''
     flutterfire config \\
@@ -64,7 +65,7 @@ void run(HookContext context) async {
   }
 
   context.logger.info(''' \
-    Configuring firebase for staging... \
+Configuring firebase for staging... \
   ''');
 
   var stgResult = await Process.run('flutterfire', [
@@ -80,7 +81,7 @@ void run(HookContext context) async {
 
   if (stgResult.stderr.length > 0) {
     context.logger.info('''
-    Something wrong happened. Consider run this command manually. \
+Something wrong happened. Consider run this command manually. \
     ''');
     context.logger.info('''
     flutterfire config \\
@@ -93,7 +94,7 @@ void run(HookContext context) async {
   }
 
   context.logger.info(''' \
-    Configuring firebase for production... \
+Configuring firebase for production... \
   ''');
 
   var prodResult = await Process.run('flutterfire', [
@@ -109,7 +110,7 @@ void run(HookContext context) async {
 
   if (prodResult.stderr.length > 0) {
     context.logger.info('''
-    Something wrong happened. Consider run this command manually. \
+Something wrong happened. Consider run this command manually. \
     ''');
     context.logger.info('''
     flutterfire config \\
