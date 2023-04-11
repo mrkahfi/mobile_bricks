@@ -126,10 +126,12 @@ flutterfire config \
       --out=lib/src/app/firebase/firebase_options_stg.dart
 ```
 
-**IMPORTANT NOTEs:** 
+**IMPORTANT NOTE ON ZOG UI:** 
 
-- Always answer `yes` for every prompt telling you that some certain firebase related files already exists.
-- If you are prompted `Would you like your iOS GoogleService-Info.plist to be associated with your iOS Build configuration or Target?`, DO select `No, I want to write the file to the path I chose`
+Zero One has just developed a package called [ZOG UI](https://pub.dev/packages/zog_ui). Its goal is to speed up the UI development process by providing a collection of ready-to-use components, yet still attempting to maintain their customizability.
+
+However, **the package is currently still on alpha release and lacks documentation**. Therefore, consider using ZOG UI components pragmatically. If you encounter issues in some components, **DO** implement your own components instead of relying on all of ZOG UI components by trying to customize them.
+
 
 ## Localization Setup
 
