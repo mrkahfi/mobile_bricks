@@ -53,6 +53,9 @@ dependencies:
   # UI
   flutter_screenutil: ^5.6.0
   flutter_svg: ^2.0.4
+
+  # Deep links
+  firebase_dynamic_links: ^5.1.0
   
   # ZOG UI
   zog_ui: ^0.0.1-alpha.11

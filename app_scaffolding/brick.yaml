@@ -50,4 +50,8 @@ vars:
     description: iOS bundle ID
     default: com.zot-starter.mobile
     prompt: What is the app's iOS bundle ID?
+  appleTeamId:
+    type: string
+    description: Apple Team ID
+    prompt: What is your Apple Team's ID?
   

@@ -45,8 +45,8 @@ class AppConfig {
   /// {{ appName }} for Firebase Options
   static const firebaseAppName = FlavorConfig<String>(
     dev: 'Dev{{ packageName }}',
-    stg: 'St{{ packageName }}',
-    prod: 'App{{ packageName }}',
+    stg: 'Stg{{ packageName }}',
+    prod: '{{ packageName }}',
   );
 
   /// App Banner Name

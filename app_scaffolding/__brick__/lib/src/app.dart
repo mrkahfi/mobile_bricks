@@ -9,6 +9,7 @@ import 'package:{{ packageName }}/src/app/themes/app_theme.dart';
 import 'package:{{ packageName }}/src/constants/constants.dart';
 import 'package:{{ packageName }}/src/controllers/app_controller.dart';
 import 'package:{{ packageName }}/src/routes/routes.dart';
+import 'package:{{ packageName }}/src/utils/dynamic_link/dynamic_link_notifier.dart';
 
 class MyApp extends ConsumerWidget {
   const MyApp({super.key});
@@ -16,6 +17,10 @@ class MyApp extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final routers = ref.watch(goRouterProvider);
+    ref.listen<Uri?>(
+      dynamicLinkNotifierProvider,
+      (prevUri, currentUri) => handleDeepLink(ref, routers, currentUri),
+    );
 
     return ZeroApp.router(
       routeInformationParser: routers.routeInformationParser,

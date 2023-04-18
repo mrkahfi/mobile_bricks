@@ -126,6 +126,37 @@ flutterfire config \
       --out=lib/src/app/firebase/firebase_options_stg.dart
 ```
 
+## DeepLink Setup
+
+### Android Setup
+
+1. Retrieve your SHA-256 fingerprint
+
+For debug APK, on Terminal:
+
+```
+keytool -list -v -keystore ~/.android/debug.keystore -alias androiddebugkey -storepass android -keypass androi
+```
+
+For release APK, firstly you need to have an [signing key](https://developer.android.com/studio/publish/app-signing#generate-key) first. You will get a keystore file.
+
+Once done, on Terminal:
+
+```
+keytool -list -v -keystore <path_to_your_keystore_file>
+```
+
+2. Paste the given SHA-256 fingerprint to [assetlinks.json](./android/assetlinks.json) file
+3. Upload the file [assetlinks.json](./android/assetlinks.json) to your public directory of your website, under directory `[yourwebsite.com]/.wellknown/`, so it would be acccessible as `[yourwebsite.com]/.wellknown/assetlinks.json`
+
+
+### iOS Setup
+
+1. Open [apple-app-site-association](./ios/apple-app-site-association) file
+2. Make sure the `appID` match your `{{ appleTeamId }}.{{ iosBundleId }}`.
+3. Upload the file [apple-app-site-association](./ios/apple-app-site-association)  to your public directory of your website, under directory `[yourwebsite.com]/.wellknown/`, so it would be acccessible as `[yourwebsite.com]/.wellknown/apple-app-site-association`
+
+
 ## ABOUT ZOG UI
 
 **IMPORTANT NOTE ON ZOG UI:** 
@@ -137,7 +168,7 @@ However, **the package is currently still on alpha release and lacks documentati
 
 ## Localization Setup
 
-- Open folder [`assets/translations/`]()
+- Open folder [`assets/translations/`](./assets/translations/)
 - Add some text for `en` and `id` version language.
 - Run code in terminal for generate `easy_localization` :
 

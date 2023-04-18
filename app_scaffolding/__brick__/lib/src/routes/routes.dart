@@ -1,41 +1,87 @@
+import 'dart:async';
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:{{ packageName }}/src/features/auth/presentation/sign_in/sign_in_screen.dart';
-import 'package:{{ packageName }}/src/features/main/presentation/main_screen.dart';
+import 'package:{{ packageName }}/src/features/main/presentation/home/home_screen.dart';
+import 'package:{{ packageName }}/src/features/presentations.dart';
 import 'package:{{ packageName }}/src/repositories/auth_repository.dart';
-import 'package:{{ packageName }}/src/routes/go_router_refresh_stream.dart';
+import 'package:{{ packageName }}/src/utils/dynamic_link/dynamic_link_notifier.dart';
+import 'package:{{ packageName }}/src/utils/extensions/string_extension.dart';
 
 // It is better to split the route into smal chunks based on their focused area
 // or based on feature modules
 part '_auth.dart';
 part '_main.dart';
+part '_deeplink_handler.dart';
+part '_go_router_refresh_stream.dart';
 
 enum Routes {
   signin,
-  main,
+  main;
+
+  String get path {
+    if (this == main) return '/';
+    return '/${name.toKebabCase}';
+  }
+}
+
+enum MainTabRoute {
+  tab1,
+  tab2,
+  tab3,
+  tab4,
+  tab5,
   ;
 
   String get path {
-    return '/$name';
+    return '/${name.toKebabCase}';
+  }
+
+  Widget get icon {
+    switch (this) {
+      case tab1:
+        return const Icon(Icons.home);
+      case tab2:
+        return const Icon(Icons.list);
+      case tab3:
+        return const Icon(Icons.search);
+      case tab4:
+        return const Icon(Icons.history);
+      case tab5:
+        return const Icon(Icons.person);
+    }
+  }
+
+  String get label {
+    return name.toUpperCase();
   }
 }
+
+final _rootNavigatorKey = GlobalKey<NavigatorState>();
+final _shellNavigatorKey = GlobalKey<NavigatorState>();
 
 final Provider<GoRouter> goRouterProvider = Provider<GoRouter>((ref) {
   final authRepository = ref.watch(authRepositoryProvider);
   return GoRouter(
-    initialLocation: Routes.signin.path,
+    initialLocation: Routes.main.path,
+    navigatorKey: _rootNavigatorKey,
     debugLogDiagnostics: true,
     redirect: (context, state) {
       final isLoggedIn = authRepository.currentUser != null;
+
       if (isLoggedIn) {
         if (state.location == Routes.signin.path) {
-          return Routes.main.path;
+          return MainTabRoute.tab1.path;
         }
       }
       return null;
     },
     refreshListenable: GoRouterRefreshStream(authRepository.authStateChanges()),
-    routes: <GoRoute>[_authRoutes, _mainRoutes],
+    routes: [
+      _authRoutes,
+      _mainRoutes,
+    ],
   );
 });
