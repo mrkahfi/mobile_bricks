@@ -3,7 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:zog_ui/zog_ui.dart';
 import 'package:{{ packageName }}/src/features/main/presentation/home/home_controller.dart';
 import 'package:{{ packageName }}/src/features/main/presentation/home/widgets/some_widget.dart';
-import 'package:{{ packageName }}/src/features/main/presentation/main_state.dart';
+import 'package:{{ packageName }}/src/routes/routes.dart';
 import 'package:{{ packageName }}/src/utils/extensions/num_extension.dart';
 import 'package:{{ packageName }}/src/utils/extensions/widget_extension.dart';
 
@@ -29,7 +29,7 @@ class HomeScreen extends ConsumerWidget {
         ],
       ),
       appBar: ZeroAppBar(
-        title: Text(MainTab.tab1.label),
+        title: Text(MainTabRoute.tab1.label),
         actions: [
           IconButton(
             onPressed: () =>

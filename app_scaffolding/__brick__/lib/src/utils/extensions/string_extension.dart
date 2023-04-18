@@ -20,4 +20,9 @@ extension XString on String {
   double? get thousandToDouble {
     return double.tryParse(replaceAll(',', ''));
   }
+
+  String get toKebabCase {
+    RegExp exp = RegExp(r'(?<=[a-z])[A-Z]');
+    return replaceAllMapped(exp, (Match m) => ('-${m.group(0)}')).toLowerCase();
+  }
 }

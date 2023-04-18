@@ -6,4 +6,10 @@ extension XNum on num {
       height: this as double,
     );
   }
+
+  SizedBox get gapW {
+    return SizedBox(
+      width: this as double,
+    );
+  }
 }
