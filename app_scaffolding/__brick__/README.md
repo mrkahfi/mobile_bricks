@@ -83,7 +83,7 @@
 * [x] Add Custom Linting
 * [ ] Use Isar as Hive replacement
 * [ ] Push Notification
-* [ ] Deep Link
+* [x] Deep Link
 * [ ] Modularization
 * [ ] Responsive UI
 * [ ] FVM 
