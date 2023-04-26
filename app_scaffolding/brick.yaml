@@ -22,8 +22,8 @@ environment:
 #  * an optional short description
 #  * an optional default value
 #  * an optional list of default values (array only)
-#  * an optional prompt phrase used when asking for the variable
-#  * a list of values (enums only)
+#  * an optional prompt phrase used when
+
 vars:
   appName:
     type: string
@@ -38,7 +38,7 @@ vars:
   firebaseProjectId:
     type: string
     description: Firebase Project ID
-    default: zot_starter
+    default: zot-starter
     prompt: What is the app's Firebase project ID?
   androidAppId:
     type: string
