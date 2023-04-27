@@ -81,12 +81,12 @@
 
 ## TODOs 🗓️
 * [x] Add Custom Linting
-* [ ] Use Isar as Hive replacement
+* [ ] ~~Use Isar as Hive replacement~~
 * [ ] Push Notification
 * [x] Deep Link
 * [ ] Modularization
 * [ ] Responsive UI
-* [ ] FVM 
+* [x] FVM 
 * [ ] Integration Testing
 * [ ] Unit Testing (Mocktail with Riverpod)
 
