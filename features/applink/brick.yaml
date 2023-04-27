@@ -1,0 +1,24 @@
+name: applink
+description: A new brick created with the Mason CLI.
+
+version: 0.1.0+1
+
+environment:
+  mason: ">=0.1.0-dev.49 <0.1.0"
+
+vars:
+  devAppLink:
+    type: string
+    description: Development Applink URL
+    default: dev.zot-starter.web.app
+    prompt: Development Applink URL
+  stgAppLink:
+    type: string
+    description: Staging Applink URL
+    default: stg.zot-starter.web.app
+    prompt: Staging Applink URL
+  appLink:
+    type: string
+    description: Production Applink URL
+    default: zot-starter.web.app
+    prompt: Production Applink URL
