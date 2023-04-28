@@ -12,7 +12,7 @@ dart pub global activate mason_cli
 
 ### Initialize Mason
 
-Go to the root of your mobile project and initialize Mason:
+**Go to the root folder of your mobile project** and initialize Mason:
 
 ```
 mason init
@@ -64,7 +64,7 @@ mason get
 Instead of having a useless default "counter-app" project, use brick [`app_scaffolding`](https://gitlab.zero-one-group.com/zo-group/software/mobile_bricks/-/tree/main/app_scaffolding). Just go to the root of your mobile project and run this command.
 
 ```
-# initialize Mason 
+# add bricks
 mason make app_scaffolding
 ```
 
