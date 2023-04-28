@@ -86,12 +86,11 @@ Let's say you want to add a deep link functionality. We have [`feature_applink`]
 1. Add the brick
 
 ```
-```
 mason add applink --path <path_to_your_cloned_repo>/features/applink
-```
 ```
 
 2. Make it
+
 ```
 mason make feature_applink
 ```
