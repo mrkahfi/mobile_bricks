@@ -24,7 +24,7 @@ There are two ways to download the bricks, remotely and locally.
 
 #### ⛅️ Remotely From the Repo
 
-Install all the bricks.
+Example: adding a brick to the list and installing.
 
 ```
 mason add app_scaffolding --git-url https://gitlab.zero-one-group.com/zo-group/software/mobile_bricks.git --git-path app_scaffolding
@@ -34,6 +34,8 @@ mason add app_scaffolding --git-url https://gitlab.zero-one-group.com/zo-group/s
 #### 💾 Locally From the Cloned Repo
 
 Getting the bricks from repositories can stuck for some reason, such as some security check issue. Alternatively, you can clone the repo and get it locally.
+
+Example:
 
 1. Clone the repo
 
