@@ -1,5 +1,7 @@
 # mobile_bricks
 
+Ready to use (and of course, to custom) code templates for ZOT Mobile team.
+
 ## Getting Started
 
 ### 🎯 Pub.dev
@@ -63,7 +65,14 @@ mason get
 ## Use Cases 
 
 ### 🚀 Project Initialization
-Instead of having a useless default "counter-app" project, use brick [`app_scaffolding`](https://gitlab.zero-one-group.com/zo-group/software/mobile_bricks/-/tree/main/app_scaffolding). Just go to the root of your mobile project and run this command.
+Instead of having a useless default "counter-app" project, use brick [`app_scaffolding`](/app_scaffolding). Just go to the root of your mobile project and run this command.
+
+1. Add the brick.
+```
+mason add app_scaffolding --path <path_to_your_cloned_repo>/app_scaffolding
+```
+
+2. Make it.
 
 ```
 # add bricks
@@ -72,11 +81,23 @@ mason make app_scaffolding
 
 This initializes the whole starter app setup.
 
-### Module Creation
+### Feature Invocation
+Let's say you want to add a deep link functionality. We have [`feature_applink`](/features/applink).
+
+1. Add the brick
 
 ```
-TODO
 ```
+mason add applink --path <path_to_your_cloned_repo>/features/applink
+```
+```
+
+2. Make it
+```
+mason make feature_applink
+```
+
+Available features are place under [feature](/features/) folder.
 
 ### Feature Creation
 
