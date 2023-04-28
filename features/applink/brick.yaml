@@ -22,3 +22,18 @@ vars:
     description: Production Applink URL
     default: zot-starter.web.app
     prompt: Production Applink URL
+  devSha256:
+    type: string
+    description: Your development env's SHA-256 fingerprint
+    default: 
+    prompt: Your development env's SHA-256 fingerprint
+  stgSha256:
+    type: string
+    description: Your staging env's SHA-256 fingerprint
+    default: 
+    prompt: Your staging env's SHA-256 fingerprint
+  sha256:
+    type: string
+    description: Your production env's SHA-256 fingerprint
+    default: 
+    prompt: Your production env's SHA-256 fingerprint

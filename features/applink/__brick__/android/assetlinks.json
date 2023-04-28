@@ -3,7 +3,7 @@
     "target": {
       "namespace": "android_app",
       "package_name": "{{ androidAppId }}",
-      "sha256_cert_fingerprints": [""] 
+      "sha256_cert_fingerprints": ["{{ sha256 }}"] 
     }
   },
   {
@@ -11,7 +11,7 @@
     "target": {
       "namespace": "android_app",
       "package_name": "{{ androidAppId }}.stg",
-      "sha256_cert_fingerprints": [""]
+      "sha256_cert_fingerprints": ["{{ stgSha256 }}"]
     }
   },
   {
@@ -19,7 +19,7 @@
     "target": {
       "namespace": "android_app",
       "package_name": "{{ androidAppId }}.dev",
-      "sha256_cert_fingerprints": [""]
+      "sha256_cert_fingerprints": ["{{ devSha256 }}"]
     }
   }]
   
