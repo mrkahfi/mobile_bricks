@@ -25,10 +25,6 @@ void run(HookContext context) async {
 
   await file.writeAsString(newFileContent);
 
-  context.logger.info(''' 
-  $newFileContent
-  ''');
-
   // assetlinks.json
   var assetlinksPath =
       p.join(Directory.current.path, 'android', 'assetlinks.json');
@@ -43,10 +39,6 @@ void run(HookContext context) async {
 
   await assetLinksFile.writeAsString(newAssetLinksContent);
 
-  context.logger.info(''' 
-  $newAssetLinksContent
-  ''');
-
   // apple-app-site-association
   var siteAssocPath =
       p.join(Directory.current.path, 'ios', 'apple-app-site-association');
@@ -57,8 +49,4 @@ void run(HookContext context) async {
       siteAssocContent.replaceAll(r'appleTeamId', appleTeamId);
 
   await siteAssocFile.writeAsString(newSiteAssocContent);
-
-  context.logger.info(''' 
-  $newSiteAssocContent 
-  ''');
 }
