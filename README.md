@@ -75,7 +75,6 @@ mason add app_scaffolding --path <path_to_your_cloned_repo>/app_scaffolding
 2. Make it.
 
 ```
-# add bricks
 mason make app_scaffolding
 ```
 
