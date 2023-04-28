@@ -36,6 +36,18 @@ mason make feature_applink
 
 This will do applink setup for both Android and iOS.
 
+### ✨ Variables
+
+| Name        | Description                                     | Default(s)              | Type   |
+|-------------|-------------------------------------------------|-------------------------|--------|
+| devAppLink  | the app link domain for development environment | dev.zot-starter.web.app | string |
+| stgAppLink  | the app link domain for staging environment     | stg.zot-starter.web.app | string |
+| appLink     | the app link domain for production environment  | zot-starter.web.app     | string |
+| devSha256   | SHA-256 fingerprint for development environment |                         | string |
+| stgSha256   | SHA-256 fingerprint for staging environment     |                         | string |
+| sha256      | SHA-256 fingerprint for production environment  |                         | string |
+| appleTeamId | the Apple Developer Team ID                     |                         | string |
+
 
 ## Limitation
 This will generate 2 files:
