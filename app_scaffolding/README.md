@@ -40,7 +40,7 @@ firebase login
 
 Login to your Firebase console and [create a Firebase project](https://console.firebase.google.com/u/0/). Then, note the **project ID**.
 
-### Make It
+### Usage
 
 1. Make sure you already have Mason initialized in your project. If you don't, please [initialize first](https://github.com/zero-one-group/mobile_bricks#getting-started).
 2. Run this command.
@@ -51,6 +51,15 @@ mason make app_scaffolding
 
 This is a starting point for a new brick.
 
+### ✨ Variables
+
+| Name              | Description                                                                                      | Default(s)             | Type   |
+|-------------------|--------------------------------------------------------------------------------------------------|------------------------|--------|
+| appName           | the app's name, will be reflected on the app's launcher                                          | ZOT Mobile Starter     | string |
+| packageName       | the package name                                                                                 | zot_starter            | string |
+| firebaseProjectId | firebase project ID, can be found on the project setting page of your Firebase projects' console | zot-starter            | string |
+| androidAppId      | Android application ID                                                                           | com.zot_starter.mobile | string |
+| iosBundleId       | iOS bundle ID                                                                                    | com.zot_starter.mobile | string |
 
 ## Features
 *  Adapted from Clean Architecture with Riverpod state Management
