@@ -40,7 +40,7 @@ firebase login
 
 Login to your Firebase console and [create a Firebase project](https://console.firebase.google.com/u/0/). Then, note the **project ID**.
 
-### Usage
+### 🧑‍💻 Usage
 
 1. Make sure you already have Mason initialized in your project. If you don't, please [initialize first](https://github.com/zero-one-group/mobile_bricks#getting-started).
 2. Run this command.
