@@ -37,3 +37,8 @@ vars:
     description: Your production env's SHA-256 fingerprint
     default: 
     prompt: Your production env's SHA-256 fingerprint
+  appleTeamId:
+    type: string
+    description: Apple Team ID
+    prompt: What is your Apple Team's ID?
+  

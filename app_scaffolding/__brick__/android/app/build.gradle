@@ -67,19 +67,19 @@ android {
             dimension "flavor-type"
             applicationId "{{ androidAppId }}"
             resValue "string", "app_name", "{{ appName }}"
-            manifestPlaceholders.deeplinkHost = "{{ appLink }}"
+            manifestPlaceholders.deeplinkHost = "appLink"
         }
         stg {
             dimension "flavor-type"
             applicationId "{{ androidAppId }}.stg"
             resValue "string", "app_name", "[STG] {{ appName }}"
-            manifestPlaceholders.deeplinkHost = "{{ stgAppLink }}"
+            manifestPlaceholders.deeplinkHost = "stgAppLink"
         }
         dev {
             dimension "flavor-type"
             applicationId "{{ androidAppId }}.dev"
             resValue "string", "app_name", "[DEV] {{ appName }}"
-            manifestPlaceholders.deeplinkHost = "{{ devAppLink }}"
+            manifestPlaceholders.deeplinkHost = "devAppLink"
         }
     }
 

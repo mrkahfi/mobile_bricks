@@ -2,15 +2,15 @@
   "applinks": {
       "details": [
       {
-        "appID": "{{ appleTeamId }}.{{ iosBundleId }}.dev",
+        "appID": "appleTeamId.{{ iosBundleId }}.dev",
         "paths": ["*"]
       },
       {
-        "appID": "{{ appleTeamId }}.{{ iosBundleId }}.stg",
+        "appID": "appleTeamId.{{ iosBundleId }}.stg",
         "paths": ["*"]
       },
       {
-        "appID": "{{ appleTeamId }}.{{ iosBundleId }}",
+        "appID": "appleTeamId.{{ iosBundleId }}",
         "paths": ["*"]
       }
     ]
