@@ -80,7 +80,7 @@ mason make app_scaffolding
 
 This initializes the whole starter app setup.
 
-### Feature Invocation
+### Feature Incorporation
 Let's say you want to add a deep link functionality. We have [`feature_applink`](/features/applink).
 
 1. Add the brick
