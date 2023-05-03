@@ -173,10 +173,6 @@ keytool -list -v -keystore <path_to_your_keystore_file>
 
 1. Open `assets/translations`. There are 2 files which represents 2 languages, `en-US.json`, and `id-ID.json`
 add a JSON field inside that JSON file.
-
-![](https://i.ibb.co/cDvmf0Q/Screen-Shot-2022-11-27-at-06-14-47.png)
-
-
 2. Add some text for `en` and `id` version language.
 3. Run the follwoing code in terminal for `easy_localization` generation :
 
@@ -190,7 +186,7 @@ flutter pub run easy_localization:generate -h
 flutter pub run easy_localization:generate -S "assets/translations" -O "lib/src/localization"
 ```
 
-5. Finally run the following command generate `locale_keys.g.dart`:
+1. Run the following command generate `locale_keys.g.dart`:
 
 ```bash
 flutter pub run easy_localization:generate -S "assets/translations" -O "lib/src/localization" -o "locale_keys.g.dart" -f keys
