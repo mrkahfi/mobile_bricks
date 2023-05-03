@@ -1,22 +1,37 @@
 # {{ appName }}
 
-[![GitHub license](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![platform](https://img.shields.io/badge/platform-Flutter-blue.svg)](https://flutter.dev/)
 
-## Features
-*  Fake login authentication
+## Development Guidelines
+Before getting into development, please learn our [Development Handbook](doc/handbook.md) first!
 
-## Specification
-*  Adapted from Clean Architecture with Riverpod state Management
-*  ThemeMode toggle (Dark and Light) 🔥
-*  Powered by ZOG UI with examples (`ZeroApp`)
-*  Contants Generation to get rid of hadcoded texts
-*  Localizations using `easy_localization`
-*  Multiple flavors with multiple Firebase environments
-*  Skeleton (shimmer) loading effect
-*  Quick files generation with Mason CLI
-*  Implementation example of cstom colors and typography
-*  Custom Linting
+  - [Architecture](doc/handbook.md#architecture)
+  - [Project Structure](doc/handbook.md#project-structure)
+  - [Naming](doc/handbook.md#naming)
+    - [Models](doc/handbook.md#models)
+    - [Widgets](doc/handbook.md#widgets)
+    - [Presentation](doc/handbook.md#presentation)
+    - [Classes and Variables](doc/handbook.md#classes-and-variables)
+  - [Formatting](doc/handbook.md#formatting)
+    - [Methods](doc/handbook.md#methods)
+    - [Widgets](doc/handbook.md#widgets-1)
+  - [**Commenting**](doc/handbook.md#commenting)
+  - [Localization](doc/handbook.md#localization)
+  - [Flavoring](doc/handbook.md#flavoring)
+  - [Routing](doc/handbook.md#routing)
+  - [Error Handling](doc/handbook.md#error-handling)
+  - [Generated Sources](doc/handbook.md#generated-sources)
+  - [MR and Code Review](doc/handbook.md#mr-and-code-review)
+  - [Security](doc/handbook.md#security)
+  - [Tech Stack(s)](doc/handbook.md#tech-stacks)
+  - [**About ZOG UI**](doc/handbook.md#about-zog-ui)
+  - [**Development Setup**](doc/handbook.md#development-setup)
+    - [Manual Setup](doc/handbook.md#manual-setup)
+    - [**Using Mason**](doc/handbook.md#using-mason)
+  - [Version Manager](doc/handbook.md#version-manager)
+    - [Setup](doc/handbook.md#setup)
+    - [Usage](doc/handbook.md#usage)
+  - [Notes](doc/handbook.md#notes)
 
 
 ## Folder Structure 🔥
@@ -67,41 +82,37 @@
 
 
 ## Built With 🛠
-* [Riverpod Pattern](https://riverpod.dev/) - A Reactive Caching and Data-binding Framework
-* [Go Router](https://pub.dev/packages/go_router/) - Declarative router for Flutter based on Navigation 2 
-* [Equatable](https://pub.dev/packages/equatable) - Being able to compare objects in `Dart` often involves having to override the `==` operator.
-* [Dio](https://github.com/cfug/dio) - A type-safe HTTP client.
-* [Json Serializable](https://pub.dev/packages/json_serializable) - Builders for handling JSON.
+* [Riverpod Pattern](https://riverpod.dev/) - State management
+* [Go Router](https://pub.dev/packages/go_router/) - Navigation
+* [Equatable](https://pub.dev/packages/equatable) - Dart objects comparison
+* [Dio](https://github.com/cfug/dio) - HTTP client.
+* [Json Serializable](https://pub.dev/packages/json_serializable) - JSON handling
 * [Freezed](https://pub.dev/packages/freezed) - Code generation for immutable classes
-* [Formz](https://pub.dev/packages/formz) - Form representation and validation in a generic way.
-* [Hive DB](https://docs.hivedb.dev/) - Lightweight and blazing key-value database written in Dart.
-* [Easy Localization](https://pub.dev/packages/easy_localization) - To simplify the internationalization and localization.
-* [ZOG UI](https://pub.dev/packages/zog_ui) - Collection of ZOG design system UI components
-* [Mason CLI](https://pub.dev/packages/mason_cli) - To create and consume reusable templates called bricks
-
-## TODOs 🗓️
-* [x] Add Custom Linting
-* [ ] ~~Use Isar as Hive replacement~~
-* [ ] Push Notification
-* [x] Deep Link
-* [ ] Modularization
-* [ ] Responsive UI
-* [x] FVM 
-* [ ] Integration Testing
-* [ ] Unit Testing (Mocktail with Riverpod)
+* [Formz](https://pub.dev/packages/formz) - Form validation
+* [Hive DB](https://docs.hivedb.dev/) - Local storage
+* [Easy Localization](https://pub.dev/packages/easy_localization) - Localization
+* [ZOG UI](https://pub.dev/packages/zog_ui) - UI components
 
 ## Getting Started
 
 ### Configure Firebase Project 🔥
 
-All the Firebase configuration for each platform has been done automatically upon project initialization using Mason.
+Before you deploy the app to production, you need to have the Firebase project for it set up.
 
-However, in case you have to do them manually, execute these 3 commands right on the root directory of your **mobile** project.
+**Step 1.** Go to [https://console.firebase.google.com/](https://console.firebase.google.com/) Create a new Firebase project. It's best to use the suffixes "-dev", "-stg", and "-prod" on each project to indicate its environment mode and to distingue it from the rest of the projects.
+
+**Step 2.** Go to terminal in you root of {{ packageName }} directory (`apps/{{ packageName }}`), run the following command to login using your Firebase account:
+
+```bash
+$ flutterfire login
+```
+
+**Step 3.** And once you're successfully logged in, run commad:
 
 ```
 # Configure Firebase project for development environment
 flutterfire config  \
-      --project={{ firebaseProjectId }}  \
+      --project={{ devFirebaseProjectId }}  \
       --ios-bundle-id={{ iosBundleId }}.dev \
       --android-package-name={{ androidAppId }}.dev \
       --ios-out=ios/config/dev/GoogleService-Info.plist \
@@ -110,7 +121,7 @@ flutterfire config  \
 ```
 # Configure Firebase project for staging environment
 flutterfire config  \
-      --project={{ firebaseProjectId }} \
+      --project={{ stgFirebaseProjectId }} \
       --ios-bundle-id={{ iosBundleId }}.stg \
       --android-package-name={{ androidAppId }}.stg \
       --ios-out=ios/config/stg/GoogleService-Info.plist \
@@ -119,7 +130,7 @@ flutterfire config  \
 ```
 # Configure Firebase project for production environment
 flutterfire config \
-      --project={{ firebaseProjectId }}  \
+      --project={{ prodFirebaseProjectId }}  \
       --ios-bundle-id={{ iosBundleId }} \
       --ios-out=ios/config/prod/GoogleService-Info.plist \
       --android-package-name={{ androidAppId }} \
@@ -153,36 +164,35 @@ keytool -list -v -keystore <path_to_your_keystore_file>
 ### iOS Setup
 
 1. Open [apple-app-site-association](./ios/apple-app-site-association) file
-2. Make sure the `appID` match your `{{ appleTeamId }}.{{ iosBundleId }}`.
+2. Make sure the `appID` match your `.{{ iosBundleId }}`.
 3. Upload the file [apple-app-site-association](./ios/apple-app-site-association)  to your public directory of your website, under directory `[yourwebsite.com]/.wellknown/`, so it would be acccessible as `[yourwebsite.com]/.wellknown/apple-app-site-association`
-
-
-## ABOUT ZOG UI
-
-**IMPORTANT NOTE ON ZOG UI:** 
-
-Zero One has just developed a package called [ZOG UI](https://pub.dev/packages/zog_ui). Its goal is to speed up the UI development process by providing a collection of ready-to-use components, yet still attempting to maintain their customizability.
-
-However, **the package is currently still on alpha release and lacks documentation**. Therefore, consider using ZOG UI components pragmatically. If you encounter issues in some components, **DO** implement your own components instead of relying on all of ZOG UI components by trying to customize them.
 
 
 ## Localization Setup
 
-- Open folder [`assets/translations/`](./assets/translations/)
-- Add some text for `en` and `id` version language.
-- Run code in terminal for generate `easy_localization` :
 
-```
+1. Open `assets/translations`. There are 2 files which represents 2 languages, `en-US.json`, and `id-ID.json`
+add a JSON field inside that JSON file.
+
+![](https://i.ibb.co/cDvmf0Q/Screen-Shot-2022-11-27-at-06-14-47.png)
+
+
+2. Add some text for `en` and `id` version language.
+3. Run the follwoing code in terminal for `easy_localization` generation :
+
+```bash
 flutter pub run easy_localization:generate -h
 ```
-- Then run this code for generate `codegen_loader.g.dart` :
 
-```
+4. Then run the following command to generate `codegen_loader.g.dart` :
+
+```bash
 flutter pub run easy_localization:generate -S "assets/translations" -O "lib/src/localization"
 ```
 
-- Finally run this code for generate `locale_keys.g.dart`:
-```
+5. Finally run the following command generate `locale_keys.g.dart`:
+
+```bash
 flutter pub run easy_localization:generate -S "assets/translations" -O "lib/src/localization" -o "locale_keys.g.dart" -f keys
 ```
 
@@ -192,29 +202,39 @@ flutter pub run easy_localization:generate -S "assets/translations" -O "lib/src/
 For development:
 
 ```console
-flutter run --flavor dev --dart-define=API_URL='<your_dev_api_url>'
+flutter run --flavor dev --dart-define=API_URL='{{ devApiUrl }}'
 ```
 
 For staging:
 
 ```console
-flutter run --flavor stg --dart-define=API_URL='<your_staging_api_url>'
+flutter run --flavor stg --dart-define=API_URL='{{ stgApiUrl }}'
 ```
 
 For production
 
 ```console
-flutter run --flavor prod --dart-define=API_URL='<your_prod_api_url>'
+flutter run --flavor prod --dart-define=API_URL='{{ prodApiUrl }}'
 ```
-
 
 
 ## How to run the Test
 
+```
+TODO
+```
+
+## Documentation
+
+- Technical Docs: Read [the whole technical specification document](doc/tech_specs.md). 
+- Public API Docs: [](doc/api/index.html). 
+
 
 ## Author 🧑‍💻
 
-* **{{ teamName }}**
+@{{ teamName }}
+
+* ****
 
 Don't forget to follow us, fork and give us a ⭐
 

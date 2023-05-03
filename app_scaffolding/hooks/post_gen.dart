@@ -3,7 +3,9 @@ import 'dart:io';
 import 'package:mason/mason.dart';
 
 void run(HookContext context) async {
-  final firebaseProjectId = context.vars['firebaseProjectId'];
+  final devFirebaseProjectId = context.vars['devFirebaseProjectId'];
+  final stgFirebaseProjectId = context.vars['stgFirebaseProjectId'];
+  final prodFirebaseProjectId = context.vars['prodFirebaseProjectId'];
   final androidAppId = context.vars['androidAppId'];
   final iosBundleId = context.vars['iosBundleId'];
 
@@ -14,17 +16,19 @@ Activating flutterfire_cli zero-one globally... \
 
   // dart pub global activate --source="git" https://github.com/zero-one-group/flutterfire_cli
   // --git-path=packages/flutterfire_cli --git-ref=flutterfire_cli-zero-one  --executable="flutterfire" --overwrite
-  await Process.run('dart', [
+  var result = await Process.run('dart', [
     'pub',
     'global',
     'activate',
-    '--source=\"git\"',
+    '--source=git',
     'https://github.com/zero-one-group/flutterfire_cli',
     '--git-path=packages/flutterfire_cli',
     '--git-ref=flutterfire_cli-zero-one',
-    '--executable=\"flutterfire\"',
+    '--executable=flutterfire',
     '--overwrite',
   ]);
+  stdout.write(result.stdout);
+  stderr.write(result.stderr);
 
   // await Process.run('dart', [
   //   'pub',
@@ -41,7 +45,7 @@ Configuring firebase for development... \
 
   var devResult = await Process.run('flutterfire', [
     'config',
-    '--project=$firebaseProjectId',
+    '--project=$devFirebaseProjectId',
     '--ios-bundle-id=$iosBundleId.dev',
     '--ios-out=ios/config/dev/GoogleService-Info.plist',
     '--android-package-name=$androidAppId.dev',
@@ -56,7 +60,7 @@ Something wrong happened. Consider run this command manually. \
     ''');
     context.logger.info('''
     flutterfire config \\
-        --project=$firebaseProjectId \\
+        --project=$devFirebaseProjectId \\
         --ios-bundle-id=$iosBundleId.dev \\
         --ios-out=ios/config/dev/GoogleService-Info.plist \\
         --android-package-name=$androidAppId.dev \\
@@ -70,7 +74,7 @@ Configuring firebase for staging... \
 
   var stgResult = await Process.run('flutterfire', [
     'config',
-    '--project=$firebaseProjectId',
+    '--project=$stgFirebaseProjectId',
     '--ios-bundle-id=$iosBundleId.stg',
     '--ios-out=ios/config/stg/GoogleService-Info.plist',
     '--android-package-name=$androidAppId.stg',
@@ -85,7 +89,7 @@ Something wrong happened. Consider run this command manually. \
     ''');
     context.logger.info('''
     flutterfire config \\
-        --project=$firebaseProjectId \\
+        --project=$stgFirebaseProjectId \\
         --ios-bundle-id=$iosBundleId.stg \\
         --ios-out=ios/config/stg/GoogleService-Info.plist \\
         --android-package-name=$androidAppId.stg \\
@@ -99,7 +103,7 @@ Configuring firebase for production... \
 
   var prodResult = await Process.run('flutterfire', [
     'config',
-    '--project=$firebaseProjectId',
+    '--project=$prodFirebaseProjectId',
     '--ios-bundle-id=$iosBundleId',
     '--ios-out=ios/config/prod/GoogleService-Info.plist',
     '--android-package-name=$androidAppId',
@@ -114,7 +118,7 @@ Something wrong happened. Consider run this command manually. \
     ''');
     context.logger.info('''
     flutterfire config \\
-        --project=$firebaseProjectId \\
+        --project=$prodFirebaseProjectId \\
         --ios-bundle-id=$iosBundleId \\
         --ios-out=ios/config/prod/GoogleService-Info.plist \\
         --android-package-name=$androidAppId \\
