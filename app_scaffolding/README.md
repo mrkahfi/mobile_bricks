@@ -57,7 +57,9 @@ This is a starting point for a new brick.
 |-------------------|--------------------------------------------------------------------------------------------------|------------------------|--------|
 | appName           | the app's name, will be reflected on the app's launcher                                          | ZOT Mobile Starter     | string |
 | packageName       | the package name                                                                                 | zot_starter            | string |
-| firebaseProjectId | firebase project ID, can be found on the project setting page of your Firebase projects' console | zot-starter            | string |
+| devFirebaseProjectId | development firebase project ID, can be found on the project setting page of your Firebase projects' console | zot-starter            | string |
+| stgFirebaseProjectId | staging firebase project ID, can be found on the project setting page of your Firebase projects' console | zot-starter            | string |
+| prodFirebaseProjectId | production firebase project ID, can be found on the project setting page of your Firebase projects' console | zot-starter            | string |
 | androidAppId      | Android application ID                                                                           | com.zot_starter.mobile | string |
 | iosBundleId       | iOS bundle ID                                                                                    | com.zot_starter.mobile | string |
 

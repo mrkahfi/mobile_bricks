@@ -35,11 +35,21 @@ vars:
     description: Package name
     default: zot_starter
     prompt: What is the app's package name?
-  firebaseProjectId:
+  devFirebaseProjectId:
     type: string
-    description: Firebase Project ID
-    default: zot-starter
-    prompt: What is the app's Firebase project ID?
+    description: Development Firebase Project ID
+    default: zot-starter-dev
+    prompt: What is the development app's Firebase project ID?
+  stgFirebaseProjectId:
+    type: string
+    description: StagingFirebase Project ID
+    default: zot-starter-stg
+    prompt: What is the staging app's Firebase project ID?
+  prodFirebaseProjectId:
+    type: string
+    description: Production Firebase Project ID
+    default: zot-starter-prod
+    prompt: What is the production app's Firebase project ID?
   androidAppId:
     type: string
     description: Android App ID
