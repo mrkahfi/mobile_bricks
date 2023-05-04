@@ -13,9 +13,11 @@
     - [Widgets](#widgets)
     - [Presentation](#presentation)
     - [Classes and Variables](#classes-and-variables)
-  - [Formatting](#formatting)
-    - [Methods](#methods)
-    - [Widgets](#widgets-1)
+  - [Code Styles](#code-styles)
+    - [Linting](#linting)
+    - [Formatting](#formatting)
+      - [Methods](#methods)
+      - [Widgets](#widgets-1)
   - [Commenting](#commenting)
   - [Localization](#localization)
   - [Flavoring](#flavoring)
@@ -115,10 +117,38 @@ This architecture is composed of four layers (_data, domain, application, and pr
 * Variables naming within a project must be consistent and follow the same pattern. For example, whether you should name a variable of a `TextController` with `_conName` or `_nameTextController`, it’s all up to you. Do discuss amongst yourselves during the planning phase about what name pattern to go with according to your convenience.
 
 
-## Formatting
+## Code Styles
+
+It's good to keep consistent code style, at least project-wide, and Dart/Flutter does come with linting support.
 
 
-### Methods
+### Linting
+
+We're using the [flutter_lints](https://pub.dev/packages/flutter_lints) package which contains recommended rules for Flutter apps.
+
+Run linting by running “`flutter analyze`" in the root of the project or integrate linter with your IDE.
+
+
+### Formatting
+
+To format the code use` flutter format lib/` or `flutter format test/` command in the root of a project.
+
+**Usage with VS Code**
+
+Linting can be easily integrated via Flutter extension.
+
+With this extension, you can find analysis issues in the Problems tab: VS Code linting.
+
+To see issues next to the affected line, use the _Error Lens_ extension.
+
+**Auto-formatting on file save**
+
+Enable automatic code formatting on each file save by settings Manage (Bottom left cog icon) ➡ Settings, then search for Editor: Format On Save and enable the checkbox:
+
+![](img/vscode-onsave.png)
+
+
+#### Methods
 
 * Use soft-tabs with a two-space indent. For more indentation and spacing rules, follow [the Official Dart Formatting rule](https://github.com/dart-lang/dart_style/wiki/Formatting-Rules).
 * **Blank lines:** Separate each abstract method using a blank line for better readability.
@@ -158,7 +188,7 @@ void createAccount(String firstName, String lastName, String email, String phone
 ```
 
 
-### Widgets
+#### Widgets
 
 * Prefer splitting the code into small widgets in order to avoid large nested trees. The debugging process will become easy to check the UI issues. Besides, the widget tree is readable and clean. 
 
