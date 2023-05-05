@@ -529,7 +529,7 @@ keytool -list -v -keystore <path_to_your_keystore_file>
 
 **IMPORTANT NOTE ON ZOG UI:** 
 
-Zero One has just developed a package called [ZOG UI](https://pub.dev/packages/zog_ui). Its goal is to speed up the UI development process by providing a collection of ready-to-use components, yet still attempting to maintain their customizability.
+Zero One has developed a package called [ZOG UI](https://pub.dev/packages/zog_ui). Its goal is to accelerate the UI development process by providing a collection of ready-to-use components, yet still attempting to maintain their customizability.
 
 However, **the package is currently still on alpha release and lacks documentation**. Therefore, the usage of ZOG UI components should be done pragmatically. If there are some issues encountered in some components, it is encourage to implement your own widget instead of relying on all of ZOG UI components by trying to customize them.
 

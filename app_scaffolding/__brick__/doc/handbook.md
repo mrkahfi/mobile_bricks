@@ -449,7 +449,7 @@ Here are a couple commonly used dependencies that become our standard stacks.
 
 ## About ZOG UI
 
-Zero One has just developed a package called [ZOG UI](https://pub.dev/packages/zog_ui). Its goal is to speed up the UI development process by providing a collection of ready-to-use components, yet still attempting to maintain their customizability.
+Zero One has developed a package called [ZOG UI](https://pub.dev/packages/zog_ui). Its goal is to accelerate the UI development process by providing a collection of ready-to-use components, yet still attempting to maintain their customizability.
 
 However, the package is currently still on alpha release and lacks documentation. Therefore, consider using ZOG UI components pragmatically. If you encounter issues in some components, **DO** implement your own components instead of relying on all of ZOG UI components by trying to customize them.
 
