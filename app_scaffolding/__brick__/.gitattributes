@@ -1,0 +1,5 @@
+**/*.g.dart                             linguist-generated=true
+**/*.freezed.dart                       linguist-generated=true
+test/.test_coverage.dart                linguist-generated=true
+bin/cache/**                            linguist-generated=true
+lib/generated_plugin_registrant.dart    linguist-generated=true
