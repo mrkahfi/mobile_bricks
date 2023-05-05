@@ -212,19 +212,19 @@ Adding a new feature or making changes on the existing ones require a good under
 
 
 ### Components
-The components are common widgets located in `lib/src/components`. This folder contains all the widgets that are used accross the app and they can be inside more than one features. For common widgets that are specific to a feature, there should be other `common_widgets` under that corresponding feature folder to indicate that common widgets are only of that feature.
+The components are common widgets located in `lib/src/components`. This folder contains all the widgets that are used accross features and they can be used in more than one features. For common widgets that are specific to a feature, there should be specific `widgets` folders underneath to indicate that those widgets belong only to that feature.
 
 ### Routes
 This folder is located in `lib/src/routes`. This contains all the page routes definition along with their redirections, parameters being passed from one route to another. Every time you added a new screen the app should navigate to, add a new route inside this file. Further reading about [GoRouter for Flutter](https://pub.dev/documentation/go_router/latest/)
 
 
 ### Utils
-This folder is located in `lib/src/utils`. This contains all the utilities that are reused accross the features such as camera utility, network utility, notification, etc.
+This folder is located in `lib/src/utils`. This contains all the utilities that are reused accross features, such as extensions, camera utility, network utility, notification, etc.
 
 
 #### Firebase
 
-This folder is located in `lib/firebase`. This consists of 3 different firebase options files. All these three are generated using Firebase CLI.
+This folder is located in `lib/src/app/firebase`. This consists of 3 different firebase options files. All these three are generated using Firebase CLI.
 
 
 ## Cloud Infrastructure

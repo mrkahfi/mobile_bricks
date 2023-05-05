@@ -99,43 +99,7 @@ Before getting into development, please learn our [Development Handbook](doc/han
 
 Before you deploy the app to production, you need to have the Firebase project for it set up.
 
-**Step 1.** Go to [https://console.firebase.google.com/](https://console.firebase.google.com/) Create a new Firebase project. It's best to use the suffixes "-dev", "-stg", and "-prod" on each project to indicate its environment mode and to distingue it from the rest of the projects.
-
-**Step 2.** Go to terminal in you root of {{ packageName }} directory (`apps/{{ packageName }}`), run the following command to login using your Firebase account:
-
-```bash
-$ flutterfire login
-```
-
-**Step 3.** And once you're successfully logged in, run commad:
-
-```
-# Configure Firebase project for development environment
-flutterfire config  \
-      --project={{ devFirebaseProjectId }}  \
-      --ios-bundle-id={{ iosBundleId }}.dev \
-      --android-package-name={{ androidAppId }}.dev \
-      --ios-out=ios/config/dev/GoogleService-Info.plist \
-      --out=lib/src/app/firebase/firebase_options_dev.dart
-```
-```
-# Configure Firebase project for staging environment
-flutterfire config  \
-      --project={{ stgFirebaseProjectId }} \
-      --ios-bundle-id={{ iosBundleId }}.stg \
-      --android-package-name={{ androidAppId }}.stg \
-      --ios-out=ios/config/stg/GoogleService-Info.plist \
-      --out=lib/src/app/firebase/firebase_options_stg.dart
-```
-```
-# Configure Firebase project for production environment
-flutterfire config \
-      --project={{ prodFirebaseProjectId }}  \
-      --ios-bundle-id={{ iosBundleId }} \
-      --ios-out=ios/config/prod/GoogleService-Info.plist \
-      --android-package-name={{ androidAppId }} \
-      --out=lib/src/app/firebase/firebase_options_stg.dart
-```
+If the project was initially generated using `[app_scaffolding](/app_scaffolding/)`, then the Firebase configuration should have been done automatically. However, in case you have to redo it manually, please refer [Firebase Configuration](/)
 
 ## DeepLink Setup
 
