@@ -1,17 +1,17 @@
 import 'dart:developer';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:{{ packageName }}/src/features/main/application/home/{{ featureNameName.camelCase() }}_service.dart';
+import '../application/{{ featureName.snakeCase() }}_service.dart';
 import './{{ featureName.snakeCase() }}_state.dart';
 
-class  {{ featureName.pascalCase() }}(Controller extends StateNotifier<HomeState> {
-  {{ featureName.pascalCase() }}Controller(this.ref) : super(const HomeState());
+class  {{ featureName.pascalCase() }}Controller extends StateNotifier<{{ featureName.pascalCase() }}State> {
+  {{ featureName.pascalCase() }}Controller(this.ref) : super(const {{ featureName.pascalCase() }}State());
   final Ref ref;
 
-  Future<void> fetchItems() async {
+  Future<void> fetch{{ entityName.pascalCase() }}s() async {
     state = state.copyWith(value: const AsyncLoading());
     log('isLoading');
-    final response = await ref.read({{ featureNameName.camelCase() }}ServiceProvider).fetchItems();
+    final response = await ref.read({{ featureName.camelCase() }}ServiceProvider).fetch{{ entityName.pascalCase() }}s();
 
     response.when(
       success: (data) {
@@ -25,7 +25,7 @@ class  {{ featureName.pascalCase() }}(Controller extends StateNotifier<HomeState
 }
 
 final  {{ featureName.camelCase() }}ControllerProvider =
-    StateNotifierProvider<HomeController, HomeState>((ref) {
-  final homeController = HomeController(ref)..fetchItems();
+    StateNotifierProvider<{{ featureName.pascalCase() }}Controller, {{ featureName.pascalCase() }}State>((ref) {
+  final homeController = {{ featureName.pascalCase() }}Controller(ref)..fetch{{ entityName.pascalCase() }}s();
   return homeController;
 });
