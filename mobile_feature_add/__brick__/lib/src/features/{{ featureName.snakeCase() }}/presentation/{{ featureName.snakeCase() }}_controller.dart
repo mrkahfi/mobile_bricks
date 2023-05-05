@@ -1,8 +1,8 @@
 import 'dart:developer';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:{{ packageName }}/src/features/main/application/home/example_service.dart';
-import 'package:{{ packageName }}/src/features/main/presentation/home/home_state.dart';
+import 'package:{{ packageName }}/src/features/main/application/home/{{ featureNameName.camelCase() }}_service.dart';
+import './{{ featureName.snakeCase() }}_state.dart';
 
 class  {{ featureName.pascalCase() }}(Controller extends StateNotifier<HomeState> {
   {{ featureName.pascalCase() }}Controller(this.ref) : super(const HomeState());
@@ -11,7 +11,7 @@ class  {{ featureName.pascalCase() }}(Controller extends StateNotifier<HomeState
   Future<void> fetchItems() async {
     state = state.copyWith(value: const AsyncLoading());
     log('isLoading');
-    final response = await ref.read(exampleServiceProvider).fetchItems();
+    final response = await ref.read({{ featureNameName.camelCase() }}ServiceProvider).fetchItems();
 
     response.when(
       success: (data) {
