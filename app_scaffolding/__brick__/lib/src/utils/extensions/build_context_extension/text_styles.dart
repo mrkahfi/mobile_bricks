@@ -31,8 +31,7 @@ extension BuildContextEntension<T> on BuildContext {
   TextStyle? get bodySmall =>
       ZeroTheme.of(this).typography.toTextTheme().bodySmall;
 
-  TextStyle? get titleTextStyle =>
-      ZeroTheme.of(this).appBarTheme.titleTextStyle;
+  TextStyle? get titleTextStyle => ZeroTheme.of(this).appBarStyle.titleStyle;
 
   TextStyle? get bodyExtraSmall =>
       bodySmall?.copyWith(fontSize: 10, height: 1.6, letterSpacing: .5);
