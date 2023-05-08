@@ -25,7 +25,7 @@ class ExampleResponse {
     if (!json.containsKey('items')) return;
 
     if (json['items'] is List<dynamic>) {
-      for (final item in (json['items'] as List<dynamic>)) {
+      for (final item in json['items'] as List<dynamic>) {
         items.add(ItemResponse.fromJson(item as Map<String, dynamic>));
       }
     }

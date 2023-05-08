@@ -22,7 +22,7 @@ extension XString on String {
   }
 
   String get toKebabCase {
-    RegExp exp = RegExp(r'(?<=[a-z])[A-Z]');
-    return replaceAllMapped(exp, (Match m) => ('-${m.group(0)}')).toLowerCase();
+    final exp = RegExp('(?<=[a-z])[A-Z]');
+    return replaceAllMapped(exp, (Match m) => '-${m.group(0)}').toLowerCase();
   }
 }
