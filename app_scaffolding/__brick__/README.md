@@ -99,7 +99,7 @@ Before getting into development, please learn our [Development Handbook](doc/han
 
 Before you deploy the app to production, you need to have the Firebase project for it set up.
 
-If the project was initially generated using `[app_scaffolding](/app_scaffolding/)`, then the Firebase configuration should have been done automatically. However, in case you have to redo it manually, please refer [Firebase Configuration](/)
+If the project was initially generated using `[app_scaffolding](/app_scaffolding/)`, then the Firebase configuration should have been done automatically. However, in case you have to redo it manually, please refer [Firebase Configuration](doc/tech_specs.md#firebase-project-setup)
 
 ## DeepLink Setup
 
