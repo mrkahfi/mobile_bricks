@@ -74,8 +74,6 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
-  flutterfire_cli: ^0.2.7
-
   integration_test:
     sdk: flutter
 
