@@ -1,0 +1,112 @@
+name: {{ packageName }}
+description: A new Flutter project.
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=2.18.5 <3.0.0'
+dependencies:
+  flutter:
+    sdk: flutter
+
+  formz: ^0.4.1
+
+  freezed: ^2.3.2
+  freezed_annotation: ^2.2.0
+
+  # Navigation
+  go_router: ^5.0.5
+
+  json_annotation: ^4.8.0
+  json_serializable: ^6.6.1
+  
+
+  # State Management
+  flutter_riverpod: ^2.1.1
+  rxdart: ^0.27.7
+
+  # Networking
+  dio: ^5.1.1
+
+  # Local Storage
+  hive_flutter: ^1.1.0
+
+  # Firebase
+  firebase_core: ^2.4.0
+  firebase_crashlytics: ^3.0.8
+  firebase_analytics: ^10.0.8
+  firebase_messaging: ^14.2.0 # push notification
+
+  # Localization
+  easy_localization: ^3.0.1
+  easy_localization_loader: ^1.0.1+1
+
+  stack_trace: ^1.11.0
+
+
+  # The following adds the Cupertino Icons font to your application.
+  # Use with the CupertinoIcons class for iOS style icons.
+  cupertino_icons: ^1.0.2
+
+  # UI
+  flutter_screenutil: ^5.6.0
+  flutter_svg: ^2.0.4
+
+  # Deep links
+  firebase_dynamic_links: ^5.1.0
+  
+  # ZOG UI
+  zog_ui: ^0.0.1-alpha.11
+    # git: 
+    #   url: https://github.com/zero-one-group/zog-ui.git
+    #   path: packages/mobile
+
+
+
+dev_dependencies:
+  build_runner:
+  flutter_gen_runner: ^5.2.0
+
+  # Linting & analysis
+  very_good_analysis: ^4.0.0+1
+  custom_lint: ^0.3.4
+  riverpod_lint: ^1.3.1
+  flutter_lints: ^2.0.0
+
+  flutter_test:
+    sdk: flutter
+
+  integration_test:
+    sdk: flutter
+
+  # Testing
+  mocktail: ^0.3.0
+
+
+flutter_gen:
+  output: lib/gen/ # Optional (default: lib/gen/)
+  line_length: 80 # Optional (default: 80)
+
+  integrations:
+    flutter_svg: true
+    rive: true
+    
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/translations/
+    - assets/images/
+    - assets/jsons/
+
+  fonts:
+    - family: DMMono
+      fonts:
+        - asset: assets/fonts/DMMono-Regular.ttf
+    - family: DMSans
+      fonts:
+        - asset: assets/fonts/DMSans-Regular.ttf
+

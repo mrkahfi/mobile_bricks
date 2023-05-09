@@ -1,0 +1,25 @@
+[{
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "androidAppId",
+      "sha256_cert_fingerprints": ["sha256"] 
+    }
+  },
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "androidAppId.stg",
+      "sha256_cert_fingerprints": ["stgSha256"]
+    }
+  },
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "androidAppId.dev",
+      "sha256_cert_fingerprints": ["devSha256"]
+    }
+  }]
+  
