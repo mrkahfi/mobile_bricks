@@ -51,15 +51,14 @@ This architecture is composed of four layers (_data, domain, application, and pr
 
 1. **Presentation Layer.** This layer is responsible to present data (widget) to screen and handle user interaction. This layer includes **_widgets_**, and their **_controllers_** and **_states_**.
 2. **Application Layer.** This layer is optional. This layer holds **_services_** that can be used to bridge the presentation layer with the domain layer in order to serve data that the controller needs.
-3. **Domain Layer. **Contains domain models called entities. Entities are objects that hold data that can be used for the presentation layer. This layer includes: **_Entity_** classes, which the UI needs to consume.
+3. **Domain Layer.** Contains domain models called entities. Entities are objects that hold data that can be used for the presentation layer. This layer includes: **_Entity_** classes, which the UI needs to consume.
 4. **Data Layer**. This layer includes both **_repositories_** and the **_models_** that represent objects that need to be sent to or received from the data sources (local or remote). There is repositories in this layer that can be used to :
     1. Isolate domain models (entities) from the implementation details of the data sources in the data layer.
-    2. Convert data transfer objects (response) to validated entities that are understood by the domain layer.
+    2. Map data transfer objects (response) to validated entities that are understood by the domain layer.
     3. (optionally) perform operations such as data caching.
 
 
 ## Project Structure
-
 
 
 * The project structure follows _“Feature-First”_ architecture by default, whereby the feature folders are placed on top of the layer folders. This means that every feature has its own “presentation”, “application”, “domain”, and “data” folder underneath.
