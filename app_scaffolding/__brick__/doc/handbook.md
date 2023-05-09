@@ -51,8 +51,11 @@ This architecture is composed of four layers (_data, domain, application, and pr
 
 1. **Presentation Layer.** This layer is responsible to present data (widget) to screen and handle user interaction. This layer includes **_widgets_**, and their **_controllers_** and **_states_**.
 2. **Application Layer.** This layer is optional. This layer holds **_services_** that can be used to bridge the presentation layer with the domain layer in order to serve data that the controller needs.
-3. **Domain Layer.** Contains models that are domain models. Domain model is an entity that holds data that can be used for the presentation layer. This layer includes: **_Entity_** classes, which the UI needs to consume.
-4. **Data Layer**. This layer includes both **_repositories_** and the **_models_** that represent objects that need to be sent to or received from the data sources (local or remote).
+3. **Domain Layer. **Contains domain models called entities. Entities are objects that hold data that can be used for the presentation layer. This layer includes: **_Entity_** classes, which the UI needs to consume.
+4. **Data Layer**. This layer includes both **_repositories_** and the **_models_** that represent objects that need to be sent to or received from the data sources (local or remote). There is repositories in this layer that can be used to :
+    1. Isolate domain models (entities) from the implementation details of the data sources in the data layer.
+    2. Convert data transfer objects (response) to validated entities that are understood by the domain layer.
+    3. (optionally) perform operations such as data caching.
 
 
 ## Project Structure
@@ -190,6 +193,27 @@ void createAccount(String firstName, String lastName, String email, String phone
 
 #### Widgets
 
+* Add widget keys in every widget for testing purposes.
+
+```dart
+
+class SignInScreen extends ConsumerStatefulWidget {
+  const SignInScreen({super.key});
+
+  static const _key = 'SignInKey';
+  static const scaffoldKey = Key("scaffold.$_key");
+  static const logoKey = Key("logo.$_key");
+  static const emailTextFieldKey = Key("emailTextField.$_key");
+  static const passwordTextFieldKey = Key("passwordTextField.$_key");
+  static const btnSignInKey = Key("btnSignIn.$_key");
+  static const btnForgotPasswordKey = Key("btnForgotPassword.$_key");
+  static const signUpKey = Key("signUp.$_key");
+
+  @override
+  ConsumerState<SignInScreen> createState() => _SignInScreenState();
+}
+
+```
 * Prefer splitting the code into small widgets in order to avoid large nested trees. The debugging process will become easy to check the UI issues. Besides, the widget tree is readable and clean. 
 
 * When separating widget trees, consider creating new widgets rather than using helper method [^1]. 
