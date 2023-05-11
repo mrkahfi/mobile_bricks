@@ -430,6 +430,21 @@ analyzer:
     - "lib/generated_plugin_registrant.dart"
 ```
 
+**TIPS: **
+
+To get rid of viewing a lot of code-generated files and want to hide them by default the project explorer, enable file nesting in the VSCode settings.
+
+
+```dart
+{
+  "explorer.fileNesting.patterns": {
+      "*.dart": "${capture}.g.dart, ${capture}.freezed.dart"
+  },
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.expand": false,
+}
+
+
 
 ## MR and Code Review
 
