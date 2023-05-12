@@ -417,7 +417,23 @@ By generated source code, we mean something like `.g.dart` or .freezed.dart file
 
 * Commit the generated files to the source tree.
 * Never manually edit the generated files.
-* Generated source code files should have a .g.dart extension (except when using _freezed_)
+* * Never manually edit the generated files.
+* Generated Dart code files should have an additional extension such as `.g.dart, .freezed.dart, .mock.dart, etc`.
+* Prevent the generated files from being exposed on code-review by registering them in .`gitattributes.`
+
+```bash
+**/*.g.dart                             linguist-generated=true
+**/*.g.dart                             -diff -merge
+**/*.freezed.dart                       linguist-generated=true
+**/*.freezed.dart                       -diff -merge
+test/.test_coverage.dart                linguist-generated=true
+test/.test_coverage.dart                -diff -merge
+bin/cache/**                            linguist-generated=true
+bin/cache/**                            -diff -merge
+lib/generated_plugin_registrant.dart    linguist-generated=true
+lib/generated_plugin_registrant.dart    -diff -merge
+
+```
 * Exclude the generated files in the `analysis_options.yaml`
 
 ```bash
