@@ -1,4 +1,5 @@
 # Mobile
+
 This section is on how to start running the project on devices or simulators.
 
 ## Running mobile apps
@@ -67,7 +68,7 @@ If you want to run through VS Code configucation, then you have to add configura
                 "--dart-define=ENV=DEV",
                 "--flavor=dev"
             ]
-        }, 
+        },
         {
             "name": "Staging",
             "type": "dart",
@@ -96,71 +97,70 @@ If you want to run through VS Code configucation, then you have to add configura
 
 Pretty much all of the multiple flavors/schemes setup is taken from [Build flavors in Flutter (Android and iOS) with different Firebase projects per flavor](https://medium.com/@animeshjain/build-flavors-in-flutter-android-and-ios-with-different-firebase-projects-per-flavor-27c5c5dac10b)
 
-
-
 # Project Architecture
 
 The project's structure combines the Feature-First and Layer First approach. Feature-First means the directories of features are placed on top of layers directory. Every single feature has to have their own application, presentation, domain, and data layers underneath which each of them represents application layer. While Layer-First means otherwise.
 
-
 ## Entry Points
+
 This project has single entry point as what per defined in `main.dart`. Anything specific to each environment is defined as variables in `--dart-define`.
 
 All of the firebase projects being used by their respective main files are located under `lib/firebase` folder.
 
 As for how to run or build the app with specific target, please refer [Running with Flavors](#running-with-flavors).
 
-
 ## Folder Layout
 
 ```
     # Root Project
     .
-    ├── android                       
-    │   ├── app                      
-    │   │   ├── src                            
-    │   │   │   ├── google-services.json 
-    ├── assets                            
-    │   ├── fonts                        
-    │   ├── images                           
-    │   ├── translations 
-    ├── ios                         
-    │   ├── config                      
-    │   │   ├── dev                            
-    │   │   │   ├── GoogleServices-info.plist 
-    │   │   ├── prod                             
-    │   │   │   ├── GoogleServices-info.plist               
-    │   │   ├── stg                             
-    │   │   │   ├── GoogleServices-info.plist        
-    ├── lib                             
+    ├── android
+    │   ├── app
+    │   │   ├── src
+    │   │   │   ├── google-services.json
+    ├── assets
+    │   ├── fonts
+    │   ├── images
+    │   ├── translations
+    ├── ios
+    │   ├── config
+    │   │   ├── dev
+    │   │   │   ├── GoogleServices-info.plist
+    │   │   ├── prod
+    │   │   │   ├── GoogleServices-info.plist
+    │   │   ├── stg
+    │   │   │   ├── GoogleServices-info.plist
+    ├── lib
     │   ├── gen                         # All generated codes go here
     │   └── src                         # All the source code here
-    │   │   ├── app                                 
-    │   │   │   ├── config              # Flavor and app config    
-    │   │   │   ├── firebase            # Store Firebase options       
+    │   │   ├── app
+    │   │   │   ├── config              # Flavor and app config
+    │   │   │   ├── firebase            # Store Firebase options
     │   │   │   ├── theme               # App theme, typography, colors, etc
-    │   │   ├── common_widgets          # Widgets used in many places accross the app.
+    │   │   ├── components          # Widgets used in many places accross the app.
     │   │   ├── constants               # Constants, extras keys, etc,
-    │   │   ├── features                         
-    │   │   │   ├── auth  
-    │   │   │   │   ├── application     # Feature service and domain mapper goes here
-    │   │   │   │   ├── data            # DTO, request and response objects, and repositories
-    │   │   │   │   ├── domain          # UI Entity objects
-    │   │   │   │   ├── presentation    # UI and the controllers and states                    
-    │   │   │   ├── main  
-    │   │   │   │   ├── application  
-    │   │   │   │   ├── data  
-    │   │   │   │   ├── domain  
-    │   │   │   │   ├── presentation                    
-    │   │   ├── localization            # Generated CodeGen loader, LocaleKeys, etc  
+    │   │   ├── features
+    │   │   │   ├── auth
+    │   │   │   │   ├── application     # Feature services
+    │   │   │   │   ├── presentation    # UI and the controllers and states
+    │   │   │   ├── main
+    │   │   │   │   ├── application
+    │   │   │   │   ├── presentation
+    │   │   ├── data
+    │   │   │   ├── repositories        # shared repositories
+    │   │   │   ├── models              # shared DTO models
+    │   │   ├── domain
+    │   │   │   ├── entities            # shared entity models
+    │   │   ├── localization            # Generated CodeGen loader, LocaleKeys, etc
     │   │   ├── routing                 # Routes using Go Router
     │   │   ├── services                # Local and remote data handling service
     │   │   ├── utils                   # Extensions, validators, etc.
-    └── test         
+    └── test
 
 ```
 
 ### Network Service
+
 This service is located in `lib/service/network` folder. This folder includes all classes related with network connections.
 
 - `DioClient` class is responsible for handling core network connection job such as setting header, parameters, certificate. The bearer token which is saved once the user is logged in is also obtained inside this class.
@@ -168,8 +168,8 @@ This service is located in `lib/service/network` folder. This folder includes al
 
 ![](https://i.ibb.co/5Tj326X/Screen-Shot-2022-11-27-at-21-13-46.png)
 
-
 ### Features
+
 Features are located in `lib/src/features`. What meant by "features" is the features the user sees inside the app. They are not necessarity screens. One feature might contain multiple screens.
 
 Each features inside the app has at least these 4 layers. Therefore, every time you would like to add a new feature, you need to add at least 4 folders under that feature directory which represents those 4 layer.
@@ -197,37 +197,37 @@ The above interaction can be explained as below.
 Adding a new feature or making changes on the existing ones require a good understanding of Riverpod state management. For further information about Riverpod, please read [the Flutter Riverpod documentation](https://riverpod.dev/)
 
 > **Info:** When defining models (request or responses), we use [json_serializable](https://pub.dev/packages/json_serializable) and the generator [build_runner](https://pub.dev/packages/build_runner). Therefore, every time you add a new model or make changes on existing models, don't forget to run.
-> 
+>
 > ```
 > $ flutter pub run build_runner build --delete-conflicting-outputs
-> 
+>
 > ```
-> 
+>
 > Or if you want to target a specific model, consider using `--build-filter` like this.
-> 
+>
 > ```
 > $ flutter pub run build_runner build --build-filter="package:/mobile/lib/src/features/fund/data/models/fund_details.g.dart"
-> 
+>
 > ```
 
-
 ### Components
+
 The components are common widgets located in `lib/src/components`. This folder contains all the widgets that are used accross features and they can be used in more than one features. For common widgets that are specific to a feature, there should be specific `widgets` folders underneath to indicate that those widgets belong only to that feature.
 
 ### Routes
+
 This folder is located in `lib/src/routes`. This contains all the page routes definition along with their redirections, parameters being passed from one route to another. Every time you added a new screen the app should navigate to, add a new route inside this file. Further reading about [GoRouter for Flutter](https://pub.dev/documentation/go_router/latest/)
 
-
 ### Utils
-This folder is located in `lib/src/utils`. This contains all the utilities that are reused accross features, such as extensions, camera utility, network utility, notification, etc.
 
+This folder is located in `lib/src/utils`. This contains all the utilities that are reused accross features, such as extensions, camera utility, network utility, notification, etc.
 
 #### Firebase
 
 This folder is located in `lib/src/app/firebase`. This consists of 3 different firebase options files. All these three are generated using Firebase CLI.
 
-
 ## Cloud Infrastructure
+
 This app incorporates Firebase under the hood to handle some key functionalities such as authentication, push notifications, crash reporting, and analytics.
 
 Since it separates its environment, the Firebase projects configured for it are separated as well. This is a general best practice to avoid mixing resources between environment that leads to confuses in addressing issues.
@@ -240,13 +240,12 @@ For further resources on how to orginaze projects using Firebase, please refer:
 1. [Overview of Environments](https://firebase.google.com/docs/projects/dev-workflows/overview-environments)
 1. [Firebase's General Best Practices](https://firebase.google.com/docs/projects/dev-workflows/general-best-practices)
 
-
 # Deployment Guidelines
 
 While the flavor for production is already available, the Firebase project for production environment has not been set.
 
-
 ## Firebase Project Setup
+
 Before you deploy the app to production, you need to have the Firebase project for it set up.
 
 **Step 1.** Go to [https://console.firebase.google.com/](https://console.firebase.google.com/) Create a new Firebase project. It's best to name it "Simpan-Prod" to indicate that it's production mode and to distingue it from the rest of the projects.
@@ -268,6 +267,7 @@ flutterfire config  \
       --ios-out=ios/config/dev/GoogleService-Info.plist \
       --out=lib/src/app/firebase/firebase_options_dev.dart
 ```
+
 ```
 # Configure Firebase project for staging environment
 flutterfire config  \
@@ -277,6 +277,7 @@ flutterfire config  \
       --ios-out=ios/config/stg/GoogleService-Info.plist \
       --out=lib/src/app/firebase/firebase_options_stg.dart
 ```
+
 ```
 # Configure Firebase project for production environment
 flutterfire config \
@@ -291,15 +292,12 @@ When we do this, we have to use the correct bundle ID on iOS. This can be found 
 
 ![](https://i.ibb.co/rfkmVf5/Screen-Shot-2022-11-25-at-13-00-05.png)
 
-
-
 ### Setup for Android
 
 1. On [Firebase console](https://console.firebase.google.com/), select the project you've just created.
 2. Go to Project Settings, you will get a file named **_google-service.json_**, download it.
 3. Put the file under `android/app/src/prod` folder.
 4. Don't forget to add in your SHA1 into the app under Firebase project settings.
-
 
 ### Setup for iOS
 
@@ -313,7 +311,6 @@ When we do this, we have to use the correct bundle ID on iOS. This can be found 
 
 Once the production Firebase projects is well configured, you can build binaries of both Android and iOS for the deployment. These are commands to build apk for each flavors development, staging, and production respectively.
 
-
 #### Build for Android
 
 For development:
@@ -323,6 +320,7 @@ $ flutter build apk --release --flavor dev \\
     --dart-define=ENV=DEV \\
     --dart-define=API_URL='{{ devApiUrl }}' # Development
 ```
+
 For staging:
 
 ```bash
@@ -339,7 +337,6 @@ $ flutter build apk --release --flavor prod \\
     --dart-define=API_URL='{{ prodApiUrl }}' # Development
 ```
 
-
 #### Build for iOS
 
 For development:
@@ -349,6 +346,7 @@ $ flutter build ios --release --flavor dev \\
     --dart-define=ENV=DEV \\
     --dart-define=API_URL='{{ devApiUrl }}' # Development
 ```
+
 For staging:
 
 ```bash
@@ -365,7 +363,6 @@ $ flutter build ios --release --flavor prod \\
     --dart-define=API_URL='{{ prodApiUrl }}' # Development
 ```
 
-
 The above commands will produce file named `Runner.app` in which its content has .ipa file inside.
 
 All those commands are for the case you need to build the binary manually. Otherwise, using our NX workspace and Gitlab's repository it's much easier to have it deployed automatically using our CI/CD pipeline. Please refer to [Read Me](#read-me) for more information.
@@ -380,8 +377,8 @@ All those commands are for the case you need to build the binary manually. Other
 >
 > ```
 
-
 ## FCM Setup for iOS
+
 FCM is Firebase Cloud Messaging, a service provided by Firebase to allow apps do push notifications.
 
 It's important to dedicate a section for this issue as to make the notification work on iOS takes a bit extra configurations compared to Android. This is because Firebase need to have Apple Notification Service (APN) enabled and coupled with its project.
@@ -425,8 +422,8 @@ Here are some steps to publish the app to TestFlight.
 ![](https://i.ibb.co/GttzDvT/Screen-Shot-2022-12-06-at-15-52-54.png)
 
 **Step 2.** On XCode's menu bar, select "Product -> Archive". Make sure you have already add your developer account to XCode.
- 
-**Step 3.** Once archived, ***Organizer*** window would pop up straight away. If it wouldn't, open it from "Window -> Organizer".
+
+**Step 3.** Once archived, **_Organizer_** window would pop up straight away. If it wouldn't, open it from "Window -> Organizer".
 
 **Step 4.** Distributed the app. Select the archive you've just created and then "Distribute App". In this step, select "App Store", and then "Upload", and then "Next", and then select "Automatically manage signing" and then "Next".
 
@@ -434,13 +431,11 @@ Here are some steps to publish the app to TestFlight.
 
 **Step 6.** Login to your [AppstoreConnect](https://appstoreconnect.apple.com/). Select the app (in this case "{{ appName }}"). Go to "TestFlight" tab. It will take up to 30 minutes after upload success to get the build shown on the build list.
 
-**Step 7.** Once shown, on the build click "Manage" on "missing compliance".  And then select *"None of the algirithms mentioned above"*.
+**Step 7.** Once shown, on the build click "Manage" on "missing compliance". And then select _"None of the algirithms mentioned above"_.
 
 ![](https://i.ibb.co/5LfjjpN/Screen-Shot-2022-12-06-at-17-33-28.png).
 
 **Step 8.** Save. Your update will be pushed to the testers.
-
-
 
 # Wordings and Localizations
 
@@ -455,14 +450,12 @@ assets
     └── en-US.json
 ```
 
-
 ## Setup and Usage
 
 1. Open `assets/translations`. There are 2 files which represents 2 languages, `en-US.json`, and `id-ID.json`
-add a JSON field inside that JSON file.
+   add a JSON field inside that JSON file.
 
 ![](https://i.ibb.co/cDvmf0Q/Screen-Shot-2022-11-27-at-06-14-47.png)
-
 
 2. Add some text for `en` and `id` version language.
 3. Run the follwoing code in terminal for `easy_localization` generation :
@@ -484,15 +477,13 @@ flutter pub run easy_localization:generate -S "assets/translations" -O "lib/src/
 ```
 
 6. In the related screen or widget, just call the `LocaleKeys` and then type the variable you have just created, with trailing `.tr()` for
-example, `LocaleKeys.contactForm.tr()`.
-
+   example, `LocaleKeys.contactForm.tr()`.
 
 7. If would like to add arguments, for example `LocaleKeys.contactForm.tr(args: [state.name.value])` , and then in the json file, add the `{}`
 
 ![](https://i.ibb.co/LdntTm3/Screen-Shot-2022-11-27-at-06-13-53.png)
 
 For further information, please refer the documentation of [EasyLocalization](https://pub.dev/packages/easy_localization).
-
 
 # DeepLink Setup
 
@@ -517,24 +508,22 @@ keytool -list -v -keystore <path_to_your_keystore_file>
 2. Paste the given SHA-256 fingerprint to [assetlinks.json](./android/assetlinks.json) file
 3. Upload the file [assetlinks.json](./android/assetlinks.json) to your public directory of your website, under directory `[yourwebsite.com]/.wellknown/`, so it would be acccessible as `[yourwebsite.com]/.wellknown/assetlinks.json`
 
-
 ## iOS Setup
 
 1. Open [apple-app-site-association](./ios/apple-app-site-association) file
 2. Make sure the `appID` match your `.{{ iosBundleId }}`.
-3. Upload the file [apple-app-site-association](./ios/apple-app-site-association)  to your public directory of your website, under directory `[yourwebsite.com]/.wellknown/`, so it would be acccessible as `[yourwebsite.com]/.wellknown/apple-app-site-association`
-
+3. Upload the file [apple-app-site-association](./ios/apple-app-site-association) to your public directory of your website, under directory `[yourwebsite.com]/.wellknown/`, so it would be acccessible as `[yourwebsite.com]/.wellknown/apple-app-site-association`
 
 ## ABOUT ZOG UI
 
-**IMPORTANT NOTE ON ZOG UI:** 
+**IMPORTANT NOTE ON ZOG UI:**
 
 Zero One has developed a package called [ZOG UI](https://pub.dev/packages/zog_ui). Its goal is to accelerate the UI development process by providing a collection of ready-to-use components, yet still attempting to maintain their customizability.
 
 However, **the package is currently still on alpha release and lacks documentation**. Therefore, the usage of ZOG UI components should be done pragmatically. If there are some issues encountered in some components, it is encourage to implement your own widget instead of relying on all of ZOG UI components by trying to customize them.
 
-
 # Known Issues
+
 While pretty much all the features are working and bugs are fixed, there are still a couple technical debts that need for future works. All of them are marked as `//TODO` comments in the codebase. These marks basically indicate item needs for improvement.
 
 To sum up, these are some kind TODOs you have to notice about.
