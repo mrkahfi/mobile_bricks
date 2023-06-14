@@ -5,7 +5,6 @@ This section is on how to start running the project on devices or simulators.
 ## Running mobile apps
 
 ```bash
-$ cd apps/mobile
 # Check emulator with flutter emulators
 $ flutter run # please note that there must be 1 Emulator listed and run
 ```

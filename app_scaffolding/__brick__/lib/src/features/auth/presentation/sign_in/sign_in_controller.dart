@@ -1,15 +1,13 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:formz/formz.dart';
-import 'package:{{ packageName }}/src/features/auth/domain/formz/formz.dart';
+import 'package:{{ packageName }}/src/data/repositories/auth_repository.dart';
+import 'package:{{ packageName }}/src/domain/formz/formz.dart';
 import 'package:{{ packageName }}/src/features/auth/presentation/sign_in/sign_in_state.dart';
-import 'package:{{ packageName }}/src/repositories/auth_repository.dart';
 
 class SignInController extends StateNotifier<SignInState> {
-  SignInController({
-    required this.authRepository,
-  }) : super(const SignInState());
+  SignInController(this.ref) : super(const SignInState());
 
-  final AuthRepository authRepository;
+  final Ref ref;
 
   FormzStatus validate({EmailFormz? email, PasswordFormz? password}) {
     return Formz.validate([email ?? state.email, password ?? state.password]);
@@ -35,13 +33,14 @@ class SignInController extends StateNotifier<SignInState> {
     return value.hasError == false;
   }
 
-  Future<void> _authenticate(String email, String password) {
-    return authRepository.createUserWithEmailAndPassword(email, password);
+  Future<void> _authenticate(String email, String password) async {
+    await ref
+        .read(authRepositoryProvider)
+        .signInWithEmailAndPassword(email, password);
   }
 }
 
 final signInNotifierProvider =
-    StateNotifierProvider<SignInController, SignInState>((ref) {
-  final authRepository = ref.watch(authRepositoryProvider);
-  return SignInController(authRepository: authRepository);
-});
+    StateNotifierProvider<SignInController, SignInState>(
+  SignInController.new,
+);

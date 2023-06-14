@@ -7,7 +7,6 @@ import 'package:{{ packageName }}/gen/assets.gen.dart';
 import 'package:{{ packageName }}/src/app/config/config.dart';
 import 'package:{{ packageName }}/src/components/button.dart';
 import 'package:{{ packageName }}/src/components/textfield.dart';
-import 'package:{{ packageName }}/src/controllers/app_controller.dart';
 import 'package:{{ packageName }}/src/features/auth/presentation/sign_in/sign_in_controller.dart';
 import 'package:{{ packageName }}/src/localization/locale_keys.g.dart';
 import 'package:{{ packageName }}/src/utils/extensions/widget_extension.dart';
@@ -21,13 +20,6 @@ class SignInScreen extends ConsumerWidget {
     final password = ref.watch(signInNotifierProvider).password;
 
     return Scaffold(
-      floatingActionButton: FloatingActionButton(
-        child: const Icon(
-          Icons.dark_mode,
-        ),
-        onPressed: () =>
-            ref.read(appControllerProvider.notifier).toggleThemeMode(),
-      ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [

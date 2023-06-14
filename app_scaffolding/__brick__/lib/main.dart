@@ -8,12 +8,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:stack_trace/stack_trace.dart' as stack_trace;
 import 'package:{{ packageName }}/src/app.dart';
-
 import 'package:{{ packageName }}/src/app/config/config.dart';
-import 'package:{{ packageName }}/src/constants/constants.dart';
+import 'package:{{ packageName }}/src/app/constants/constants.dart';
+import 'package:{{ packageName }}/src/data/services/local/hive_db.dart';
+import 'package:{{ packageName }}/src/data/services/remote/config/http_overrides.dart';
 import 'package:{{ packageName }}/src/localization/codegen_loader.g.dart';
-import 'package:{{ packageName }}/src/services/local/hive_db.dart';
-import 'package:{{ packageName }}/src/services/remote/config/http_overrides.dart';
 
 void main() {
   const env = String.fromEnvironment(

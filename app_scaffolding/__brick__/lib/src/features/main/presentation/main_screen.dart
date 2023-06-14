@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:zog_ui/zog_ui.dart';
-import 'package:{{ packageName }}/src/controllers/app_controller.dart';
+import 'package:{{ packageName }}/src/features/main/presentation/main_controller.dart';
 import 'package:{{ packageName }}/src/routes/routes.dart';
 
 /// Screen that contains the bottom navigation bar along with the children tabs
@@ -26,7 +26,7 @@ class MainScreen extends ConsumerWidget {
       floatingActionButton: FloatingActionButton(
         child: const Icon(Icons.dark_mode),
         onPressed: () =>
-            ref.read(appControllerProvider.notifier).toggleThemeMode(),
+            ref.read(mainControllerProvider.notifier).toggleThemeMode(),
       ),
       body: child,
       bottomNavigationBar: ZeroNavigationBar(

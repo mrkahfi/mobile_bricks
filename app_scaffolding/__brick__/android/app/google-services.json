@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "276303003139",
+    "project_id": "zot-starter-prod",
+    "storage_bucket": "zot-starter-prod.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:276303003139:android:bafa4acb9bf9d8491cd836",
+        "android_client_info": {
+          "package_name": "{{ androidAppId }}"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "276303003139-8ucf28r9lmh61jmrv5kh6cs4qa509g94.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDaJl13TSAF-UdLoSRb_zL-a4htdgejd9A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "276303003139-8ucf28r9lmh61jmrv5kh6cs4qa509g94.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "276303003139-7nnp0ele9ubsgo36qpfg1ds4idaf7vjb.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.zot-starter.mobile"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

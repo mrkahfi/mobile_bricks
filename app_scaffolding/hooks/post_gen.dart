@@ -10,9 +10,18 @@ void run(HookContext context) async {
   final iosBundleId = context.vars['iosBundleId'];
 
   context.logger.info(''' \ ''');
+
   context.logger.info(''' \
-Activating flutterfire_cli zero-one globally... \
+Getting dependencies... \
 ''');
+
+  var pubResult = await Process.run('dart', [
+    'pub',
+    'get',
+  ]);
+
+  stdout.write(pubResult.stdout);
+  stderr.write(pubResult.stderr);
 
   // dart pub global activate --source="git" https://github.com/zero-one-group/flutterfire_cli
   // --git-path=packages/flutterfire_cli --git-ref=flutterfire_cli-zero-one  --executable="flutterfire" --overwrite
