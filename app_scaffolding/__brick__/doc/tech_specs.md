@@ -137,7 +137,7 @@ As for how to run or build the app with specific target, please refer [Running w
     │   │   │   ├── config              # Flavor and app config
     │   │   │   ├── firebase            # Store Firebase options
     │   │   │   ├── theme               # App theme, typography, colors, etc
-    │   │   ├── components          # Widgets used in many places accross the app.
+    │   │   ├── components              # Widgets used in many places accross the app.
     │   │   ├── constants               # Constants, extras keys, etc,
     │   │   ├── features
     │   │   │   ├── auth
