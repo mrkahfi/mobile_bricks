@@ -17,7 +17,7 @@ extension BuildContextEntension<T> on BuildContext {
   }
 
   ScaffoldFeatureController<SnackBar, SnackBarClosedReason> showSnackBar(
-      String message) {
+      String message,) {
     return ScaffoldMessenger.of(this).showSnackBar(
       SnackBar(
         content: Text(message),
@@ -29,5 +29,5 @@ extension BuildContextEntension<T> on BuildContext {
   Future<bool?> showToast(String message) async {
 // It's a plugin to show toast and we can with extension
     return true;
-  }
+  }   
 }

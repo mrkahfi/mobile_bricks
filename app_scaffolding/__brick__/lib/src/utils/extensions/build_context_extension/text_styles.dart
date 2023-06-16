@@ -40,11 +40,15 @@ extension BuildContextEntension<T> on BuildContext {
       ZeroTheme.of(this).typography.toTextTheme().bodyLarge;
 
   TextStyle? get dividerTextSmall => bodySmall?.copyWith(
-      letterSpacing: 0.5, fontWeight: FontWeight.w700, fontSize: 12);
+        letterSpacing: 0.5,
+        fontWeight: FontWeight.w700,
+        fontSize: 12,
+      );
 
   TextStyle? get dividerTextLarge => bodySmall?.copyWith(
-      letterSpacing: 1.5,
-      fontWeight: FontWeight.w700,
-      fontSize: 13,
-      height: 1.23);
+        letterSpacing: 1.5,
+        fontWeight: FontWeight.w700,
+        fontSize: 13,
+        height: 1.23,
+      );
 }

@@ -10,9 +10,18 @@ void run(HookContext context) async {
   final iosBundleId = context.vars['iosBundleId'];
 
   context.logger.info(''' \ ''');
+
   context.logger.info(''' \
-Activating flutterfire_cli zero-one globally... \
+Getting dependencies... \
 ''');
+
+  var pubResult = await Process.run('dart', [
+    'pub',
+    'get',
+  ]);
+
+  stdout.write(pubResult.stdout);
+  stderr.write(pubResult.stderr);
 
   // dart pub global activate --source="git" https://github.com/zero-one-group/flutterfire_cli
   // --git-path=packages/flutterfire_cli --git-ref=flutterfire_cli-zero-one  --executable="flutterfire" --overwrite
@@ -49,6 +58,7 @@ Configuring firebase for development... \
     '--ios-bundle-id=$iosBundleId.dev',
     '--ios-out=ios/config/dev/GoogleService-Info.plist',
     '--android-package-name=$androidAppId.dev',
+    '--android-out=/android/app/src/dev/google-services.json',
     '--out=lib/src/app/firebase/firebase_options_dev.dart',
   ]);
   stdout.write(devResult.stdout);
@@ -64,6 +74,7 @@ Something wrong happened. Consider run this command manually. \
         --ios-bundle-id=$iosBundleId.dev \\
         --ios-out=ios/config/dev/GoogleService-Info.plist \\
         --android-package-name=$androidAppId.dev \\
+        --android-out=/android/app/src/dev/google-services.json \\
         --out=lib/src/app/firebase/firebase_options_dev.dart \
     ''');
   }
@@ -78,6 +89,7 @@ Configuring firebase for staging... \
     '--ios-bundle-id=$iosBundleId.stg',
     '--ios-out=ios/config/stg/GoogleService-Info.plist',
     '--android-package-name=$androidAppId.stg',
+    '--android-out=/android/app/src/stg/google-services.json',
     '--out=lib/src/app/firebase/firebase_options_stg.dart',
   ]);
   stdout.write(stgResult.stdout);
@@ -93,6 +105,7 @@ Something wrong happened. Consider run this command manually. \
         --ios-bundle-id=$iosBundleId.stg \\
         --ios-out=ios/config/stg/GoogleService-Info.plist \\
         --android-package-name=$androidAppId.stg \\
+        --android-out=/android/app/src/stg/google-services.json \\
         --out=lib/src/app/firebase/firebase_options_stg.dart \
     ''');
   }
@@ -107,6 +120,7 @@ Configuring firebase for production... \
     '--ios-bundle-id=$iosBundleId',
     '--ios-out=ios/config/prod/GoogleService-Info.plist',
     '--android-package-name=$androidAppId',
+    '--android-out=/android/app/src/main/google-services.json',
     '--out=lib/src/app/firebase/firebase_options.dart',
   ]);
   stdout.write(prodResult.stdout);
@@ -122,6 +136,7 @@ Something wrong happened. Consider run this command manually. \
         --ios-bundle-id=$iosBundleId \\
         --ios-out=ios/config/prod/GoogleService-Info.plist \\
         --android-package-name=$androidAppId \\
+        --android-out=/android/app/src/main/google-services.json \\
         --out=lib/src/app/firebase/firebase_options.dart \
     ''');
   }

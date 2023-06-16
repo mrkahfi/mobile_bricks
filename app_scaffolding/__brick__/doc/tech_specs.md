@@ -5,7 +5,6 @@ This section is on how to start running the project on devices or simulators.
 ## Running mobile apps
 
 ```bash
-$ cd apps/mobile
 # Check emulator with flutter emulators
 $ flutter run # please note that there must be 1 Emulator listed and run
 ```
@@ -14,7 +13,7 @@ $ flutter run # please note that there must be 1 Emulator listed and run
 
 **_Flavors_** in Android are used to create different app versions. It can be free or paid, etc. This enables us to create multiple variants of the app using the same code base. In iOS, this is called as **_Scheme_**.
 
-In Simpan, flavors are divided by its development environments. So it can be either development, staging (UAT), or production. Each of these flavor produces different binary variants with different Application IDs (for Android) or Bundle IDs (for iOS).
+In {{ appName }}, flavors are divided by its development environments. So it can be either development, staging (UAT), or production. Each of these flavor produces different binary variants with different Application IDs (for Android) or Bundle IDs (for iOS).
 
 The purpose of this separation is to make it easier to testers, product managers, or stakeholders to test the app with fully isolated environment and in order for them not to get confused on which environment of the app the are currently on.
 
@@ -137,7 +136,7 @@ As for how to run or build the app with specific target, please refer [Running w
     │   │   │   ├── config              # Flavor and app config
     │   │   │   ├── firebase            # Store Firebase options
     │   │   │   ├── theme               # App theme, typography, colors, etc
-    │   │   ├── components          # Widgets used in many places accross the app.
+    │   │   ├── components              # Widgets used in many places accross the app.
     │   │   ├── constants               # Constants, extras keys, etc,
     │   │   ├── features
     │   │   │   ├── auth
@@ -231,7 +230,7 @@ This folder is located in `lib/src/app/firebase`. This consists of 3 different f
 This app incorporates Firebase under the hood to handle some key functionalities such as authentication, push notifications, crash reporting, and analytics.
 
 Since it separates its environment, the Firebase projects configured for it are separated as well. This is a general best practice to avoid mixing resources between environment that leads to confuses in addressing issues.
-The following diagram shows how Simpan's development environments related with the Firebase projects.
+The following diagram shows how {{ appName }}'s development environments related with the Firebase projects.
 
 ![](https://i.ibb.co/72SNsSR/Screen-Shot-2022-11-25-at-12-26-37.png)
 
@@ -248,7 +247,7 @@ While the flavor for production is already available, the Firebase project for p
 
 Before you deploy the app to production, you need to have the Firebase project for it set up.
 
-**Step 1.** Go to [https://console.firebase.google.com/](https://console.firebase.google.com/) Create a new Firebase project. It's best to name it "Simpan-Prod" to indicate that it's production mode and to distingue it from the rest of the projects.
+**Step 1.** Go to [https://console.firebase.google.com/](https://console.firebase.google.com/) Create a new Firebase project. It's best to name it "{{ appName }}-Prod" to indicate that it's production mode and to distingue it from the rest of the projects.
 
 **Step 2.** Go to terminal in you root of mobile directory (`apps/mobile`), run the following command to login using your Firebase account:
 

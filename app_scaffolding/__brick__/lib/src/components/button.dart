@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:zog_ui/zog_ui.dart';
 import 'package:{{ packageName }}/src/localization/locale_keys.g.dart';
+import 'package:zog_ui/zog_ui.dart';
 
 class CommonButton extends StatelessWidget {
   const CommonButton(

@@ -14,6 +14,12 @@
       "languageVersion": "2.18"
     },
     {
+      "name": "characters",
+      "rootUri": "file:///Users/mrkahvi/.pub-cache/hosted/pub.dev/characters-1.3.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "checked_yaml",
       "rootUri": "file:///Users/mrkahvi/.pub-cache/hosted/pub.dev/checked_yaml-2.0.3",
       "packageUri": "lib/",
@@ -36,6 +42,24 @@
       "rootUri": "file:///Users/mrkahvi/.pub-cache/hosted/pub.dev/crypto-3.0.3",
       "packageUri": "lib/",
       "languageVersion": "2.19"
+    },
+    {
+      "name": "ffi",
+      "rootUri": "file:///Users/mrkahvi/.pub-cache/hosted/pub.dev/ffi-2.0.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
+      "name": "flutter",
+      "rootUri": "file:///Users/mrkahvi/flutter/packages/flutter",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
+      "name": "flutter_web_plugins",
+      "rootUri": "file:///Users/mrkahvi/flutter/packages/flutter_web_plugins",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
     },
     {
       "name": "http",
@@ -74,6 +98,12 @@
       "languageVersion": "2.19"
     },
     {
+      "name": "material_color_utilities",
+      "rootUri": "file:///Users/mrkahvi/.pub-cache/hosted/pub.dev/material_color_utilities-0.2.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.13"
+    },
+    {
       "name": "meta",
       "rootUri": "file:///Users/mrkahvi/.pub-cache/hosted/pub.dev/meta-1.9.1",
       "packageUri": "lib/",
@@ -86,10 +116,28 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "package_info_plus",
+      "rootUri": "file:///Users/mrkahvi/.pub-cache/hosted/pub.dev/package_info_plus-4.0.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.18"
+    },
+    {
+      "name": "package_info_plus_platform_interface",
+      "rootUri": "file:///Users/mrkahvi/.pub-cache/hosted/pub.dev/package_info_plus_platform_interface-2.0.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "path",
       "rootUri": "file:///Users/mrkahvi/.pub-cache/hosted/pub.dev/path-1.8.3",
       "packageUri": "lib/",
       "languageVersion": "2.12"
+    },
+    {
+      "name": "plugin_platform_interface",
+      "rootUri": "file:///Users/mrkahvi/.pub-cache/hosted/pub.dev/plugin_platform_interface-2.1.4",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
     },
     {
       "name": "pointycastle",
@@ -108,6 +156,12 @@
       "rootUri": "file:///Users/mrkahvi/.pub-cache/hosted/pub.dev/pub_semver-2.1.4",
       "packageUri": "lib/",
       "languageVersion": "2.17"
+    },
+    {
+      "name": "sky_engine",
+      "rootUri": "file:///Users/mrkahvi/flutter/bin/cache/pkg/sky_engine",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
     },
     {
       "name": "source_span",
@@ -140,6 +194,18 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "vector_math",
+      "rootUri": "file:///Users/mrkahvi/.pub-cache/hosted/pub.dev/vector_math-2.1.4",
+      "packageUri": "lib/",
+      "languageVersion": "2.14"
+    },
+    {
+      "name": "win32",
+      "rootUri": "file:///Users/mrkahvi/.pub-cache/hosted/pub.dev/win32-5.0.3",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
       "name": "yaml",
       "rootUri": "file:///Users/mrkahvi/.pub-cache/hosted/pub.dev/yaml-3.1.2",
       "packageUri": "lib/",
@@ -152,7 +218,7 @@
       "languageVersion": "2.12"
     }
   ],
-  "generated": "2023-05-05T08:01:04.646279Z",
+  "generated": "2023-06-15T15:19:31.851054Z",
   "generator": "pub",
-  "generatorVersion": "2.19.6"
+  "generatorVersion": "3.0.2"
 }

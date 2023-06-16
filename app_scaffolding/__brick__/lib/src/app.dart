@@ -1,13 +1,11 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-
 import 'package:zog_ui/zog_ui.dart';
-
 import 'package:{{ packageName }}/src/app/config/config.dart';
+import 'package:{{ packageName }}/src/app/constants/constants.dart';
 import 'package:{{ packageName }}/src/app/themes/app_theme.dart';
-import 'package:{{ packageName }}/src/constants/constants.dart';
-import 'package:{{ packageName }}/src/controllers/app_controller.dart';
+import 'package:{{ packageName }}/src/features/main/presentation/main_controller.dart';
 import 'package:{{ packageName }}/src/routes/routes.dart';
 import 'package:{{ packageName }}/src/utils/dynamic_link/dynamic_link_notifier.dart';
 
@@ -37,8 +35,8 @@ class MyApp extends ConsumerWidget {
         );
       },
       darkTheme: AppTheme.dark,
-      themeMode: ref.watch(appControllerProvider).currentTheme,
-      color: ref.watch(appControllerProvider).currentTheme == ThemeMode.light
+      themeMode: ref.watch(mainControllerProvider).currentTheme,
+      color: ref.watch(mainControllerProvider).currentTheme == ThemeMode.light
           ? LightColors.primaryColor
           : DarkColors.primaryColor,
     );

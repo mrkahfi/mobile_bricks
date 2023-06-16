@@ -1,6 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:{{ packageName }}/src/features/main/domain/models/item.dart';
+import 'package:{{ packageName }}/src/domain/entities/item.dart';
 
 part 'home_state.freezed.dart';
 

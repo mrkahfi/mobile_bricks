@@ -1,8 +1,9 @@
-import 'dart:developer';
+
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../application/{{ featureName.snakeCase() }}_service.dart';
 import './{{ featureName.snakeCase() }}_state.dart';
+
 
 class  {{ featureName.pascalCase() }}Controller extends StateNotifier<{{ featureName.pascalCase() }}State> {
   {{ featureName.pascalCase() }}Controller(this.ref) : super(const {{ featureName.pascalCase() }}State());
@@ -10,8 +11,8 @@ class  {{ featureName.pascalCase() }}Controller extends StateNotifier<{{ feature
 
   Future<void> fetch{{ entityName.pascalCase() }}s() async {
     state = state.copyWith(value: const AsyncLoading());
-    log('isLoading');
-    final response = await ref.read({{ featureName.camelCase() }}ServiceProvider).fetch{{ entityName.pascalCase() }}s();
+    
+    final response = await ref.read({{ featureName.camelCase() }}ServiceProvider).doSomething();
 
     response.when(
       success: (data) {

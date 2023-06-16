@@ -4,18 +4,18 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:{{ packageName }}/src/data/repositories/auth_repository.dart';
 import 'package:{{ packageName }}/src/features/main/presentation/home/home_screen.dart';
 import 'package:{{ packageName }}/src/features/presentations.dart';
-import 'package:{{ packageName }}/src/repositories/auth_repository.dart';
 import 'package:{{ packageName }}/src/utils/dynamic_link/dynamic_link_notifier.dart';
 import 'package:{{ packageName }}/src/utils/extensions/string_extension.dart';
 
 // It is better to split the route into smal chunks based on their focused area
 // or based on feature modules
 part '_auth.dart';
-part '_main.dart';
 part '_deeplink_handler.dart';
 part '_go_router_refresh_stream.dart';
+part '_main.dart';
 
 enum Routes {
   signin,

@@ -31,14 +31,16 @@ vars:
     default: Products List
     prompt: What is the feature name??
 
-  entityName:
-    type: string
-    description: An entity name (a model that UI needs)
-    default: Product Item
-    prompt: Add an entity name (a model that UI needs)?
+  # entityName:
+  #   type: string
+  #   description: An entity name (a model that UI needs)
+  #   default: Product Item
+  #   prompt: Add an entity name (a model that UI needs)?
 
-  modelName:
-    type: string
-    description: An model name (a data source model)
-    default: Product
-    prompt: Add an model name (a data source model)?
+  # modelName:
+  #   type: string
+  #   description: An model name (a data source model)
+  #   default: Product
+  #   prompt: Add an model name (a data source model)?
+
+    
