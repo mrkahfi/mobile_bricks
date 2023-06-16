@@ -1,3 +1,8 @@
+# 0.9.0+9
+
+- refactor: move data dan domain layer out of features
+
+
 # 0.6.11+7
 
 - feat: add custom linting, refactor accordingly
