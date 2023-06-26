@@ -2,6 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:formz/formz.dart';
+import 'package:go_router/go_router.dart';
 import 'package:zog_ui/zog_ui.dart' show ZeroText;
 import 'package:{{ packageName }}/gen/assets.gen.dart';
 import 'package:{{ packageName }}/src/app/config/config.dart';
@@ -9,6 +10,8 @@ import 'package:{{ packageName }}/src/components/button.dart';
 import 'package:{{ packageName }}/src/components/textfield.dart';
 import 'package:{{ packageName }}/src/features/auth/presentation/sign_in/sign_in_controller.dart';
 import 'package:{{ packageName }}/src/localization/locale_keys.g.dart';
+import 'package:{{ packageName }}/src/routes/routes.dart';
+import 'package:{{ packageName }}/src/utils/extensions/string_extension.dart';
 import 'package:{{ packageName }}/src/utils/extensions/widget_extension.dart';
 
 class SignInScreen extends ConsumerWidget {
@@ -18,6 +21,8 @@ class SignInScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final email = ref.watch(signInNotifierProvider).email;
     final password = ref.watch(signInNotifierProvider).password;
+
+    _listenLogin(context, ref);
 
     return Scaffold(
       body: Column(
@@ -59,5 +64,19 @@ class SignInScreen extends ConsumerWidget {
         ],
       ).withDefaultPadding,
     );
+  }
+
+  void _listenLogin(BuildContext context, WidgetRef ref) {
+    ref.listen(signInNotifierProvider, (previousState, currentState) {
+      currentState.value.when(
+        data: (data) => context.goNamed(Routes.main.name),
+        error: (e, stacktrace) => ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text('Error'.hardcoded),
+          ),
+        ),
+        loading: () {},
+      );
+    });
   }
 }

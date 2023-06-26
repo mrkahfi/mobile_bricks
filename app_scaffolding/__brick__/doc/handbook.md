@@ -38,7 +38,7 @@
 
 This architecture is composed of four layers (_data, domain, application, and presentation_) with their own responsibility and clear contract for how communication happens between layers. This architecture is adapted from [Clean Architecture by Uncle Bob](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html) with the implementation of[ Riverpod State Management](https://riverpod.dev/docs/getting_started).
 
-![alt_text](img/app-architecture.png "image_tooltip")
+![alt_text](img/app-architecture.jpg "image_tooltip")
 
 1. **Presentation Layer.** This layer is responsible to present data (widget) to screen and handle user interaction. This layer includes **_widgets_**, and their **_controllers_** and **_states_**.
 2. **Application Layer.** This layer is optional. This layer holds **_services_** that can be used to bridge the presentation layer with the domain layer in order to serve data that the controller needs.

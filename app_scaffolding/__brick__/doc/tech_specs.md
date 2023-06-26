@@ -180,7 +180,7 @@ Each features inside the app has at least these 4 layers. Therefore, every time 
 
 This is how a layer interacts with each others.
 
-![](img/app-architecture.png)
+![](img/app-architecture.jpg)
 
 The above interaction can be explained as below.
 

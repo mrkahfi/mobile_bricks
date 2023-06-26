@@ -187,7 +187,6 @@ TODO
 ## Documentation
 
 - Technical Docs: Read [the whole technical specification document](doc/tech_specs.md). 
-- Public API Docs: [](doc/api/index.html). 
 
 
 ## Author 🧑‍💻
