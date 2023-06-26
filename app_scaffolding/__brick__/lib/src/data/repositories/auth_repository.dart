@@ -4,7 +4,11 @@ import 'package:{{ packageName }}/src/utils/delay.dart';
 import 'package:{{ packageName }}/src/utils/in_memory_store.dart';
 
 class AuthRepository {
-  final _authState = InMemoryStore<User?>(null);
+  AuthRepository({
+    InMemoryStore<User?>? authState,
+  }) : _authState = authState ?? InMemoryStore<User?>(null);
+
+  final InMemoryStore<User?> _authState;
 
   Stream<User?> authStateChanges() => _authState.stream;
   User? get currentUser => _authState.value;
@@ -13,15 +17,11 @@ class AuthRepository {
 
   Future<void> signInWithEmailAndPassword(String email, String password) async {
     await delay();
-  }
-
-  Future<void> createUserWithEmailAndPassword(
-    String email,
-    String password,
-  ) async {
-    await delay();
-
-    _createNewUser(email, password);
+    final user = User(
+      uid: email.split('').reversed.join(),
+      email: email,
+    );
+    _authState.value = user;
   }
 
   Future<void> signOut() async {
