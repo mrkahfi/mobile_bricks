@@ -7,7 +7,7 @@ class AuthService {
   final AuthRepository authRepository;
 
   Future<void> signIn(String email, String password) {
-    return authRepository.createUserWithEmailAndPassword(email, password);
+    return authRepository.signInWithEmailAndPassword(email, password);
   }
 }
 
